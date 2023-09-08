@@ -1,11 +1,13 @@
 import React from 'react';
-import './App.css';
+import Login from './components/user/login/Login';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      Hello EventWise Users !! 
-    </div>
+    <Provider store={store}>
+      <Login />
+    </Provider>
   );
 }
 
