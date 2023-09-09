@@ -1,6 +1,8 @@
 import Authentication from '../pages/Authentication';
 import HomePage from '../pages/HomePage';
 import NotFound from '../pages/NotFound';
+import SearchEvent from '../pages/SearchEvent';
+import CityRoute from './CityRoute';
 
 interface AppRoute {
     path: string,
@@ -15,7 +17,11 @@ export const routes: AppRoute[] = [
     },
     {
         path:'/:city',
-        component: HomePage,
+        component: CityRoute,
+    },
+    {
+        path: '/search',
+        component: SearchEvent,
     },
     {
         path: '/authentication',
