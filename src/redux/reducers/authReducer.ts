@@ -1,8 +1,7 @@
 import { AuthAction, AuthActionTypes, AuthState } from '../types/authTypes';
 
 const initialState: AuthState = {
-    isLoading: false,
-    isAuthenticated: false,
+    loading: false,
     token: null,
     error: null,
 };
@@ -12,22 +11,19 @@ const authReducer = (state = initialState, action:AuthAction): AuthState => {
         case AuthActionTypes.LOGIN_REQUEST:
             return {
                 ...state,
-                isLoading: true,
-                isAuthenticated: false,
+                loading: true,
             }
         case AuthActionTypes.LOGIN_SUCCESS:
             return {
                 ...state,
-                isLoading: false,
-                isAuthenticated: true,
+                loading: false,
                 token: action.payload,
                 error: null,
             };
         case AuthActionTypes.LOGIN_FAILURE:
             return {
                 ...state,
-                isLoading: false,
-                isAuthenticated: false,
+                loading: false,
                 token: null,
                 error: action.payload,
             };

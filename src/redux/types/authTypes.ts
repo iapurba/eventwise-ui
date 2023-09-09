@@ -5,8 +5,7 @@ export enum AuthActionTypes {
 };
 
 export interface AuthState {
-    isLoading: boolean,
-    isAuthenticated: boolean,
+    loading: boolean,
     token: string | null,
     error: string | null,
 };

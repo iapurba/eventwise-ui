@@ -1,6 +1,7 @@
-import axios from 'axios';
 import { Dispatch } from 'redux';
 import { AuthAction, AuthActionTypes } from '../types/authTypes';
+import { loginUserService } from '../../api/services/authService';
+import { setAuthToken } from '../../utils/cookieUtils';
 
 export const loginRequest = (): AuthAction => ({
     type: AuthActionTypes.LOGIN_REQUEST,
@@ -20,11 +21,9 @@ export const login = (credentials: any) => {
     return async (dispatch: Dispatch<AuthAction>) => {
         dispatch(loginRequest());
         try {
-            const response = await axios.post(
-                'http://localhost:3001/api/auth/login',
-                credentials
-            );
-            const { token } = response.data;
+            const userData = await loginUserService(credentials);
+            const { token } = userData;
+            setAuthToken(token);
             dispatch(loginSuccess(token));
 
         } catch (error) {
