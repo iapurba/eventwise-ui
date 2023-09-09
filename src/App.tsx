@@ -1,12 +1,11 @@
-import React from 'react';
-import Login from './components/user/login/Login';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import RouteConfig from './routes/RouteConfig';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Login />
+      <RouteConfig />
     </Provider>
   );
 }
