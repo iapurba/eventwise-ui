@@ -9,7 +9,7 @@ type serviceUrlType = {
     [key: string]: serviceEndpoint;
 };
 
-export const SERVICE_URL: serviceUrlType = {
+export const AUTH_SERVICE_URL: serviceUrlType = {
     REGISTER_USER: {
         path: '/api/auth/register',
         method: 'post',
@@ -17,5 +17,16 @@ export const SERVICE_URL: serviceUrlType = {
     LOGIN_USER: {
         path: '/api/auth/login',
         method: 'post',
+    },
+};
+
+export const EVENT_SERVICE_URL : serviceUrlType = {
+    GET_EVENT: {
+        path: '/api/events/:eventId',
+        method: 'get',
+    },
+    GET_EVENTS: {
+        path: '/api/events',
+        method: 'get',
     },
 };

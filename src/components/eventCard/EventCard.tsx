@@ -5,7 +5,8 @@ import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-const EventCard = () => {
+
+const EventCard = ({ event }: any) => {
     return (
         <Card >
             <CardMedia
@@ -20,13 +21,15 @@ const EventCard = () => {
                     variant='h6'
                     sx={{ fontWeight: 'bold' }}
                 >
-                    {'Trimurthi - Chapter ONE'}
+                    {event?.title}
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                    October 15 | 11 AM Onwards
+                    {`${event?.date} | ${event?.time} Onwards`}
                 </Typography>
-                <Typography variant='body1'>Nazrul Mancha, Kolkata</Typography>
-            </CardContent>
+                <Typography variant='body1'>
+                    {`${event?.location?.venue}, ${event?.location?.address?.city}`}
+                </Typography>
+            </CardContent>           
             <CardActions>
                 <Button>BUY NOW</Button>
             </CardActions>

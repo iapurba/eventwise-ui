@@ -5,7 +5,7 @@ import { getAuthToken } from '../utils/cookieUtils';
 interface ServiceConfig {
     path: string,
     method: AxiosRequestConfig['method'],
-    payload: any | null,
+    payload?: any | null,
 };
 
 const authToken = getAuthToken();
