@@ -3,16 +3,16 @@ import { AuthAction, AuthActionTypes } from '../types/authTypes';
 import { loginUserService } from '../../api/services/authService';
 import { setAuthToken } from '../../utils/cookieUtils';
 
-export const loginRequest = (): AuthAction => ({
+const loginRequest = (): AuthAction => ({
     type: AuthActionTypes.LOGIN_REQUEST,
 });
 
-export const loginSuccess = (token: string): AuthAction => ({
+const loginSuccess = (token: string): AuthAction => ({
     type: AuthActionTypes.LOGIN_SUCCESS,
     payload: token,
 });
 
-export const loginFailure = (error: string): AuthAction => ({
+const loginFailure = (error: string): AuthAction => ({
     type: AuthActionTypes.LOGIN_FAILURE,
     payload: error,
 });
