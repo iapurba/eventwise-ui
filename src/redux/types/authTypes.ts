@@ -5,23 +5,23 @@ export enum AuthActionTypes {
 };
 
 export interface AuthState {
-    loading: boolean,
-    token: string | null,
-    error: string | null,
+    loading: boolean;
+    token: string | null;
+    error: string | null;
 };
 
 interface LoginRequestAction {
-    type: AuthActionTypes.LOGIN_REQUEST,
+    type: AuthActionTypes.LOGIN_REQUEST;
 };
 
 interface LoginSuccessAction {
-    type: AuthActionTypes.LOGIN_SUCCESS,
-    payload: any,
+    type: AuthActionTypes.LOGIN_SUCCESS;
+    payload: any;
 };
 
 interface LoginFailureAction {
-    type: AuthActionTypes.LOGIN_FAILURE,
-    payload: any,
+    type: AuthActionTypes.LOGIN_FAILURE;
+    payload: any;
 };
 
 export type AuthAction = (
