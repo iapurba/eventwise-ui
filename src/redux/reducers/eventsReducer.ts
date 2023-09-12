@@ -1,26 +1,26 @@
-import { EventActionTypes, EventState, FecthEventsAction } from "../types/eventTypes";
+import { EventsActionTypes, EventsState, FecthEventsAction } from "../types/eventsTypes";
 
-const initialState: EventState = {
+const initialState: EventsState = {
     events: [],
     loading: false,
     error: null,
 };
 
-export const eventReducer = (state = initialState, action: FecthEventsAction): EventState => {
+export const eventsReducer = (state = initialState, action: FecthEventsAction): EventsState => {
     switch (action.type) {
-        case EventActionTypes.FETCH_EVENTS_REQUEST:
+        case EventsActionTypes.FETCH_EVENTS_REQUEST:
             return {
                 ...state,
                 loading: true,
             }
-        case EventActionTypes.FETCH_EVENTS_SUCCESS:
+        case EventsActionTypes.FETCH_EVENTS_SUCCESS:
             return {
                 ...state,
                 events: action.payload,
                 loading: false,
                 error: null,
             }
-        case EventActionTypes.FETCH_EVENTS_FAILURE:
+        case EventsActionTypes.FETCH_EVENTS_FAILURE:
             return {
                 ...state,
                 loading: false,

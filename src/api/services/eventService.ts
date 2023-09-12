@@ -9,3 +9,13 @@ export const fetchEventsService = async () => {
 
     } catch (error) { throw error; }
 };
+
+export const fetchEventByIdService = async (eventId: string) => {
+    try {
+        const { path, method } = EVENT_SERVICE_URL.GET_EVENT;
+        const params = { eventId };
+        const data = await createServiceRequest({ method, path, params });
+        return data;
+
+    } catch (error) { throw error; }
+};

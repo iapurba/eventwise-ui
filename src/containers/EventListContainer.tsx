@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import EventCard from '../components/eventCard/EventCard';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchEvents } from '../redux/actions/eventActions';
+import { fetchEvents } from '../redux/actions/eventsActions';
 import { RootState } from '../redux/rootState';
 
 const EventListContainer = () => {
-    const eventList = useSelector((state: RootState) => state.event.events);
+    const eventList = useSelector((state: RootState) => state.events.events);
     const dispatch = useDispatch<any>();
 
     useEffect(() => {
