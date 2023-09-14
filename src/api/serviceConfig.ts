@@ -9,8 +9,6 @@ interface ServiceConfig {
     params?: Record<string, string>;
 };
 
-const authToken = getAuthToken();
-
 const createServiceRequest = async ({ path, method, payload = null, params = {} }: ServiceConfig) => {
     try {
         // Replace placeholders in the path with actual values
@@ -21,6 +19,8 @@ const createServiceRequest = async ({ path, method, payload = null, params = {} 
             }
         };
 
+        const authToken = getAuthToken();
+        
         const config: AxiosRequestConfig = {
             method,
             url: `${SERVICE_DOMAIN}${finalPath}`,

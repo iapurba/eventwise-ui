@@ -20,6 +20,13 @@ export const AUTH_SERVICE_URL: serviceUrlType = {
     },
 };
 
+export const USER_SERVICE_URL : serviceUrlType = {
+    GET_USER_PROFILE: {
+        path: '/api/users/me',
+        method: 'get',
+    },
+};
+
 export const EVENT_SERVICE_URL : serviceUrlType = {
     GET_EVENT: {
         path: '/api/events/{eventId}',
