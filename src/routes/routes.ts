@@ -1,8 +1,12 @@
 import Authentication from '../pages/Authentication';
+import EventDetails from '../pages/EventDetails';
 import HomePage from '../pages/HomePage';
 import NotFound from '../pages/NotFound';
 import SearchEvent from '../pages/SearchEvent';
+import ShowTickets from '../pages/EventTickets';
 import CityRoute from './CityRoute';
+import Checkout from '../pages/Checkout';
+import UserProfile from '../pages/UserProfile';
 
 interface AppRoute {
     path: string,
@@ -12,6 +16,14 @@ interface AppRoute {
 
 export const routes: AppRoute[] = [
     {
+        path: '/users/login',
+        component: Authentication,
+    },
+    {
+        path: '/users/me',
+        component: UserProfile,
+    },
+    {
         path: '/online',
         component: HomePage,
     },
@@ -20,12 +32,20 @@ export const routes: AppRoute[] = [
         component: CityRoute,
     },
     {
-        path: '/search',
-        component: SearchEvent,
+        path: '/events/:eventId',
+        component: EventDetails,
     },
     {
-        path: '/authentication',
-        component: Authentication,
+        path: '/buy/events/:eventId/tickets',
+        component: ShowTickets,
+    },
+    {
+        path: '/buy/checkout',
+        component: Checkout,
+    },
+    {
+        path: '/search',
+        component: SearchEvent,
     },
     {
         path:'*',
