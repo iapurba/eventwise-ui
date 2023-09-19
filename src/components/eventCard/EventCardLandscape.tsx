@@ -24,7 +24,7 @@ const EventCard = ({ event }: any) => {
                     {event?.title}
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                    {`${event?.date} | ${event?.time} Onwards`}
+                    {`${event?.date} | ${event?.startTime} Onwards`}
                 </Typography>
                 <Typography variant='body1'>
                     {`${event?.location?.venue}, ${event?.location?.address?.city}`}
