@@ -7,10 +7,10 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
 import EllipsisTypography from '../common/EllipsisTypography';
-import { CustomEventOutlinedIcon, CustomLocationIcon } from '../common/CustomIcons';
+import { CustomEventIcon, CustomLocationIcon } from '../common/CustomIcons';
 
 const StyledCard = styled(Card)(({ theme }) => ({
-    borderRadius: '9px',
+    borderRadius: theme.shape.borderRadius,
     boxShadow: 'none',
     border: '1px solid rgb(240, 241, 242)',
     cursor: 'pointer',
@@ -25,7 +25,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
     backgroundColor: '#F5FCFE',
     padding: '9px',
     fontWeight: 'bold',
-    borderRadius: '9px',
+    borderRadius: theme.shape.borderRadius,
     alignItems: 'center',
     width: '100%',
     fontFamily: 'Inter, sans-serif',
@@ -51,7 +51,7 @@ const EventCard = ({ event }: any) => {
                     {event?.title}
                 </EllipsisTypography>
                 <Box display="flex" alignItems="center" mb={1}>
-                    <CustomEventOutlinedIcon />
+                    <CustomEventIcon />
                     <StyledTypography>
                         {`December 2`}
                     </StyledTypography>

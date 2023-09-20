@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
-import EventCard from '../components/eventCard/EventCardLandscape';
+import EventCard from '../components/events/EventCardLandscape';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../redux/actions/eventsActions';
 import { RootState } from '../redux/rootState';
