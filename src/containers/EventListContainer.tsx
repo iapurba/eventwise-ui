@@ -28,7 +28,7 @@ const EventListContainer = () => {
     }
 
     return (
-        <Grid container spacing={4}>
+        <Grid container spacing={4} pt={3}>
             {eventList.map((event, index) => (
                 <Grid item xs={12} sm={4} md={4} key={index}>
                     <div onClick={() => handleEventClick(event._id)}>

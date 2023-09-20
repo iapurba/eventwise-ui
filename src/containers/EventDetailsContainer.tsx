@@ -10,7 +10,7 @@ const EventDetailsContainer = () => {
                 <Card>
                     <CardMedia
                         sx={{ height: 500 }}
-                        image={`${process.env.PUBLIC_URL}/images/event-poster.png`}
+                        image={`${process.env.PUBLIC_URL}/images/event-poster.jpg`}
                         title="event poster"
                     />
                 </Card>
