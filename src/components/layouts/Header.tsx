@@ -1,11 +1,16 @@
-import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search'; 
+import SearchIcon from '@mui/icons-material/Search';
+
+const StyledAppBar = styled(AppBar)(({ theme }) => ({
+    backgroundColor: '#333545',
+    color: 'white',
+    padding: theme.spacing(0, 12),
+}));
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -47,34 +52,39 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-const PrimaryHeader = () => {
+// function stringAvatar(name: string) {
+//     return {
+//         children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
+//     };
+// }
 
+const PrimaryHeader = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static">
-                    <Toolbar>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="div"
-                            sx={{ display: { xs: 'none', sm: 'block' } }}
-                            mr={1}
-                        >
-                            Eventwise
-                        </Typography>
-                        <Search>
-                            <SearchIconWrapper>
-                                <SearchIcon />
-                            </SearchIconWrapper>
-                            <StyledInputBase
-                                placeholder="Search…"
-                                inputProps={{ 'aria-label': 'search' }}
-                            />
-                        </Search>
-                        {/* <Box sx={{ flexGrow: 1 }} /> */}
-                    </Toolbar>
-                </AppBar>
-            </Box>
+            <StyledAppBar position="static">
+                <Toolbar>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{ display: { xs: 'none', sm: 'block' } }}
+                        mr={1}
+                    >
+                        Eventwise
+                    </Typography>
+                    <Search>
+                        <SearchIconWrapper>
+                            <SearchIcon />
+                        </SearchIconWrapper>
+                        <StyledInputBase
+                            placeholder="Search…"
+                            inputProps={{ 'aria-label': 'search' }}
+                        />
+                    </Search>
+                    {/* <Box sx={{ flexGrow: 1 }} /> */}
+                </Toolbar>
+            </StyledAppBar>
+        </Box>
     );
 };
 
