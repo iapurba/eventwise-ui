@@ -1,9 +1,9 @@
 import EventTicketsContainer from "../containers/EventTicketsContainer";
 
-const EventTickets = () => {
+const TicketsPage = () => {
     return (
         <EventTicketsContainer/>
     );
 };
 
-export default EventTickets;
+export default TicketsPage;

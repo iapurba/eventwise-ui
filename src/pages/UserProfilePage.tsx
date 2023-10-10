@@ -1,10 +1,10 @@
 import * as React from 'react';
 import UserProfileTabs from '../components/user/UserProfileTabs';
 
-const UserProfile = () => {
+const UserProfilePage = () => {
   return (
     <UserProfileTabs/>
   );
 };
 
-export default UserProfile;
+export default UserProfilePage;
