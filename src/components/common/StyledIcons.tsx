@@ -1,11 +1,12 @@
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import EventOutlinedIcon from '@mui/icons-material/EventOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import TrendingUpOutlinedIcon from '@mui/icons-material/TrendingUpOutlined';
 import { styled } from '@mui/material/styles';
+import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
+import EventRoundedIcon from '@mui/icons-material/EventRounded';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded';
+import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 
-export const StyledLocationIcon = styled(LocationOnOutlinedIcon)(() => ({
+
+export const StyledLocationIcon = styled(PlaceOutlinedIcon)(() => ({
     fontSize: '20px',
     color: '#45474D',
     '&.MuiSvgIcon-root': {
@@ -14,7 +15,7 @@ export const StyledLocationIcon = styled(LocationOnOutlinedIcon)(() => ({
     },
 }));
 
-export const StyledEventIcon = styled(EventOutlinedIcon)(() => ({
+export const StyledEventIcon = styled(EventRoundedIcon)(() => ({
     fontSize: '20px',
     color: '#45474D',
     '&.MuiSvgIcon-root': {
@@ -23,7 +24,7 @@ export const StyledEventIcon = styled(EventOutlinedIcon)(() => ({
     },
 }));
 
-export const StyledBookmarkIcon = styled(BookmarkBorderIcon)(() => ({
+export const StyledBookmarkIcon = styled(BookmarkBorderRoundedIcon)(() => ({
     fontSize: '20px',
     color: '#45474D',
     '&.MuiSvgIcon-root': {
@@ -41,7 +42,7 @@ export const StyledFavouriteIcon = styled(FavoriteBorderOutlinedIcon)(() => ({
     },
 }));
 
-export const StyledTrendingIcon = styled(TrendingUpOutlinedIcon)(() => ({
+export const StyledTrendingIcon = styled(TrendingUpRoundedIcon)(() => ({
     fontSize: '18px',
     fontWeight: 'bold',
     background: '#EC1066',

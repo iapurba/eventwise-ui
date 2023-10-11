@@ -1,7 +1,6 @@
 import { Button, styled } from '@mui/material';
 
 const StyledButton = styled(Button)(({ theme }) => ({
-    width: '100%',
     fontSize: theme.spacing(2.5),
     color: '#FFFFFF',
     fontWeight: 'bold',

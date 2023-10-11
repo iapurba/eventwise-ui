@@ -10,10 +10,11 @@ interface CustomTabsProps {
 
 const CustomTab = styled(Tab)(({ theme }) => ({
     textTransform: 'capitalize',
+    marginTop: theme.spacing(2),
     fontWeight: 'bold',
     fontSize: '21px',
     '&.Mui-selected': {
-        color: '#0D0F13', // Change the color of the selected tab label to red
+        color: '#0D0F13',
     },
 }));
 
