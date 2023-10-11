@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
-import NotFound from '../pages/NotFound';
+import NotFound from '../pages/ErrorPage';
 
 const checkIfCityIsValid = (city: string): boolean => {
     const cities: string[] = [
