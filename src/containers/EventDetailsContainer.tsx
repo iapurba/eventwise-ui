@@ -1,12 +1,15 @@
 import CardMedia from '@mui/material/CardMedia';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
-import EventCardBasic from '../components/events/EventCardBasic';
-import EventAboutInfo from '../components/events/EventAboutInfo';
+import TextOnlyEventCard from '../components/event/TextOnlyEventCard';
+import EventAboutInfo from '../components/event/EventAboutInfo';
+import { events } from '../mock/events';
+
 
 const EventDetailsContainer = () => {
+    const event = events[1]
     return (
-        <Grid container spacing={4}>
+        <Grid container spacing={4} pt={3}>
             <Grid item md={8}>
                 <Card>
                     <CardMedia
@@ -14,10 +17,10 @@ const EventDetailsContainer = () => {
                         image={`${process.env.PUBLIC_URL}/images/event-poster.jpg`}
                     />
                 </Card>
-                <EventAboutInfo/>
+                <EventAboutInfo description={event?.description} />
             </Grid>
             <Grid item md={4} container>
-                <Grid item md={12}><EventCardBasic /></Grid>
+                <Grid item md={12}><TextOnlyEventCard event={event} /></Grid>
             </Grid>
         </Grid>
     );
