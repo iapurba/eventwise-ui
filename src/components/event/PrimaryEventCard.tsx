@@ -1,4 +1,3 @@
-import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
@@ -7,17 +6,8 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
 import EllipsisTypography from '../common/EllipsisTypography';
-import { CustomEventIcon, CustomLocationIcon } from '../common/CustomIcons';
-
-const StyledCard = styled(Card)(({ theme }) => ({
-    borderRadius: theme.shape.borderRadius,
-    boxShadow: 'none',
-    border: '1px solid rgb(240, 241, 242)',
-    cursor: 'pointer',
-    '&:hover': {
-        boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;',
-    },
-}));
+import { StyledEventIcon, StyledLocationIcon } from '../common/StyledIcons';
+import StyledCard from '../common/StyledCard';
 
 const StyledBox = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -39,7 +29,8 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
     margin: theme.spacing(0, 1),
 }));
 
-const EventCard = ({ event }: any) => {
+const PrimaryEventCard = ({ event }: any) => {
+    console.log(event);
     return (
         <StyledCard>
             <CardMedia
@@ -51,25 +42,25 @@ const EventCard = ({ event }: any) => {
                     {event?.title}
                 </EllipsisTypography>
                 <Box display="flex" alignItems="center" mb={1}>
-                    <CustomEventIcon />
+                    <StyledEventIcon />
                     <StyledTypography>
-                        {`December 2`}
+                        {event.date}
                     </StyledTypography>
                     <Divider orientation="vertical" flexItem sx={{ backgroundColor: '#202226',}} />
                     <StyledTypography>
-                        {`6 PM`}
+                        {event.startTime}
                     </StyledTypography>
                 </Box>
                 <Box display="flex" alignItems="center">
-                    <CustomLocationIcon />
+                    <StyledLocationIcon />
                     <StyledTypography>
-                        {`Venue to be announced, Kolkata`}
+                        {`${event.location.venue}, ${event.location.address.city}`}
                     </StyledTypography>
                 </Box>
             </CardContent>
             <CardActions>
                 <StyledBox>
-                    <Typography variant="body2" sx={{ fontWeight: 'bold' }}><span>&#8377;</span>{`1000 Onwards`}</Typography>
+                    <Typography variant="body2" sx={{ fontWeight: 'bold' }}><span>&#8377;</span>{`${1000} Onwards`}</Typography>
                     <Box sx={{ flexGrow: 1 }} />
                     <Divider orientation="vertical" flexItem sx={{ backgroundColor: '#31C0F0', margin: '0 12px' }} />
                     <Typography variant="body2" sx={{ fontWeight: 'bold' }}>{`BUY NOW`}</Typography>
@@ -79,4 +70,4 @@ const EventCard = ({ event }: any) => {
     );
 };
 
-export default EventCard;
+export default PrimaryEventCard;

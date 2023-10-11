@@ -1,12 +1,16 @@
 import { Box, Typography } from '@mui/material';
 import CustomTabs from '../common/CustomTabs';
 
-const EventAboutInfo = () => {
+interface EventAboutInfoProps {
+    description: string;
+};
+
+const EventAboutInfo = ({ description }: EventAboutInfoProps) => {
     return (
         <Box>
             <CustomTabs />
             <Box display="flex" pt={2}>
-                <Typography>This is event description block</Typography>
+                <Typography>{description}</Typography>
             </Box>
         </Box>
     );
