@@ -4,6 +4,9 @@ import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded';
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
+import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
+import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
 
 
 export const StyledLocationIcon = styled(PlaceOutlinedIcon)(() => ({
@@ -23,6 +26,15 @@ export const StyledEventIcon = styled(EventRoundedIcon)(() => ({
         padding: 0,
     },
 }));
+
+export const StyledPlayCircleIcon = styled(PlayCircleOutlineRoundedIcon)(() => ({
+    fontSize: '20px',
+    color: '#45474D',
+    '&.MuiSvgIcon-root': {
+        margin: 0,
+        padding: 0,
+    },
+}))
 
 export const StyledBookmarkIcon = styled(BookmarkBorderRoundedIcon)(() => ({
     fontSize: '20px',
@@ -53,3 +65,15 @@ export const StyledTrendingIcon = styled(TrendingUpRoundedIcon)(() => ({
         padding: '2px',
     },
 }));
+
+export const StyledAddIcon = styled(AddRoundedIcon)(() => ({
+    fontSize: '18px',
+    color: 'rgb(194, 0, 0)',
+    fontWeight: 'bold',
+}));
+
+export const StyledRemoveIcon = styled(RemoveRoundedIcon)(() => ({
+    fontSize: '18px',
+    color: 'rgb(194, 0, 0)',
+    fontWeight: 'bold',
+}))

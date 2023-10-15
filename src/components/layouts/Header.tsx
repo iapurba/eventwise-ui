@@ -27,7 +27,7 @@ const CustomMenuButton = styled(Button)(({ theme }) => ({
     fontWeight: '600',
     fontSize: '13px',
     marginLeft: '15px',
-    textTransform: 'capitalize',
+    textTransform: 'initial',
     '&:hover': {
         borderColor: 'white',
         backgroundColor: 'transparent',
@@ -50,11 +50,7 @@ const CircularIconButton = styled(IconButton)(({ theme }) => ({
 
 
 
-const Header = () => {
-
-
-    const handleSearchClick = () => {
-    }
+const Header: React.FC = () => {
 
     return (
 
@@ -69,9 +65,11 @@ const Header = () => {
                     />
                 </Box>
                 <Box style={{ display: 'flex', flexGrow: 1, flexDirection: 'row' }}>
-                    <CustomMenuButton startIcon={<PlaceOutlinedIcon />}>
-                        Events in Kolkata
-                    </CustomMenuButton>
+                    <Link to={'/all-events/kolkata'}>
+                        <CustomMenuButton startIcon={<PlaceOutlinedIcon />}>
+                            Events in Kolkata
+                        </CustomMenuButton>
+                    </Link>
                 </Box>
 
                 {/* Right side: Menu items */}
@@ -81,7 +79,6 @@ const Header = () => {
                         <CircularIconButton
                             color="inherit"
                             aria-label="search"
-                            onClick={handleSearchClick}
                         >
                             <SearchIcon />
                         </CircularIconButton>
@@ -99,10 +96,11 @@ const Header = () => {
                         </CustomMenuButton>
                     </Link>
 
-                    <Link to={'/kolkata'}>
+                    <Link to={'/explore/kolkata'}>
                         <CustomMenuButton
                             startIcon={<PlaceOutlinedIcon />}
                             endIcon={<KeyboardArrowDownRoundedIcon />}
+                            sx={{ borderColor: '#31c0f0' }}
                         >
                             {`Kolkata`}
                         </CustomMenuButton>

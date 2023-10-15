@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import StyledBox from '../common/StyledBox';
 import StyledTextField from '../common/StyledTextField';
-import FormHeader from '../common/FormHeader';
+import FormHeader from './FormHeader';
 import Radio from '@mui/material/Radio';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import RadioGroup from '@mui/material/RadioGroup';

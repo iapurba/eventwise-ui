@@ -21,10 +21,8 @@ const LoginPage = () => {
             >
                 <Grid
                     item
-                    sm={12}
-                    md={12}
                     sx={{
-                        margin: '32px 0',
+                        margin: '32px auto',
                         textAlign: 'center'
                     }}
                 >

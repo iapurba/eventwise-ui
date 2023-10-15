@@ -8,6 +8,7 @@ import Divider from '@mui/material/Divider';
 import EllipsisTypography from '../common/EllipsisTypography';
 import { StyledEventIcon, StyledLocationIcon } from '../common/StyledIcons';
 import StyledCard from '../common/StyledCard';
+import { formatDate } from '../../utils/dateTimeFormatter';
 
 const StyledBox = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -30,7 +31,6 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const PrimaryEventCard = ({ event }: any) => {
-    console.log(event);
     return (
         <StyledCard>
             <CardMedia
@@ -44,7 +44,7 @@ const PrimaryEventCard = ({ event }: any) => {
                 <Box display="flex" alignItems="center" mb={1}>
                     <StyledEventIcon />
                     <StyledTypography>
-                        {event.date}
+                        {formatDate(event.date)}
                     </StyledTypography>
                     <Divider orientation="vertical" flexItem sx={{ backgroundColor: '#202226',}} />
                     <StyledTypography>
@@ -60,7 +60,7 @@ const PrimaryEventCard = ({ event }: any) => {
             </CardContent>
             <CardActions>
                 <StyledBox>
-                    <Typography variant="body2" sx={{ fontWeight: 'bold' }}><span>&#8377;</span>{`${1000} Onwards`}</Typography>
+                    <Typography variant="body2" sx={{ fontWeight: 'bold' }}>{`₹${1000} Onwards`}</Typography>
                     <Box sx={{ flexGrow: 1 }} />
                     <Divider orientation="vertical" flexItem sx={{ backgroundColor: '#31C0F0', margin: '0 12px' }} />
                     <Typography variant="body2" sx={{ fontWeight: 'bold' }}>{`BUY NOW`}</Typography>

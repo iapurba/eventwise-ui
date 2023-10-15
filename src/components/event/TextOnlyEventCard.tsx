@@ -10,6 +10,8 @@ import {
     StyledLocationIcon
 } from '../common/StyledIcons';
 import StyledBox from '../common/StyledBox';
+import { Link } from 'react-router-dom';
+import { formatDate } from '../../utils/dateTimeFormatter';
 
 
 const StyledBoxCardAction = styled(Box)(({ theme }) => ({
@@ -54,7 +56,7 @@ const EventCardBasic = ({ event }: any) => {
                 <Box display="flex" alignItems="center" mb={1}>
                     <StyledEventIcon />
                     <Typography variant='body1' ml={1}>
-                        {`${event?.date} | ${event?.startTime}`}
+                        {`${formatDate(event?.date)} | ${event?.startTime}`}
                     </Typography>
                 </Box>
                 <Box display="flex" alignItems="center">
@@ -73,9 +75,19 @@ const EventCardBasic = ({ event }: any) => {
                         <span>₹</span>{'1999 Onwards'}
                     </Typography>
                     <Box display="flex" alignItems="center">
-                        <StyledButton>
-                            {'BUY NOW'}
-                        </StyledButton>
+                        <Link to={`/buy/events/${event._id}/tickets`}>
+                            <StyledButton
+                                sx={{
+                                    color: '#FFFFFF',
+                                    background: '#EC1066',
+                                    '&:hover': {
+                                        color: '#FFFFFF',
+                                        background: '#EC1066',
+                                    }
+                                }}>
+                                {'BUY NOW'}
+                            </StyledButton>
+                        </Link>
                     </Box>
                 </StyledBoxCardAction>
             </CardActions>

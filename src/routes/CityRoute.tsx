@@ -18,6 +18,7 @@ const checkIfCityIsValid = (city: string): boolean => {
 
 const CityRoute = () => {
     const { city } = useParams();
+    console.log('city ', city)
     const isValidCity = checkIfCityIsValid(city ? city : '');
 
     return isValidCity ? <HomePage /> : <NotFound />

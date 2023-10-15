@@ -19,24 +19,16 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             {
-                path: '/users/me',
-                element: <UserProfilePage />,
+                path: '/all-events/:city',
+                element: <CityRoute />,
             },
             {
-                path: '/users/login',
-                element: <LoginPage />,
-            },
-            {
-                path: '/users/me',
-                element: <UserProfilePage />,
+                path: '/explore/:city',
+                element: <CityRoute />,
             },
             {
                 path: '/online',
                 element: <HomePage />,
-            },
-            {
-                path: '/:city',
-                element: <CityRoute />,
             },
             {
                 path: '/events/:eventId',
@@ -49,6 +41,14 @@ export const router = createBrowserRouter([
             {
                 path: '/buy/checkout',
                 element: <CheckoutPage />,
+            },
+            {
+                path: '/users/login',
+                element: <LoginPage />,
+            },
+            {
+                path: '/users/me',
+                element: <UserProfilePage />,
             },
             {
                 path: '/search',
