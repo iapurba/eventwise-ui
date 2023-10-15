@@ -2,9 +2,7 @@ import styled from '@emotion/styled';
 import Typography from '@mui/material/Typography';
 
 const EllipsisTypography = styled(Typography)(({ theme }) => ({
-    display: '-webkit-box',
-    '-webkit-box-orient': 'vertical',
-    '-webkit-line-clamp': 2,
+    WebkitLineClamp: 2,
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     textOverflow: 'ellipsis',

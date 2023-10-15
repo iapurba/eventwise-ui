@@ -1,21 +1,23 @@
-import { Button, styled } from "@mui/material";
+import { Button, styled } from '@mui/material';
 
-const StyledButton = styled(Button)(({theme}) => ({
-    width: '100%',
-    color: 'white',
+const StyledButton = styled(Button)(({ theme }) => ({
+    fontSize: theme.spacing(2.5),
+    color: '#0C172F',
     fontWeight: 'bold',
     textAlign: 'center',
-    padding: '8px 18px',
+    padding: '8px 16px',
+    margin: 'auto',
     maxHeight: '42px',
     textTransform: 'uppercase',
     whiteSpace: 'nowrap',
-    borderRadius: '6px',
+    borderRadius: theme.shape.borderRadius,
     cursor: 'pointer',
-    backgroundColor: 'rgb(236, 16, 102)',
+    // backgroundColor: '#EC1066',
+    backgroundColor: '#29BCFF',
     fontStretch: 'condensed',
     fontFamily: 'korolev-condensed, sans-serif',
     '&:hover': {
-        backgroundColor: 'rgb(236, 16, 102)',
+        backgroundColor: '#29BCFF',
     },
 }));
 

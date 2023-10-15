@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-import { login } from '../../../redux/actions/authActions';
-import { useDispatch } from 'react-redux';
-// import { useSelector } from 'react-redux';
-// import { RootState } from '../../../redux/rootState';
 
 const Login = () => {
     // const userAuth = useSelector((state: RootState) => state.auth);
@@ -10,8 +6,6 @@ const Login = () => {
         email: '',
         password: '',
     });
-
-    const dispatch = useDispatch<any>();
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCredentials({
@@ -22,7 +16,6 @@ const Login = () => {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        dispatch(login(credentials));
     };
 
     return (

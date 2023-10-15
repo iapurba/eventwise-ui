@@ -5,6 +5,8 @@ import { Box, Divider } from '@mui/material';
 import CustomSelect from '../common/CustomSelect';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import { Link } from 'react-router-dom';
+// import { useState } from 'react';
 
 interface TicketBlockProps {
     ticketType: string;
@@ -13,7 +15,11 @@ interface TicketBlockProps {
     available: number;
 };
 
-const TicketBlock = ({ ticketType, description, price, available }: TicketBlockProps) => {
+const TicketBlock: React.FC<TicketBlockProps> = (props) => {
+
+    const { ticketType, description, price, available } = props;
+
+    // const [selectedQty, setSelectedQty] = useState<number>(0);
 
     return (
         <>
@@ -29,21 +35,27 @@ const TicketBlock = ({ ticketType, description, price, available }: TicketBlockP
                     {available ?
                         <>
                             <Box display="flex" alignItems="center" mb={1} sx={{ justifyContent: 'flex-end' }}>
-                                <Typography variant="subtitle1"><span>&#8377;</span>{` ${price} × `}</Typography>
+                                <Typography variant="subtitle1">₹ {` ${price} × `}</Typography>
                                 <CustomSelect />
                             </Box>
-                            <Box display="flex" alignItems="center" mb={1} sx={{ justifyContent: 'flex-end' }}>
-                                <Button
-                                    sx={{ pl: 4, pr: 4, mt: 1 }}
-                                    variant="contained"
-                                    color="primary"
-                                    onClick={() => alert(`You bought ${2} item(s) for Rs ${5000}`)}
-                                >
-                                    Buy
-                                </Button>
+                            <Box display="flex" alignItems="center" mb={0} sx={{ justifyContent: 'flex-end' }}>
+                                <Link to={'/buy/checkout'}>
+                                    <Button
+                                        sx={{ 
+                                            pl: 3, pr: 3, mt: 1, 
+                                            background: '#3695D8',
+                                            borderRadius: '2px'
+                                        }}
+                                        variant="contained"
+                                    >
+                                        Buy
+                                    </Button>
+                                </Link>
                             </Box>
                             {2 > 0 && (
-                                <Typography variant="subtitle1" mt={1} sx={{ fontStyle: 'italic', textAlign: 'right' }}>Total: <span>&#8377;</span> {5000}</Typography>
+                                <Typography variant="subtitle1" mt={1} sx={{ fontStyle: 'italic', textAlign: 'right' }}>
+                                    Total: ₹ {5000}
+                                </Typography>
                             )}
                         </>
                         :

@@ -5,13 +5,13 @@ const theme = createTheme({
     fontFamily: 'Inter, sans-serif',
   },
   shape: {
-    borderRadius: 9,
+    borderRadius: 6,
   },
   components: {
     MuiTabs: {
       styleOverrides: {
         indicator: {
-          backgroundColor: '#0D0F13',
+          backgroundColor: '#EC1066',
         },
       },
     },
