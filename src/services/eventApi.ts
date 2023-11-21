@@ -8,11 +8,17 @@ export const eventApi = createApi({
         getEvents: builder.query<Event[], void>({
             query: () => 'events'
         }),
-
         getEventById: builder.query<any, string>({
             query: (eventId) => `events/${eventId}`
+        }),
+        getEventByLocation: builder.query<Event[], string>({
+            query: (city) => `events?location=${city}`
         }),
     }),
 });
 
-export const { useGetEventsQuery, useGetEventByIdQuery } = eventApi;
+export const { 
+    useGetEventsQuery, 
+    useGetEventByIdQuery,
+    useGetEventByLocationQuery,
+} = eventApi;
