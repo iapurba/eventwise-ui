@@ -3,31 +3,45 @@ import EventTicketsContainer from '../containers/EventTicketsContainer';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import PageTitleTypogapgy from '../components/common/PageTitlteTypography';
+import { useParams } from 'react-router-dom';
+import { useGetEventByIdQuery } from '../services/eventApi';
+import { skipToken } from '@reduxjs/toolkit/dist/query';
+import { formatDate } from '../utils/dateTimeFormatter';
+
 
 const TicketsPage = () => {
+    const { eventId } = useParams();
+    const { data, isLoading } = useGetEventByIdQuery(eventId ?? skipToken);
+    const event = data;
 
     return (
-        <Container>
-            <Grid
-                container
-                display="flex"
-                alignItems="center"
-            >
+        isLoading
+            ? <>Loading ...</>
+            : <Container>
                 <Grid
-                    item
-                    sx={{
-                        margin: '32px auto',
-                        textAlign: 'center'
-                    }}
+                    container
+                    display="flex"
+                    alignItems="center"
                 >
-                    <PageTitleTypogapgy gutterBottom >
-                        {`Anupraas Alankaar by Aditya Jain`}
-                    </PageTitleTypogapgy>
-                    <Typography>{`Ministry Of Comedy, Bengaluru `} &nbsp; •  &nbsp; {`December 2 | 6PM`}</Typography>
+                    <Grid
+                        item
+                        sx={{
+                            margin: '32px auto',
+                            textAlign: 'center'
+                        }}
+                    >
+                        <PageTitleTypogapgy gutterBottom >
+                            {event?.title}
+                        </PageTitleTypogapgy>
+                        <Typography>
+                            {`${event?.location?.venue}, ${event?.location?.address?.city}`}
+                            &nbsp; •  &nbsp;
+                            {`${formatDate(event?.startDate)} | ${event.startTime}`}
+                        </Typography>
+                    </Grid>
                 </Grid>
-            </Grid>
-            <EventTicketsContainer />
-        </Container>
+                <EventTicketsContainer eventId={eventId ? eventId : ''} />
+            </Container>
 
     );
 };

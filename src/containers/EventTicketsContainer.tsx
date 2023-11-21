@@ -1,29 +1,34 @@
 import { Container } from '@mui/material';
-import TicketBlock from '../components/ticket/TicketBlock';
+import ShowTicket from '../components/ticket/ShowTicket';
+import { useGetTicketsByEventIdQuery } from '../services/ticketApi';
 
-const EventTicketsContainer = () => {
+interface EventTicketsContainerProps {
+    eventId: string,
+};
+
+const EventTicketsContainer: React.FC<EventTicketsContainerProps> = ({ eventId }) => {
+    
+    const showTicketsQuery = useGetTicketsByEventIdQuery(eventId);
+    const { data: tickets, isLoading } = showTicketsQuery;
+    console.log(tickets);
+
     return (
-        <Container>
-            <TicketBlock
-                ticketType="General Admission"
-                description="Access to all event areas"
-                price={500}
-                available={200}
-            />
-            <TicketBlock
-                ticketType="Early Bird"
-                description="Access to all event areas"
-                price={1000}
-                available={40}
-            />
-            <TicketBlock
-                ticketType="VIP Pass"
-                description="VIP lounge access, priority seating, and more"
-                price={2000}
-                available={0}
-            />
-            {/* Add more TicketBlocks as needed */}
-        </Container>
+        isLoading
+            ? <>Loading ...</>
+            : <Container>
+                {
+                    tickets && tickets.map((ticket: any) => (
+                        <ShowTicket
+                            key={ticket.id}
+                            ticketType={ticket?.ticketType}
+                            description={ticket?.extraInfo}
+                            price={ticket?.price}
+                            maxOrderQty={ticket?.maxTicketsPerOrder}
+                            isAvailable={ticket?.isAvailable}
+                        />
+                    ))
+                }
+            </Container>
     );
 };
 

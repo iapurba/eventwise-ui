@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Login = () => {
+const PasswordLogin = () => {
     // const userAuth = useSelector((state: RootState) => state.auth);
     const [credentials, setCredentials] = useState({
         email: '',
@@ -42,4 +42,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default PasswordLogin;

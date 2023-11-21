@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
 import EllipsisTypography from '../common/EllipsisTypography';
-import { StyledEventIcon, StyledLocationIcon } from '../common/StyledIcons';
+import { StyledEventIcon, StyledLocationIcon, StyledPlayCircleIcon } from '../common/StyledIcons';
 import StyledCard from '../common/StyledCard';
 import { formatDate } from '../../utils/dateTimeFormatter';
 
@@ -44,26 +44,56 @@ const PrimaryEventCard = ({ event }: any) => {
                 <Box display="flex" alignItems="center" mb={1}>
                     <StyledEventIcon />
                     <StyledTypography>
-                        {formatDate(event.date)}
+                        {formatDate(event.startDate)}
                     </StyledTypography>
-                    <Divider orientation="vertical" flexItem sx={{ backgroundColor: '#202226',}} />
+                    <Divider orientation="vertical" flexItem sx={{ backgroundColor: '#202226', }} />
                     <StyledTypography>
                         {event.startTime}
                     </StyledTypography>
                 </Box>
                 <Box display="flex" alignItems="center">
-                    <StyledLocationIcon />
-                    <StyledTypography>
-                        {`${event.location.venue}, ${event.location.address.city}`}
-                    </StyledTypography>
+                    {
+                        event.eventType === 'physical' ? (
+                            <>
+                                <StyledLocationIcon />
+                                <StyledTypography>
+                                    {`${event.location.venue}, ${event.location.address.city}`}
+                                </StyledTypography>
+                            </>
+                        ) : (
+                            <>
+                                <StyledPlayCircleIcon />
+                                <StyledTypography>Online</StyledTypography>
+                            </>
+                        )}
+
                 </Box>
             </CardContent>
             <CardActions>
-                <StyledBox>
-                    <Typography variant="body2" sx={{ fontWeight: 'bold' }}>{`₹${1000} Onwards`}</Typography>
+                <StyledBox
+                    sx={{
+                        backgroundColor: (event.eventType === 'physical')
+                            ? '#F5FCFE'
+                            : '#FEF3F7'
+                    }}
+                >
+                    <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
+                        {event.startingPrice === 'Free' ? 'FREE' : `₹${event.startingPrice}`}
+                    </Typography>
                     <Box sx={{ flexGrow: 1 }} />
-                    <Divider orientation="vertical" flexItem sx={{ backgroundColor: '#31C0F0', margin: '0 12px' }} />
-                    <Typography variant="body2" sx={{ fontWeight: 'bold' }}>{`BUY NOW`}</Typography>
+                    <Divider
+                        orientation="vertical"
+                        flexItem
+                        sx={{
+                            backgroundColor: (event.eventType === 'physical')
+                                ? '#31C0F0'
+                                : '#EC1066',
+                            margin: '0 12px'
+                        }}
+                    />
+                    <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
+                        {`BUY NOW`}
+                    </Typography>
                 </StyledBox>
             </CardActions>
         </StyledCard>

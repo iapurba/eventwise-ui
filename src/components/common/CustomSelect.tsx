@@ -3,11 +3,17 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
 
-const CustomSelect = () => {
-  const [selectedValue, setSelectedValue] = useState<string>('0');
+interface CustomSelectProps {
+  maxQty: number,
+  handleSelectQty: any,
+};
+
+const CustomSelect: React.FC<CustomSelectProps> = ({ maxQty, handleSelectQty }) => {
+  const [selectedValue, setSelectedValue] = useState<any>(0);
 
   const handleChange = (event: SelectChangeEvent) => {
-    setSelectedValue(event.target.value as string);
+    setSelectedValue(event.target.value);
+    handleSelectQty(event.target.value);
   };
 
   return (
@@ -18,7 +24,7 @@ const CustomSelect = () => {
         inputProps={{ 'aria-label': 'Without label' }}
       >
         <MenuItem value={0}>0</MenuItem>
-        {Array.from({ length: 10 }, (_, index) => (
+        {Array.from({ length: maxQty }, (_, index) => (
           <MenuItem key={index + 1} value={index + 1}>
             {index + 1}
           </MenuItem>

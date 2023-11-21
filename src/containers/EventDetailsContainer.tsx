@@ -6,7 +6,7 @@ import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
 import TextOnlyEventCard from '../components/event/TextOnlyEventCard';
 import EventAboutInfo from '../components/event/EventAboutInfo';
-import { useGetEventByIdQuery } from '../services/events';
+import { useGetEventByIdQuery } from '../services/eventApi';
 
 
 const EventDetailsContainer = () => {
@@ -30,7 +30,7 @@ const EventDetailsContainer = () => {
                                 image={`${process.env.PUBLIC_URL}/images/event-poster.jpg`}
                             />
                         </Card>
-                        <EventAboutInfo description={data?.description} />
+                        <EventAboutInfo description={data?.details?.description} />
                     </Grid>
                     <Grid item md={4} container>
                         <Grid item md={12}>

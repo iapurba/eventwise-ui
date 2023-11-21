@@ -9,6 +9,8 @@ import StyledButton from '../components/common/StyledButton';
 import { useState } from 'react';
 import { StyledAddIcon, StyledRemoveIcon } from '../components/common/StyledIcons';
 import { styled } from '@mui/material/styles';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/configureStore';
 
 const gridStyle = {
     justifyContent: 'center',
@@ -24,11 +26,11 @@ const StyledBox = styled(Box)(({ theme }) => ({
 
 
 const CheckoutContainer = () => {
-    // const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
-    const [loginExpanded, setLoginExpanded] = useState<boolean>(false);
-    const [orderSummaryExpanded, setOrderSummaryExpanded] = useState<boolean>(true);
+    const isAuthenticated = useSelector<RootState>((state) => state.auth.isAuthenticated)
+
+    const [loginExpanded, setLoginExpanded] = useState<boolean>(!isAuthenticated);
+    const [orderSummaryExpanded, setOrderSummaryExpanded] = useState<boolean>(!!isAuthenticated);
     const [ticketDetailsExpanded, setTicketDetailsExpanded] = useState<boolean>(false);
-    const isLoggedIn = true;
 
     const handleLoginExpand = () => {
         setLoginExpanded(true)
@@ -50,7 +52,7 @@ const CheckoutContainer = () => {
 
     return (
         <Grid container sx={gridStyle} flexDirection="column">
-            {isLoggedIn
+            {isAuthenticated
                 ? (
                     <Grid item>
                         <Divider />

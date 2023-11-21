@@ -11,6 +11,8 @@ import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import LoginModal from '../auth/LoginModal';
 
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
@@ -51,6 +53,7 @@ const CircularIconButton = styled(IconButton)(({ theme }) => ({
 
 
 const Header: React.FC = () => {
+    const [modalOpen, setModalOpen] = useState(false);
 
     return (
 
@@ -106,11 +109,16 @@ const Header: React.FC = () => {
                         </CustomMenuButton>
                     </Link>
 
-                    <Link to={'/users/me'}>
-                        <CircularIconButton color="inherit" aria-label="profile">
-                            <PersonOutlineRoundedIcon />
-                        </CircularIconButton>
-                    </Link>
+                    {/* <Link to={'/users/me'}> */}
+                    <CircularIconButton
+                        color="inherit"
+                        aria-label="profile"
+                        onClick={() => setModalOpen(true)}
+                    >
+                        <PersonOutlineRoundedIcon />
+                    </CircularIconButton>
+                    <LoginModal open={modalOpen} onClose={() => setModalOpen(false)} />
+                    {/* </Link> */}
 
                 </Box>
             </Toolbar>

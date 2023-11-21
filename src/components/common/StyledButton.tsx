@@ -8,12 +8,11 @@ const StyledButton = styled(Button)(({ theme }) => ({
     padding: '8px 16px',
     margin: 'auto',
     maxHeight: '42px',
-    textTransform: 'uppercase',
     whiteSpace: 'nowrap',
     borderRadius: theme.shape.borderRadius,
     cursor: 'pointer',
     // backgroundColor: '#EC1066',
-    backgroundColor: '#29BCFF',
+    background: '#29BCFF',
     fontStretch: 'condensed',
     fontFamily: 'korolev-condensed, sans-serif',
     '&:hover': {

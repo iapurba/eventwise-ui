@@ -7,7 +7,8 @@ import StyledButton from '../common/StyledButton';
 import {
     StyledBookmarkIcon,
     StyledEventIcon,
-    StyledLocationIcon
+    StyledLocationIcon,
+    StyledPlayCircleIcon
 } from '../common/StyledIcons';
 import StyledBox from '../common/StyledBox';
 import { Link } from 'react-router-dom';
@@ -56,14 +57,25 @@ const EventCardBasic = ({ event }: any) => {
                 <Box display="flex" alignItems="center" mb={1}>
                     <StyledEventIcon />
                     <Typography variant='body1' ml={1}>
-                        {`${formatDate(event?.date)} | ${event?.startTime}`}
+                        {`${formatDate(event?.startDate)} | ${event?.startTime}`}
                     </Typography>
                 </Box>
                 <Box display="flex" alignItems="center">
-                    <StyledLocationIcon />
-                    <Typography variant='body1' ml={1}>
-                        {`${event?.location?.venue}, ${event?.location?.address?.city}`}
-                    </Typography>
+                    {
+                        event.eventType === 'physical' ? (
+                            <>
+                                <StyledLocationIcon />
+                                <Typography variant='body1' ml={1}>
+                                    {`${event.location.venue}, ${event.location.address.city}`}
+                                </Typography>
+                            </>
+                        ) : (
+                            <>
+                                <StyledPlayCircleIcon />
+                                <Typography variant='body1' ml={1}>Online</Typography>
+                            </>
+                        )}
+
                 </Box>
             </CardContent>
             <CardActions>
@@ -72,10 +84,10 @@ const EventCardBasic = ({ event }: any) => {
                         variant='h6'
                         sx={{ fontWeight: 'bold' }}
                     >
-                        <span>₹</span>{'1999 Onwards'}
+                        {event.startingPrice === 'Free' ? 'FREE' : `₹${event.startingPrice}`}
                     </Typography>
                     <Box display="flex" alignItems="center">
-                        <Link to={`/buy/events/${event._id}/tickets`}>
+                        <Link to={`/buy/events/${event.id}/tickets`}>
                             <StyledButton
                                 sx={{
                                     color: '#FFFFFF',
