@@ -6,7 +6,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
     fontWeight: 'bold',
     textAlign: 'center',
     padding: '8px 16px',
-    margin: 'auto',
+    // margin: 'auto',
     maxHeight: '42px',
     whiteSpace: 'nowrap',
     borderRadius: theme.shape.borderRadius,
