@@ -1,16 +1,28 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { API_CONFIG } from '../../utils/api/config';
 
 interface RequestOtpPayload {
     email: string;
 };
 
 interface VerifyOtpPayload {
+    email: string;
     otp: string;
 };
 
+interface AuthResponse {
+    message: string;
+    user: {
+        id: string, 
+        email: string,
+    };
+    token: string;
+};
+
+
 export const authApi = createApi({
     reducerPath: 'authApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/api' }),
+    baseQuery: fetchBaseQuery({ baseUrl: `${API_CONFIG.baseUrl}/auth` }),
     endpoints: (builder) => ({
         requestOtp: builder.mutation<void, RequestOtpPayload>({
             query: (body) => ({
@@ -19,7 +31,7 @@ export const authApi = createApi({
                 body,
             }),
         }),
-        verifyOtp: builder.mutation<void, VerifyOtpPayload>({
+        verifyOtp: builder.mutation<AuthResponse, VerifyOtpPayload>({
             query: (body) => ({
                 url: '/verify-otp',
                 method: 'POST',
