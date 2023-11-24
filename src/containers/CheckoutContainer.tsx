@@ -5,7 +5,7 @@ import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import TicketDetailsForm from '../components/forms/TicketDetailsForm';
 import OrderSummaryContainer from './OrderSummaryContainer';
-import StyledButton from '../components/common/StyledButton';
+import StyledButton from '../components/common/Buttons/StyledButton';
 import { useState } from 'react';
 import { StyledAddIcon, StyledRemoveIcon } from '../components/common/StyledIcons';
 import { styled } from '@mui/material/styles';

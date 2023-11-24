@@ -3,7 +3,7 @@ import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
-import StyledButton from '../common/StyledButton';
+import StyledButton from '../common/Buttons/StyledButton';
 import {
     StyledBookmarkIcon,
     StyledEventIcon,

@@ -6,7 +6,7 @@ import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
 import TextOnlyEventCard from '../components/event/TextOnlyEventCard';
 import EventAboutInfo from '../components/event/EventAboutInfo';
-import { useGetEventByIdQuery } from '../services/eventApi';
+import { useGetEventByIdQuery } from '../services/apis/eventApi';
 
 
 const EventDetailsContainer = () => {

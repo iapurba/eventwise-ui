@@ -1,8 +1,8 @@
 import Grid from '@mui/material/Grid';
-import ContactDetailsForm from './ContactDetailsForm';
-import DeliveryDetailsForm from './DeliveryDetailsForm';
-import BillingDetailsForm from './BillingDetailsForm';
-import StyledButton from '../common/StyledButton';
+import ContactDetailsForm from './forms/ContactDetailsForm';
+import DeliveryDetailsForm from './forms/DeliveryDetailsForm';
+import BillingDetailsForm from './forms/BillingDetailsForm';
+import StyledButton from '../common/Buttons/StyledButton';
 
 const gridStyle = {
     justifyContent: 'center',
@@ -11,7 +11,7 @@ const gridStyle = {
     margin: 'auto',
 };
 
-const AccountDetailsForm = () => {
+const AccountDetailsUpdate = () => {
     return (
 
         <Grid container sx={gridStyle}>
@@ -31,4 +31,4 @@ const AccountDetailsForm = () => {
     );
 };
 
-export default AccountDetailsForm;
+export default AccountDetailsUpdate;

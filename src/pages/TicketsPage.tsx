@@ -2,9 +2,9 @@ import Container from '@mui/material/Container';
 import EventTicketsContainer from '../containers/EventTicketsContainer';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import PageTitleTypogapgy from '../components/common/PageTitlteTypography';
+import PageTitleTypogapgy from '../components/common/Typography/PageTitlteTypography';
 import { useParams } from 'react-router-dom';
-import { useGetEventByIdQuery } from '../services/eventApi';
+import { useGetEventByIdQuery } from '../services/apis/eventApi';
 import { skipToken } from '@reduxjs/toolkit/dist/query';
 import { formatDate } from '../utils/dateTimeFormatter';
 

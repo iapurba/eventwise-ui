@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
-import EllipsisTypography from '../common/EllipsisTypography';
+import EllipsisTypography from '../common/Typography/EllipsisTypography';
 import { StyledEventIcon, StyledLocationIcon, StyledPlayCircleIcon } from '../common/StyledIcons';
 import StyledCard from '../common/StyledCard';
 import { formatDate } from '../../utils/dateTimeFormatter';

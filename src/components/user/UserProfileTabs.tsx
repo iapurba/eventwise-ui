@@ -4,7 +4,7 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import FavouriteEventsContainer from '../../containers/FavouriteEventsContainer';
-import AccountDetailsForm from '../forms/AccountDetailsForm';
+import AccountDetailsUpdate from './AccountDetailsUpdate';
 import BookedTicketsContainer from '../../containers/BookedTicketsContainer';
 // import { Outlet } from 'react-router-dom';
 
@@ -80,7 +80,7 @@ const UserProfileTabs = () => {
                 <FavouriteEventsContainer/>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
-                <AccountDetailsForm/>
+                <AccountDetailsUpdate/>
             </CustomTabPanel>
             {/* <Outlet/> */}
         </Box>

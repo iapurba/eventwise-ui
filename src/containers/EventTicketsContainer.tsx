@@ -1,6 +1,6 @@
 import { Container } from '@mui/material';
 import ShowTicket from '../components/ticket/ShowTicket';
-import { useGetTicketsByEventIdQuery } from '../services/ticketApi';
+import { useGetTicketsByEventIdQuery } from '../services/apis/ticketApi';
 
 interface EventTicketsContainerProps {
     eventId: string,

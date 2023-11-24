@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
 import PrimaryEventCard from '../components/event/PrimaryEventCard';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useGetEventByLocationQuery } from '../services/eventApi';
+import { useGetEventByLocationQuery } from '../services/apis/eventApi';
 import { Key, useEffect } from 'react';
 import Container from '@mui/material/Container';
 import { skipToken } from '@reduxjs/toolkit/dist/query';

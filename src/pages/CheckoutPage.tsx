@@ -1,6 +1,6 @@
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import PageTitleTypogapgy from '../components/common/PageTitlteTypography';
+import PageTitleTypogapgy from '../components/common/Typography/PageTitlteTypography';
 import CheckoutContainer from '../containers/CheckoutContainer';
 
 

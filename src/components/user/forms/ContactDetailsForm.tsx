@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import FormHeader from './FormHeader';
-import StyledTextField from '../common/StyledTextField';
+import FormHeader from '../../common/FormHeader';
+import StyledTextField from '../../common/StyledTextField';
 
 
 const ContactDetailsForm = () => {
