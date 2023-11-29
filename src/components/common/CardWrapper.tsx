@@ -1,7 +1,7 @@
 import Card from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 
-const StyledCard = styled(Card)(({ theme }) => ({
+const CardWrapper = styled(Card)(({ theme }) => ({
     boxShadow: 'none',
     border: '1px solid #F0F1F2',
     borderRadius: theme.spacing(1.5),
@@ -11,4 +11,4 @@ const StyledCard = styled(Card)(({ theme }) => ({
     },
 }));
 
-export default StyledCard;
+export default CardWrapper;

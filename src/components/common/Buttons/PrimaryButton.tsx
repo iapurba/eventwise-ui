@@ -1,6 +1,6 @@
 import { Button, styled } from '@mui/material';
 
-const StyledButton = styled(Button)(({ theme }) => ({
+const PrimaryButton = styled(Button)(({ theme }) => ({
     fontSize: theme.spacing(2.5),
     color: '#0C172F',
     fontWeight: 'bold',
@@ -14,10 +14,10 @@ const StyledButton = styled(Button)(({ theme }) => ({
     // backgroundColor: '#EC1066',
     background: '#29BCFF',
     fontStretch: 'condensed',
-    fontFamily: 'korolev-condensed, sans-serif',
+    fontFamily: 'Roboto-condensed, sans-serif',
     '&:hover': {
         backgroundColor: '#29BCFF',
     },
 }));
 
-export default StyledButton;
+export default PrimaryButton;

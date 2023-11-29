@@ -7,9 +7,11 @@ import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
+import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
+import TranslateRoundedIcon from '@mui/icons-material/TranslateRounded';
+import MicExternalOnRoundedIcon from '@mui/icons-material/MicExternalOnRounded';
 
-
-export const StyledLocationIcon = styled(PlaceOutlinedIcon)(() => ({
+export const LocationIcon = styled(PlaceOutlinedIcon)(() => ({
     fontSize: '20px',
     color: '#45474D',
     '&.MuiSvgIcon-root': {
@@ -18,7 +20,7 @@ export const StyledLocationIcon = styled(PlaceOutlinedIcon)(() => ({
     },
 }));
 
-export const StyledEventIcon = styled(EventRoundedIcon)(() => ({
+export const EventIcon = styled(EventRoundedIcon)(() => ({
     fontSize: '20px',
     color: '#45474D',
     '&.MuiSvgIcon-root': {
@@ -27,7 +29,7 @@ export const StyledEventIcon = styled(EventRoundedIcon)(() => ({
     },
 }));
 
-export const StyledPlayCircleIcon = styled(PlayCircleOutlineRoundedIcon)(() => ({
+export const PlayCircleIcon = styled(PlayCircleOutlineRoundedIcon)(() => ({
     fontSize: '20px',
     color: '#45474D',
     '&.MuiSvgIcon-root': {
@@ -36,7 +38,7 @@ export const StyledPlayCircleIcon = styled(PlayCircleOutlineRoundedIcon)(() => (
     },
 }))
 
-export const StyledBookmarkIcon = styled(BookmarkBorderRoundedIcon)(() => ({
+export const CategoryIcon = styled(BookmarkBorderRoundedIcon)(() => ({
     fontSize: '20px',
     color: '#45474D',
     '&.MuiSvgIcon-root': {
@@ -45,7 +47,7 @@ export const StyledBookmarkIcon = styled(BookmarkBorderRoundedIcon)(() => ({
     },
 }));
 
-export const StyledFavouriteIcon = styled(FavoriteBorderOutlinedIcon)(() => ({
+export const FavouriteIcon = styled(FavoriteBorderOutlinedIcon)(() => ({
     fontSize: '20px',
     color: '#45474D',
     '&.MuiSvgIcon-root': {
@@ -54,7 +56,7 @@ export const StyledFavouriteIcon = styled(FavoriteBorderOutlinedIcon)(() => ({
     },
 }));
 
-export const StyledTrendingIcon = styled(TrendingUpRoundedIcon)(() => ({
+export const TrendingIcon = styled(TrendingUpRoundedIcon)(() => ({
     fontSize: '18px',
     fontWeight: 'bold',
     background: '#EC1066',
@@ -66,14 +68,32 @@ export const StyledTrendingIcon = styled(TrendingUpRoundedIcon)(() => ({
     },
 }));
 
-export const StyledAddIcon = styled(AddRoundedIcon)(() => ({
+export const AddIcon = styled(AddRoundedIcon)(() => ({
     fontSize: '18px',
     color: 'rgb(194, 0, 0)',
     fontWeight: 'bold',
 }));
 
-export const StyledRemoveIcon = styled(RemoveRoundedIcon)(() => ({
+export const RemoveIcon = styled(RemoveRoundedIcon)(() => ({
     fontSize: '18px',
     color: 'rgb(194, 0, 0)',
     fontWeight: 'bold',
-}))
+}));
+
+export const WalletIcon = styled(AccountBalanceWalletOutlinedIcon)(() => ({
+    fontSize: '18px',
+    color: '#45474D',
+    fontWeight: 'bold',
+}));
+
+export const LanguageIcon = styled(TranslateRoundedIcon)(() => ({
+    fontSize: '24px',
+    color: '#45474D',
+    fontWeight: 'bold',
+}));
+
+export const MicIcon = styled(MicExternalOnRoundedIcon)(() => ({
+    fontSize: '24px',
+    color: '#45474D',
+    fontWeight: 'bold',
+}));
