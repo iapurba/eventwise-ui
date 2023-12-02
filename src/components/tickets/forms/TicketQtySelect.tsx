@@ -3,17 +3,17 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
 
-interface CustomSelectProps {
+interface TicketQtySelectProps {
   maxQty: number,
-  handleSelectQty: any,
+  onValueChange: (qty: any) => void,
 };
 
-const CustomSelect: React.FC<CustomSelectProps> = ({ maxQty, handleSelectQty }) => {
+const TicketQtySelect: React.FC<TicketQtySelectProps> = ({ maxQty, onValueChange }) => {
   const [selectedValue, setSelectedValue] = useState<any>(0);
 
   const handleChange = (event: SelectChangeEvent) => {
     setSelectedValue(event.target.value);
-    handleSelectQty(event.target.value);
+    onValueChange(event.target.value);
   };
 
   return (
@@ -34,4 +34,4 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ maxQty, handleSelectQty }) 
   );
 }
 
-export default CustomSelect;
+export default TicketQtySelect;
