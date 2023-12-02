@@ -1,14 +1,14 @@
 import { Box, Typography } from '@mui/material';
 import CustomTabs from '../common/CustomTabs';
 
-interface EventDetailedContentProps {
+interface EventOverviewProps {
     details: {
         description: string;
         termsAndConditions?: string;
     }
 };
 
-const EventDetailedContent: React.FC<EventDetailedContentProps> = ({ details }) => {
+const EventOverview: React.FC<EventOverviewProps> = ({ details }) => {
     return (
         <Box>
             <CustomTabs />
@@ -19,4 +19,4 @@ const EventDetailedContent: React.FC<EventDetailedContentProps> = ({ details }) 
     );
 };
 
-export default EventDetailedContent;
+export default EventOverview;
