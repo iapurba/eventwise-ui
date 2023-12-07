@@ -39,7 +39,13 @@ const customTextSx = {
 
 interface TicketProps {
     ticketDetails: {
-        type: string;
+        event: {
+            id: string;
+            title: string;
+            startDate: string;
+            startTime: string;
+        };
+        ticketType: string;
         description: string;
         price: number;
         maxOrderQty: number;
@@ -51,7 +57,7 @@ interface TicketProps {
 };
 
 const Ticket: React.FC<TicketProps> = ({ ticketDetails, onQunatityChange, onBuyClick }) => {
-    const { type, description, price, maxOrderQty, isAvailable, extraInfo } = ticketDetails;
+    const { event, ticketType, description, price, maxOrderQty, isAvailable, extraInfo } = ticketDetails;
     const [quantity, setQuantity] = useState<number>(0);
     const [isBuyClicked, setIsBuyClicked] = useState<boolean>(false);
 
@@ -65,7 +71,8 @@ const Ticket: React.FC<TicketProps> = ({ ticketDetails, onQunatityChange, onBuyC
         setIsBuyClicked(true);
         if (quantity) {
             onBuyClick({
-                type,
+                event,
+                ticketType: ticketType,
                 price,
                 quantity,
                 subTotal: quantity * price
@@ -78,7 +85,7 @@ const Ticket: React.FC<TicketProps> = ({ ticketDetails, onQunatityChange, onBuyC
             <Grid container spacing={2} p={3}>
                 <Grid item xs={12} md={8}>
                     <Stack direction="row" spacing={3} alignItems="center">
-                        <Typography variant="h6">{type}</Typography>
+                        <Typography variant="h6">{ticketType}</Typography>
                         {extraInfo &&
                             <Chip
                                 label={extraInfo}
