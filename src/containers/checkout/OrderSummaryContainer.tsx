@@ -8,6 +8,8 @@ import TableRow from '@mui/material/TableRow';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { formatDate } from '../../utils/dateTimeFormatter';
+import { CartItem } from '../../features/booking/cartSlice';
 
 const StyledBox = styled(Box)(({ theme }) => ({
     borderBottom: '1px dashed #D0D0D0',
@@ -22,15 +24,12 @@ const CustomTableCell = styled(TableCell)((theme) => ({
     verticalAlign: 'top',
 }));
 
-const data = [
-    {
-        item: 'Early Bird I Gold I Single I Seating',
-        qty: 3,
-        subtotal: '2997.00',
-    }
-];
+interface OrderSummaryContainerProps {
+    cartItems: CartItem[];
+};
 
-const OrderSummaryContainer: React.FC = () => {
+const OrderSummaryContainer: React.FC<OrderSummaryContainerProps> = ({ cartItems }) => {
+    console.log(cartItems);
     return (
         <Box>
             <StyledBox>
@@ -44,15 +43,17 @@ const OrderSummaryContainer: React.FC = () => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {data.map((row, index) => (
+                            {cartItems.map((item, index) => (
                                 <TableRow key={index}>
                                     <CustomTableCell>
-                                        <Typography variant='body1'>Early Bird I Gold I Single I Seating</Typography>
-                                        <Typography variant='subtitle2'>Beyond Fusion</Typography>
-                                        <Typography variant='subtitle2'>October 30 | 7PM</Typography>
+                                        <Typography variant='body1'>{item.ticketType}</Typography>
+                                        <Typography variant='subtitle2'>{item?.event?.title}</Typography>
+                                        <Typography variant='subtitle2'>
+                                            {`${formatDate(item?.event?.startDate)} | ${item?.event?.startTime}` }
+                                        </Typography>
                                     </CustomTableCell>
-                                    <CustomTableCell align='center'>{row.qty}</CustomTableCell>
-                                    <CustomTableCell align='right'>₹{row.subtotal}</CustomTableCell>
+                                    <CustomTableCell align='center'>{item?.quantity}</CustomTableCell>
+                                    <CustomTableCell align='right'>₹{item?.subTotal}</CustomTableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

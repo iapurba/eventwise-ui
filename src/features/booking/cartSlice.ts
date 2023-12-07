@@ -1,10 +1,16 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-interface CartItem {
-    ticketType: string,
-    price: number,
-    quantity: number,
-    subTotal: number,
+export interface CartItem {
+    event: {
+        id: string;
+        title: string;
+        startDate: string;
+        startTime: string;
+    };
+    ticketType: string;
+    price: number;
+    quantity: number;
+    subTotal: number;
 };
 
 const cartSlice = createSlice({
