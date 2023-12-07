@@ -1,9 +1,9 @@
-import PageTitle from "../common/Typography/PageTitleTypography";
+import PageTitleTypography from "../common/Typography/PageTitleTypography";
 import Typography from "@mui/material/Typography";
 import { formatDate } from "../../utils/dateTimeFormatter";
-import Box from "@mui/material/Box";
 import { EventType } from "../../types/EventType";
 import React from "react";
+import PageTitleWrapper from "../common/Wrappers/PageTitleWapper";
 
 
 interface EventBasicInfoProps {
@@ -12,22 +12,14 @@ interface EventBasicInfoProps {
 
 const EventBasicInfo: React.FC<EventBasicInfoProps> = ({ event }) => {
     return (
-        <Box
-            display="flex"
-            flexDirection={'column'}
-            alignItems="center"
-            sx={{
-                margin: '32px auto',
-                textAlign: 'center'
-            }}
-        >
-            <PageTitle gutterBottom >{event?.title}</PageTitle>
+        <PageTitleWrapper>
+            <PageTitleTypography gutterBottom >{event?.title}</PageTitleTypography>
             <Typography>
                 {`${event?.location?.venue}, ${event?.location?.address?.city}`}
                 &nbsp; •  &nbsp;
                 {`${formatDate(event?.startDate)} | ${event.startTime}`}
             </Typography>
-        </Box>
+        </PageTitleWrapper>
     );
 };
 

@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
-import ContentBoxWrapper from '../common/ContentBoxWrapper';
+import ContentBoxWrapper from '../common/Wrappers/ContentBoxWrapper';
 import { formatDate } from '../../utils/dateTimeFormatter';
 import IconWithText from '../common/IconWithText';
 import SecondaryButton from '../common/Buttons/SecondaryButton';

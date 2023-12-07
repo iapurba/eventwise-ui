@@ -1,4 +1,4 @@
-export interface Event {
+export interface EventType {
     id: string;
     title: string;
     details: {
@@ -18,7 +18,7 @@ export interface Event {
             pincode: string;
         };
     };
-    startDate: Date;
+    startDate: string;
     startTime: string;
     endDate?: Date,
     duration?: string;

@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import ContentBoxWrapper from "../common/ContentBoxWrapper"
+import ContentBoxWrapper from "../common/Wrappers/ContentBoxWrapper"
 import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 import CustomAgeIcon from "../common/Icons/CustomAgeIcon";
