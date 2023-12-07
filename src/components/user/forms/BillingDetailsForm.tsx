@@ -2,7 +2,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import StyledBox from '../../common/StyledBox';
+import FormWrapper from '../../common/FormWrapper';
 import FormHeader from '../../common/FormHeader';
 import StyledTextField from '../../common/StyledTextField';
 import Typography from '@mui/material/Typography';
@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 const BillingDetailsForm = () => {
 
     return (
-        <StyledBox>
+        <FormWrapper>
             <FormHeader
                 title={'Billing Details'}
                 subtitle={'These details will be shown on your invoice'}
@@ -52,7 +52,7 @@ const BillingDetailsForm = () => {
                     </Grid>
                 </Grid>
             </Box>
-        </StyledBox>
+        </FormWrapper>
     );
 };
 

@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import StyledBox from '../../common/StyledBox';
+import FormWrapper from '../../common/FormWrapper';
 import StyledTextField from '../../common/StyledTextField';
 import FormHeader from '../../common/FormHeader';
 import Radio from '@mui/material/Radio';
@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 const DeliveryDetailsForm = () => {
 
     return (
-        <StyledBox>
+        <FormWrapper>
             <FormHeader
                 title={'Delivery details'}
                 subtitle={'These details will be used to send physical tickets'}
@@ -117,7 +117,7 @@ const DeliveryDetailsForm = () => {
                     </RadioGroup>
                 </Box>
             </Box>
-        </StyledBox>
+        </FormWrapper>
     );
 }
 

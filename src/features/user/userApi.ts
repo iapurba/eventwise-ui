@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { RootState } from '../../redux/store';
-import API_CONFIG from '../../utils/api/config';
+import API_CONFIG from '../../utils/api/apiConfig';
 
 export const userApi = createApi({
     reducerPath: 'userApi',
@@ -16,9 +16,18 @@ export const userApi = createApi({
         }
     }),
     endpoints: (builder) => ({
-        getMe: builder.query<any, string>({
+        getUserProfile: builder.query<any, void>({
             query: () => `users/me`
+        }),
+        updateUserProfile: builder.mutation<void, { userId: string, data: any }>({
+            query: ({ userId, data }) => ({
+                url: `/users/${userId}`,
+                method: 'PUT',
+                body: data,
+            })
         }),
     }),
 });
+
+export const { useGetUserProfileQuery, useUpdateUserProfileMutation } = userApi;
 

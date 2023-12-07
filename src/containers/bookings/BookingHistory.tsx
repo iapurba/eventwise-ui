@@ -1,5 +1,5 @@
 import Container from '@mui/material/Container';
-import BookedTicket from '../components/ticket/BookedTicket';
+import Booking from '../../components/tickets/Booking';
 
 const containerStyle = {
     justifyContent: 'center',
@@ -8,12 +8,12 @@ const containerStyle = {
     margin: 'auto',
 };
 
-const BookedTicketsContainer = () => {
+const BookingHistory = () => {
     return (
         <Container style={containerStyle}>
-            <BookedTicket/>
+            <Booking />
         </Container>
     );
 };
 
-export default BookedTicketsContainer;
+export default BookingHistory;

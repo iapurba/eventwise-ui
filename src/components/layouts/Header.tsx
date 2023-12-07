@@ -10,9 +10,9 @@ import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownR
 import Box from '@mui/material/Box';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import LoginModal from '../auth/LoginModal';
+import LoginModal from '../../containers/auth/LoginModal';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/configureStore';
+import { RootState } from '../../redux/store';
 import CircularIconButton from '../common/Buttons/CircularIconButton';
 import MenuButton from '../common/Buttons/MenuButton';
 import BgLetterAvatar from '../user/BgLetterAvatar';

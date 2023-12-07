@@ -6,8 +6,8 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
 import EllipsisTypography from '../common/Typography/EllipsisTypography';
-import { StyledEventIcon, StyledLocationIcon, StyledPlayCircleIcon } from '../common/StyledIcons';
-import StyledCard from '../common/StyledCard';
+import { EventIcon, LocationIcon, PlayCircleIcon } from '../common/Icons/StyledIcons';
+import CardWrapper from '../common/Wrappers/CardWrapper';
 import { formatDate } from '../../utils/dateTimeFormatter';
 
 const StyledBox = styled(Box)(({ theme }) => ({
@@ -32,17 +32,17 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
 
 const PrimaryEventCard = ({ event }: any) => {
     return (
-        <StyledCard>
+        <CardWrapper>
             <CardMedia
                 sx={{ height: 210 }}
-                image={`${process.env.PUBLIC_URL}/images/event-poster.jpg`}
+                image={`${process.env.PUBLIC_URL}/images/event-poster.png`}
             />
             <CardContent>
                 <EllipsisTypography gutterBottom>
                     {event?.title}
                 </EllipsisTypography>
                 <Box display="flex" alignItems="center" mb={1}>
-                    <StyledEventIcon />
+                    <EventIcon />
                     <StyledTypography>
                         {formatDate(event.startDate)}
                     </StyledTypography>
@@ -55,14 +55,14 @@ const PrimaryEventCard = ({ event }: any) => {
                     {
                         event.eventType === 'physical' ? (
                             <>
-                                <StyledLocationIcon />
+                                <LocationIcon />
                                 <StyledTypography>
                                     {`${event.location.venue}, ${event.location.address.city}`}
                                 </StyledTypography>
                             </>
                         ) : (
                             <>
-                                <StyledPlayCircleIcon />
+                                <PlayCircleIcon />
                                 <StyledTypography>Online</StyledTypography>
                             </>
                         )}
@@ -96,7 +96,7 @@ const PrimaryEventCard = ({ event }: any) => {
                     </Typography>
                 </StyledBox>
             </CardActions>
-        </StyledCard>
+        </CardWrapper>
     );
 };
 

@@ -1,5 +1,5 @@
 import Container from '@mui/material/Container';
-import FavouriteEventCard from '../components/event/FavouriteEventCard';
+import FavouriteEventCard from '../../components/event/FavouriteEventCard';
 import Grid from '@mui/material/Grid';
 
 const FavouriteEventsContainer = () => {

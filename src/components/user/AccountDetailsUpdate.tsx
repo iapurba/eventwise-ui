@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid';
 import ContactDetailsForm from './forms/ContactDetailsForm';
 import DeliveryDetailsForm from './forms/DeliveryDetailsForm';
 import BillingDetailsForm from './forms/BillingDetailsForm';
-import StyledButton from '../common/Buttons/StyledButton';
+import PrimaryButton from '../common/Buttons/PrimaryButton';
 
 const gridStyle = {
     justifyContent: 'center',
@@ -25,7 +25,7 @@ const AccountDetailsUpdate = () => {
                 <BillingDetailsForm />
             </Grid>
             <Grid item mt={2}>
-                <StyledButton>UPDATE</StyledButton>
+                <PrimaryButton>UPDATE</PrimaryButton>
             </Grid>
         </Grid>
     );
