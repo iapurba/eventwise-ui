@@ -1,11 +1,11 @@
-import SearchFieldContainer from '../containers/SearchFieldContainer';
-import TrendingEventsContainer from '../containers/TrendingEventsContainer';
+import SearchBox from '../containers/search/SearchBox';
+import TrendingEventList from '../containers/search/TrendingEventList';
 
 const SearchPage = () => {
     return (
         <>
-            <SearchFieldContainer />
-            <TrendingEventsContainer />
+            <SearchBox />
+            <TrendingEventList />
         </>
     );
 };
