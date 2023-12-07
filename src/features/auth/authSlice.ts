@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface AuthState {
+export interface AuthState {
     user: null | {
         id: string;
         email: string;
@@ -20,6 +20,7 @@ const authSlice = createSlice({
     initialState,
     reducers: {
         loginUser: (state, action) => {
+            console.log('loginAction ', action);
             const { user, token } = action.payload;
             state.user = user;
             state.token = token;

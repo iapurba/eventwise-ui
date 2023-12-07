@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { API_CONFIG } from '../../utils/api/config';
+import { API_CONFIG } from '../../utils/api/apiConfig';
 
 interface RequestOtpPayload {
     email: string;
