@@ -1,10 +1,12 @@
 import { Container } from '@mui/material';
-import EventDetailsContainer from '../containers/EventDetailsContainer';
+import EventDetails from '../containers/events/EventDisplayContainer';
+import { useParams } from 'react-router-dom';
 
 const EventPage = () => {
+    const { eventId } = useParams();
     return (
         <Container disableGutters>
-            <EventDetailsContainer/>
+            <EventDetails eventId={eventId ? eventId : ''} />
         </Container>
     );
 };

@@ -3,9 +3,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
-import FavouriteEventsContainer from '../../containers/FavouriteEventsContainer';
-import AccountDetailsForm from '../forms/AccountDetailsForm';
-import BookedTicketsContainer from '../../containers/BookedTicketsContainer';
+import FavouriteEventsContainer from '../../containers/user/FavouriteEventsContainer';
+import AccountDetailsUpdate from './AccountDetailsUpdate';
+import BookingHistory from '../../containers/bookings/BookingHistory';
 // import { Outlet } from 'react-router-dom';
 
 interface TabPanelProps {
@@ -74,13 +74,13 @@ const UserProfileTabs = () => {
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
-                <BookedTicketsContainer/>
+                <BookingHistory/>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
                 <FavouriteEventsContainer/>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
-                <AccountDetailsForm/>
+                <AccountDetailsUpdate/>
             </CustomTabPanel>
             {/* <Outlet/> */}
         </Box>

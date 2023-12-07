@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import EllipsisTypography from '../common/EllipsisTypography';
+import EllipsisTypography from '../common/Typography/EllipsisTypography';
 
 
 const FavouriteEventCard = () => {

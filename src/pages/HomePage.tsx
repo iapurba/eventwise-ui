@@ -1,10 +1,10 @@
 import { Container } from '@mui/material';
-import EventListContainer from '../containers/EventListContainer';
+import EventList from '../containers/events/EventList';
 
 const HomePage = () => {
     return (
         <Container disableGutters>
-            <EventListContainer />
+            <EventList />
         </Container>
     );
 };

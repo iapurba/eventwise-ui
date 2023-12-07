@@ -1,9 +1,14 @@
-export interface Event {
-    _id: string;
+export interface EventType {
+    id: string;
     title: string;
-    description: string;
+    details: {
+        description: string;
+        imageGallery: [String],
+        termsAndConditions: [String],
+    }
     category: string;
     eventType: string;
+    startingPrice: String,
     location: {
         venue: string;
         address: {
@@ -13,10 +18,10 @@ export interface Event {
             pincode: string;
         };
     };
-    date: Date;
+    startDate: string;
     startTime: string;
-    duration: string;
-    capacity: number;
+    endDate?: Date,
+    duration?: string;
     artists: string[];
     tags: string[];
     createdBy: string,
