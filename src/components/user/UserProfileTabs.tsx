@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
@@ -6,7 +5,8 @@ import { styled } from '@mui/material/styles';
 import FavouriteEventsContainer from '../../containers/user/FavouriteEventsContainer';
 import AccountDetailsUpdate from './AccountDetailsUpdate';
 import BookingHistory from '../../containers/bookings/BookingHistory';
-// import { Outlet } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -21,16 +21,9 @@ const CustomTabPanel = (props: TabPanelProps) => {
         <div
             role="tabpanel"
             hidden={value !== index}
-            id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
             {...other}
         >
-            {value === index && (
-                <Box sx={{ p: 3 }}>
-                    {/* <Typography>{children}</Typography> */}
-                    {children}
-                </Box>
-            )}
+            {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
         </div>
     );
 }
@@ -45,18 +38,40 @@ const CustomTab = styled(Tab)(({ theme }) => ({
     },
 }));
 
-function a11yProps(index: number) {
-    return {
-        id: `simple-tab-${index}`,
-        'aria-controls': `simple-tabpanel-${index}`,
-    };
-}
 
 const UserProfileTabs = () => {
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = useState<number>(0);
 
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        let path = location.pathname;
+        if (path.includes('/tickets')) {
+            setValue(0);
+        } else if (path.includes('/favourites')) {
+            setValue(1);
+        } else if (path.includes('/profile')) {
+            setValue(2);
+        }
+    }, [location.pathname]);
+
+    const handleChange = (event: any, newValue: number) => {
         setValue(newValue);
+
+        switch (newValue) {
+            case 0:
+                navigate('/users/me/tickets');
+                break;
+            case 1:
+                navigate('/users/me/favourites');
+                break;
+            case 2:
+                navigate('/users/me/profile');
+                break;
+            default:
+                break;
+        }
     };
 
     return (
@@ -65,24 +80,22 @@ const UserProfileTabs = () => {
                 <Tabs
                     value={value}
                     onChange={handleChange}
-                    aria-label="user profile tabs"
                     centered
                 >
-                    <CustomTab label="Tickets" {...a11yProps(0)} />
-                    <CustomTab label="Favourites" {...a11yProps(1)} />
-                    <CustomTab label="Edit Profile" {...a11yProps(2)} />
+                    <CustomTab label="Tickets" />
+                    <CustomTab label="Favourites" />
+                    <CustomTab label="Edit Profile" />
                 </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
-                <BookingHistory/>
+                <BookingHistory />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-                <FavouriteEventsContainer/>
+                <FavouriteEventsContainer />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
-                <AccountDetailsUpdate/>
+                <AccountDetailsUpdate />
             </CustomTabPanel>
-            {/* <Outlet/> */}
         </Box>
     );
 };

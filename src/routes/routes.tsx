@@ -51,6 +51,10 @@ export const router = createBrowserRouter([
                 element: <UserProfilePage />,
             },
             {
+                path: '/users/me/:tab',
+                element: <UserProfilePage />,
+            },
+            {
                 path: '/search',
                 element: <SearchPage />,
             },

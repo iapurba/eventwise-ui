@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../features/auth/authSlice';
 import { useNavigate } from 'react-router-dom';
+import { useGetUserProfile } from '../../features/user/userQuery';
+import { useEffect } from 'react';
 
 const ProfileWrapper = styled(Box)(() => ({
     display: 'flex',
@@ -23,6 +25,12 @@ const StyledBox = styled(Box)(() => ({
 
 
 const ProfileHeaderContainer = () => {
+    const { user } = useGetUserProfile();
+
+    useEffect(() => {
+        console.log(user);
+    })
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -38,14 +46,17 @@ const ProfileHeaderContainer = () => {
                     <Typography
                         sx={{
                             fontSize: '42px',
-                            // opacity: '.2',
+                            opacity: user?.profile?.firstName ? '1' : '.2',
                             margin: '0 0 12px',
                             fontWeight: 'bold',
                         }}
                     >
-                        Apurba Panja
+                        {user?.profile?.firstName
+                            ? `${user?.profile?.firstName} ${user?.profile?.lastName}`
+                            : 'Your Name'
+                        }
                     </Typography>
-                    <Typography>apurbapanja1@gmail.com</Typography>
+                    <Typography>{user?.email}</Typography>
                 </Box>
                 <Box>
                     <RectangularButton>Edit Profile</RectangularButton>

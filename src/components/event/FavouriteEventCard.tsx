@@ -12,7 +12,7 @@ const FavouriteEventCard = () => {
                 <Card>
                     <CardMedia
                         sx={{ height: 120, width: 'auto' }}
-                        image={`${process.env.PUBLIC_URL}/images/event-poster.jpg`}
+                        image={`${process.env.PUBLIC_URL}/images/event-poster.png`}
                     />
                 </Card>
             </Grid>

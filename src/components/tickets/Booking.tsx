@@ -35,7 +35,7 @@ const Booking = () => {
                         <Typography variant="body1">South City Mall</Typography>
                     </Grid>
                 </Grid>
-                <Grid item sm={4} justifyContent={'right'} marginLeft={'auto'}>
+                <Grid item sm={3} justifyContent={'flex-end'} marginLeft={'auto'}>
                     <CardMedia
                         sx={{ height: 100, width: 100 }}
                         image={`${process.env.PUBLIC_URL}/images/sampleQR.png`}
