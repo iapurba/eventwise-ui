@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../features/auth/authSlice';
 import { useNavigate } from 'react-router-dom';
 import { useGetUserProfile } from '../../features/user/userQuery';
-import { useEffect } from 'react';
 
 const ProfileWrapper = styled(Box)(() => ({
     display: 'flex',
@@ -26,10 +25,6 @@ const StyledBox = styled(Box)(() => ({
 
 const ProfileHeaderContainer = () => {
     const { user } = useGetUserProfile();
-
-    useEffect(() => {
-        console.log(user);
-    })
 
     const dispatch = useDispatch();
     const navigate = useNavigate();

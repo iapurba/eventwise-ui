@@ -61,7 +61,7 @@ const Header: React.FC = () => {
                         </CircularIconButton>
                     </Link>
 
-                    <Link to={'/users/me'}>
+                    <Link to={'/users/me/favourites'}>
                         <CircularIconButton color="inherit" aria-label="search">
                             <FavoriteBorderRoundedIcon />
                         </CircularIconButton>

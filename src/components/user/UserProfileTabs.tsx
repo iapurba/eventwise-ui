@@ -2,11 +2,6 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
-import FavouriteEventsContainer from '../../containers/user/FavouriteEventsContainer';
-import AccountDetailsUpdate from './AccountDetailsUpdate';
-import BookingHistory from '../../containers/bookings/BookingHistory';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -38,64 +33,37 @@ const CustomTab = styled(Tab)(({ theme }) => ({
     },
 }));
 
+interface TabItem {
+    label: string;
+    component: React.ReactNode;
+};
 
-const UserProfileTabs = () => {
-    const [value, setValue] = useState<number>(0);
+interface UserProfileTabsProps {
+    tabs: TabItem[];
+    tabIndex: number;
+    onTabChange: (newValue: number) => void;
+};
 
-    const navigate = useNavigate();
-    const location = useLocation();
-
-    useEffect(() => {
-        let path = location.pathname;
-        if (path.includes('/tickets')) {
-            setValue(0);
-        } else if (path.includes('/favourites')) {
-            setValue(1);
-        } else if (path.includes('/profile')) {
-            setValue(2);
-        }
-    }, [location.pathname]);
-
-    const handleChange = (event: any, newValue: number) => {
-        setValue(newValue);
-
-        switch (newValue) {
-            case 0:
-                navigate('/users/me/tickets');
-                break;
-            case 1:
-                navigate('/users/me/favourites');
-                break;
-            case 2:
-                navigate('/users/me/profile');
-                break;
-            default:
-                break;
-        }
-    };
-
+const UserProfileTabs: React.FC<UserProfileTabsProps> = (props) => {
+    const { tabs, tabIndex, onTabChange } = props;
     return (
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs
-                    value={value}
-                    onChange={handleChange}
+                    value={tabIndex}
+                    onChange={(e: any, i: number) => onTabChange(i)}
                     centered
                 >
-                    <CustomTab label="Tickets" />
-                    <CustomTab label="Favourites" />
-                    <CustomTab label="Edit Profile" />
+                    {tabs.map((item: TabItem, i: number) => (
+                        <CustomTab key={i} label={item.label} />
+                    ))}
                 </Tabs>
             </Box>
-            <CustomTabPanel value={value} index={0}>
-                <BookingHistory />
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={1}>
-                <FavouriteEventsContainer />
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={2}>
-                <AccountDetailsUpdate />
-            </CustomTabPanel>
+            {tabs.map((item: TabItem, i: number) => (
+                <CustomTabPanel key={i} value={tabIndex} index={i}>
+                    {item.component}
+                </CustomTabPanel>
+            ))}
         </Box>
     );
 };

@@ -1,12 +1,11 @@
-import * as React from 'react';
-import UserProfileTabs from '../components/user/UserProfileTabs';
 import ProfileHeaderContainer from '../containers/user/ProfileHeaderContainer';
+import ProfileDetailsContainer from '../containers/user/ProfileDetailsContainer';
 
 const UserProfilePage = () => {
   return (
     <div>
       <ProfileHeaderContainer/>
-      <UserProfileTabs/>
+      <ProfileDetailsContainer/>
     </div>
   );
 };

@@ -8,7 +8,7 @@ const containerStyle = {
     margin: 'auto',
 };
 
-const BookingHistory = () => {
+const BookingHistoryContainer = () => {
     return (
         <Container style={containerStyle}>
             <Booking />
@@ -16,4 +16,4 @@ const BookingHistory = () => {
     );
 };
 
-export default BookingHistory;
+export default BookingHistoryContainer;
