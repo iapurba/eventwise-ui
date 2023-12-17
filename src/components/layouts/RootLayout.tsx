@@ -1,12 +1,12 @@
 import Box from "@mui/material/Box";
-import Header from "./Header";
+import GlobalHeader from "./GlobalHeader";
 import { Outlet } from "react-router-dom";
 
 
 const RootLayout = () => {
     return (
         <>
-            <Header />
+            <GlobalHeader />
             <Box id="main">
                 <Outlet />
             </Box>

@@ -25,9 +25,13 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 }));
 
 
-const Header: React.FC = () => {
+const GlobalHeader: React.FC = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const userData = useSelector((state: RootState) => state.auth);
+    const retriveLoginState = localStorage.getItem('isAuthenticated') 
+    const isLoggedIn = userData.isAuthenticated || (
+        retriveLoginState ? JSON.parse(retriveLoginState) : false
+    )
     const navigate = useNavigate();
 
     return (
@@ -83,7 +87,7 @@ const Header: React.FC = () => {
                         </MenuButton>
                     </Link>
 
-                    {userData.isAuthenticated ? (
+                    {isLoggedIn ? (
                         <BgLetterAvatar
                             name={'Apurba Panja'}
                             onClick={() => { navigate('/users/me') }}
@@ -105,4 +109,4 @@ const Header: React.FC = () => {
     );
 };
 
-export default Header;
+export default GlobalHeader;
