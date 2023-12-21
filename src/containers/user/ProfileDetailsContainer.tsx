@@ -4,23 +4,34 @@ import UserProfileTabs from '../../components/user/UserProfileTabs';
 import FavouriteEventsContainer from './FavouriteEventsContainer';
 import EditProfileContainer from './EditProfileContainer';
 import BookingHistoryContainer from './BookingHistoryContainer';
+import UserProfileHeader from '../../components/user/UserProfileHeader';
+import { useGetUserProfile } from '../../features/user/userQuery';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '../../features/auth/authSlice';
+import { normalizeUserRtkData } from '../../processors/userProcessor';
 
 interface TabItem {
     label: string;
     component: React.ReactNode;
 }
 
-const tabs: TabItem[] = [
-    { label: 'Bookings', component: <BookingHistoryContainer /> },
-    { label: 'Favourites', component: <FavouriteEventsContainer /> },
-    { label: 'Edit Profile', component: <EditProfileContainer /> },
-];
-
 const ProfileDetailsContainer = () => {
     const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
 
+    const { userProfile, isLoading } = useGetUserProfile();
+
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
+
+    const handleEditProfile = () => {
+        navigate('/users/me/profile');
+    };
+
+    const handleSignOut = () => {
+        dispatch(logoutUser());
+        navigate('/explore/kolkata');
+    };
 
     const determineInitialTabFromRoute = (path: string): number => {
         if (path === '/users/me') return 0;
@@ -54,8 +65,34 @@ const ProfileDetailsContainer = () => {
         }
     };
 
+    const tabs: TabItem[] = [
+        { label: 'Bookings', component: <BookingHistoryContainer /> },
+        { label: 'Favourites', component: <FavouriteEventsContainer /> },
+        {
+            label: 'Edit Profile',
+            component: userProfile ? (
+                <EditProfileContainer
+                    initialProfile={normalizeUserRtkData(userProfile)}
+                />
+            ) : null,
+        },
+    ];
+
     return (
-        <UserProfileTabs tabs={tabs} tabIndex={activeTabIndex} onTabChange={handleRouteFromTabChange} />
+        <>{isLoading ? <>Loading</> :
+            <>
+                <UserProfileHeader
+                    user={userProfile}
+                    onEditProfile={handleEditProfile}
+                    onSignOut={handleSignOut}
+                />
+                <UserProfileTabs
+                    tabs={tabs}
+                    tabIndex={activeTabIndex}
+                    onTabChange={handleRouteFromTabChange}
+                />
+            </>
+        }</>
     );
 };
 

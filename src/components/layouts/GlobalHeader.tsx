@@ -28,8 +28,8 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 const GlobalHeader: React.FC = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const userData = useSelector((state: RootState) => state.auth);
-    const retriveLoginState = localStorage.getItem('isAuthenticated') 
-    const isLoggedIn = userData.isAuthenticated || (
+    const retriveLoginState = localStorage.getItem('isLoggedIn') 
+    const isLoggedIn = userData.isLoggedIn || (
         retriveLoginState ? JSON.parse(retriveLoginState) : false
     )
     const navigate = useNavigate();

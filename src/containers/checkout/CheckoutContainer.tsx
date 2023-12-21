@@ -27,11 +27,11 @@ const StyledBox = styled(Box)(({ theme }) => ({
 
 const CheckoutContainer = () => {
     const user = useSelector((state: RootState) => state.auth.user);
-    const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+    const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
     const cartData = useSelector((state: RootState) => state.cart);
 
-    const [loginExpanded, setLoginExpanded] = useState<boolean>(!isAuthenticated);
-    const [orderSummaryExpanded, setOrderSummaryExpanded] = useState<boolean>(!!isAuthenticated);
+    const [loginExpanded, setLoginExpanded] = useState<boolean>(!isLoggedIn);
+    const [orderSummaryExpanded, setOrderSummaryExpanded] = useState<boolean>(!!isLoggedIn);
     const [ticketDetailsExpanded, setTicketDetailsExpanded] = useState<boolean>(false);
 
     const handleLoginExpand = () => {
@@ -42,19 +42,19 @@ const CheckoutContainer = () => {
 
     const handleOrderSummaryExpanded = () => {
         setLoginExpanded(false)
-        setOrderSummaryExpanded(isAuthenticated)
+        setOrderSummaryExpanded(isLoggedIn)
         setTicketDetailsExpanded(false)
     };
 
     const handlerTicketDetailsExpanded = () => {
         setLoginExpanded(false)
         setOrderSummaryExpanded(false)
-        setTicketDetailsExpanded(isAuthenticated)
+        setTicketDetailsExpanded(isLoggedIn)
     };
 
     return (
         <Grid container sx={gridStyle} flexDirection="column">
-            {isAuthenticated
+            {isLoggedIn
                 ? (
                     <Grid item>
                         <Divider />

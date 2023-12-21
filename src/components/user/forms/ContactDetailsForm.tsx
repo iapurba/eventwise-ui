@@ -2,16 +2,26 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import FormHeader from '../../common/FormHeader';
 import StyledTextField from '../../common/StyledTextField';
+import { ContactDetailsType } from '../../../types/UserProfileType';
+import { ChangeEvent } from 'react';
 
+interface ContactDetailsFormProps {
+    contactDetails: ContactDetailsType;
+    onInputChange: (field: string, value: string) => void;
+}
 
-const ContactDetailsForm = () => {
+const ContactDetailsForm: React.FC<ContactDetailsFormProps> = ({
+    contactDetails,
+    onInputChange,
+}) => {
+
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        onInputChange(name, value);
+    };
+
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-            }}
-        >
+        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <FormHeader title={'Please update your account details below'} />
             <Box component="form" noValidate sx={{ mt: 1 }}>
                 <Grid container spacing={2}>
@@ -23,6 +33,8 @@ const ContactDetailsForm = () => {
                             type="text"
                             placeholder="First Name"
                             size="small"
+                            value={contactDetails.firstName}
+                            onChange={handleInputChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -33,6 +45,8 @@ const ContactDetailsForm = () => {
                             type="text"
                             placeholder="Last Name"
                             size="small"
+                            value={contactDetails.lastName}
+                            onChange={handleInputChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
@@ -43,6 +57,8 @@ const ContactDetailsForm = () => {
                             type="text"
                             placeholder="Phone Number"
                             size="small"
+                            value={contactDetails.phone}
+                            onChange={handleInputChange}
                         />
                     </Grid>
                 </Grid>

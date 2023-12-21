@@ -44,8 +44,11 @@ interface UserProfileTabsProps {
     onTabChange: (newValue: number) => void;
 };
 
-const UserProfileTabs: React.FC<UserProfileTabsProps> = (props) => {
-    const { tabs, tabIndex, onTabChange } = props;
+const UserProfileTabs: React.FC<UserProfileTabsProps> = ({
+    tabs,
+    tabIndex,
+    onTabChange
+}) => {
     return (
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>

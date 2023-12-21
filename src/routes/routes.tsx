@@ -9,10 +9,10 @@ import TicketsPage from '../pages/TicketsPage';
 import CheckoutPage from '../pages/CheckoutPage';
 import SearchPage from '../pages/SearchPage';
 import RootLayout from '../components/layouts/RootLayout';
+import PrivateRoute from './PrivateRoute';
 
 
 export const router = createBrowserRouter([
-
     {
         path: '/',
         element: <RootLayout />,
@@ -48,11 +48,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/users/me',
-                element: <UserProfilePage />,
+                element: <PrivateRoute element={<UserProfilePage />}/>,
             },
             {
                 path: '/users/me/:tab',
-                element: <UserProfilePage />,
+                element: <PrivateRoute element={<UserProfilePage />}/>,
             },
             {
                 path: '/search',

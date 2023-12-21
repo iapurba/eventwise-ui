@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
-const RectangularButton = styled(Button)(() => ({
+const SquareButton = styled(Button)(() => ({
     borderRadius: '6px',
     color: 'white',
     padding: '7px 15px',
@@ -15,4 +15,4 @@ const RectangularButton = styled(Button)(() => ({
     }
 }));
 
-export default RectangularButton;
+export default SquareButton;

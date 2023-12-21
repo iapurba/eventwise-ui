@@ -7,10 +7,23 @@ import Radio from '@mui/material/Radio';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import RadioGroup from '@mui/material/RadioGroup';
 import Typography from '@mui/material/Typography';
+import { DeliveryDetailsType } from '../../../types/UserProfileType';
+import { ChangeEvent } from 'react';
 
+interface DeliveryDetailsFormProps {
+    deliveryDetails: DeliveryDetailsType;
+    onInputChange: (field: string, value: string) => void;
+};
 
-const DeliveryDetailsForm = () => {
+const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
+    deliveryDetails,
+    onInputChange,
+}) => {
 
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        onInputChange(name, value);
+    }
     return (
         <FormWrapper>
             <FormHeader
@@ -23,22 +36,26 @@ const DeliveryDetailsForm = () => {
                         <StyledTextField
                             required
                             fullWidth
-                            id="address1"
-                            name="address1"
+                            id="addressLine1"
+                            name="addressLine1"
                             type="text"
                             placeholder='Address 1*'
                             size="small"
+                            value={deliveryDetails.addressLine1}
+                            onChange={handleInputChange}
                         />
                     </Grid>
                     <Grid item xs={12}>
                         <StyledTextField
                             required
                             fullWidth
-                            id="address2"
-                            name="address2"
+                            id="addressLine2"
+                            name="addressLine2"
                             type="text"
                             placeholder="Address 2*"
                             size="small"
+                            value={deliveryDetails.addressLine2}
+                            onChange={handleInputChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -50,6 +67,8 @@ const DeliveryDetailsForm = () => {
                             type="text"
                             placeholder="Landmark"
                             size="small"
+                            value={deliveryDetails.landmark}
+                            onChange={handleInputChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -61,6 +80,8 @@ const DeliveryDetailsForm = () => {
                             type="text"
                             placeholder="City*"
                             size="small"
+                            value={deliveryDetails.city}
+                            onChange={handleInputChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -71,6 +92,8 @@ const DeliveryDetailsForm = () => {
                             type="text"
                             placeholder="Pincode*"
                             size="small"
+                            value={deliveryDetails.pincode}
+                            onChange={handleInputChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -82,6 +105,8 @@ const DeliveryDetailsForm = () => {
                             type="text"
                             placeholder="State*"
                             size="small"
+                            value={deliveryDetails.state}
+                            onChange={handleInputChange}
                         />
                     </Grid>
                 </Grid>
@@ -94,7 +119,12 @@ const DeliveryDetailsForm = () => {
                     }}
                 >
                     <FormHeader title={"Address Type*"} />
-                    <RadioGroup name="addressType" row>
+                    <RadioGroup
+                        name="addressType"
+                        row
+                        value={deliveryDetails.addressType}
+                        onChange={(e: any) => onInputChange('addressType', e.target.value)}
+                    >
                         <FormControlLabel
                             value="residential"
                             control={<Radio size="small" sx={{ padding: '0 6px' }} />}

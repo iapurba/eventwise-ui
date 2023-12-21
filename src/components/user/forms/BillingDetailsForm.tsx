@@ -6,9 +6,25 @@ import FormWrapper from '../../common/FormWrapper';
 import FormHeader from '../../common/FormHeader';
 import StyledTextField from '../../common/StyledTextField';
 import Typography from '@mui/material/Typography';
+import { BillingDetailsType } from '../../../types/UserProfileType';
+import { ChangeEvent } from 'react';
 
-const BillingDetailsForm = () => {
+interface BillingDetailsFormProps {
+    billingDetails: BillingDetailsType;
+    onInputChange: (field: string, value: string) => void;
+    onUseSameDetails: (isChecked:boolean) => void;
+};
 
+const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
+    billingDetails,
+    onInputChange,
+    onUseSameDetails
+}) => {
+
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        onInputChange(name, value);
+    }
     return (
         <FormWrapper>
             <FormHeader
@@ -25,7 +41,7 @@ const BillingDetailsForm = () => {
                                     Use same as delivery details
                                 </Typography>
                             }
-
+                            onChange={(e) => onUseSameDetails((e.target as HTMLInputElement).checked)}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -37,6 +53,8 @@ const BillingDetailsForm = () => {
                             type="text"
                             placeholder="Pincode*"
                             size="small"
+                            value={billingDetails.pincode}
+                            onChange={handleInputChange}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -48,6 +66,8 @@ const BillingDetailsForm = () => {
                             placeholder="State*"
                             name="state"
                             size="small"
+                            value={billingDetails.state}
+                            onChange={handleInputChange}
                         />
                     </Grid>
                 </Grid>
