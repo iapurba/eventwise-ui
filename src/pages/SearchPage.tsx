@@ -1,12 +1,13 @@
-import SearchBox from '../containers/search/SearchBox';
-import TrendingEventList from '../containers/search/TrendingEventList';
+import PageWrapper from '../components/common/wrappers/PageWrapper';
+import SearchBox from '../features/search/SearchBox';
+import TrendingEventList from '../features/search/TrendingEventList';
 
 const SearchPage = () => {
     return (
-        <>
+        <PageWrapper id="search-page">
             <SearchBox />
             <TrendingEventList />
-        </>
+        </PageWrapper>
     );
 };
 

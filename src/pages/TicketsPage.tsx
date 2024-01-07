@@ -1,14 +1,14 @@
-import Container from '@mui/material/Container';
-import TicketsContainer from '../containers/tickets/TicketsContainer';
+import PageWrapper from '../components/common/wrappers/PageWrapper';
+import TicketsContainer from '../features/checkout/containers/tickets/TicketsContainer';
 import { useParams } from 'react-router-dom';
 
 const TicketsPage = () => {
     const { eventId } = useParams();
 
     return (
-        <Container>
+        <PageWrapper id='ticket-page'>
             <TicketsContainer eventId={eventId ? eventId : ''} />
-        </Container>
+        </PageWrapper>
     );
 };
 

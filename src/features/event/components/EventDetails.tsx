@@ -11,7 +11,7 @@ import {
     PlayCircleIcon,
     WalletIcon
 } from '../../../components/common/Icons/StyledIcons';
-import { Venue } from '../../types/event';
+import { Venue } from '../types/event';
 
 
 const StyledBox = styled(Box)(({ theme }) => ({

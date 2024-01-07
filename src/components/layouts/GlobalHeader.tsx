@@ -10,12 +10,12 @@ import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownR
 import Box from '@mui/material/Box';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import LoginModal from '../../containers/auth/LoginModal';
+import LoginModal from '../../features/auth/containers/LoginModal';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import CircularIconButton from '../common/Buttons/CircularIconButton';
 import MenuButton from '../common/Buttons/MenuButton';
-import BgLetterAvatar from '../user/BgLetterAvatar';
+import BgLetterAvatar from '../../features/user/components/BgLetterAvatar';
 
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({

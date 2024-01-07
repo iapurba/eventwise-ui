@@ -1,12 +1,12 @@
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
-const PageTitleWrapper = styled(Box)(() => ({
+const PageHeaderWrapper = styled(Box)(() => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
-    margin: '32px auto',
+    margin: '0px auto',
 }));
 
-export default PageTitleWrapper;
+export default PageHeaderWrapper;

@@ -3,11 +3,11 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
-import TicketQtySelect from './forms/TicketQtySelect';
+import TicketQtySelect from '../forms/TicketQtySelect';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { useState } from 'react';
-import ErrorTypography from '../common/Typography/ErrorTypography';
+import ErrorTypography from '../../../../components/common/Typography/ErrorTypography';
 
 const BuyButton = styled(Button)(({ theme }) => ({
     padding: '6px 24px',
@@ -39,12 +39,6 @@ const customTextSx = {
 
 interface TicketProps {
     ticketDetails: {
-        event: {
-            id: string;
-            title: string;
-            startDate: string;
-            startTime: string;
-        };
         ticketType: string;
         description: string;
         price: number;
@@ -56,8 +50,11 @@ interface TicketProps {
     onBuyClick: (ticketData: any) => void;
 };
 
-const Ticket: React.FC<TicketProps> = ({ ticketDetails, onQunatityChange, onBuyClick }) => {
-    const { event, ticketType, description, price, maxOrderQty, isAvailable, extraInfo } = ticketDetails;
+const Ticket: React.FC<TicketProps> = ({
+    ticketDetails,
+    onQunatityChange,
+    onBuyClick
+}) => {
     const [quantity, setQuantity] = useState<number>(0);
     const [isBuyClicked, setIsBuyClicked] = useState<boolean>(false);
 
@@ -71,11 +68,10 @@ const Ticket: React.FC<TicketProps> = ({ ticketDetails, onQunatityChange, onBuyC
         setIsBuyClicked(true);
         if (quantity) {
             onBuyClick({
-                event,
-                ticketType: ticketType,
-                price,
+                ticketType: ticketDetails?.ticketType,
+                price: ticketDetails?.price,
                 quantity,
-                subTotal: quantity * price
+                subTotal: quantity * ticketDetails?.price
             });
         };
     };
@@ -85,25 +81,29 @@ const Ticket: React.FC<TicketProps> = ({ ticketDetails, onQunatityChange, onBuyC
             <Grid container spacing={2} p={3}>
                 <Grid item xs={12} md={8}>
                     <Stack direction="row" spacing={3} alignItems="center">
-                        <Typography variant="h6">{ticketType}</Typography>
-                        {extraInfo &&
+                        <Typography variant="h6">
+                            {ticketDetails?.ticketType}
+                        </Typography>
+                        {ticketDetails?.extraInfo &&
                             <Chip
-                                label={extraInfo}
+                                label={ticketDetails?.extraInfo}
                                 size="small"
                                 sx={{ background: '#F9E79F' }}
                             />
                         }
                     </Stack>
-                    <Typography variant="body2" mt={1}>{description}</Typography>
+                    <Typography variant="body2" mt={1}>
+                        {ticketDetails?.description}
+                    </Typography>
                 </Grid>
                 <Grid item xs={12} md={4}>
-                    {isAvailable ?
+                    {ticketDetails?.isAvailable ?
                         <>
                             <StyledBox mb={1}>
-                                <Typography variant="subtitle1">₹ {` ${price} × `}</Typography>
+                                <Typography variant="subtitle1">₹ {` ${ticketDetails?.price} × `}</Typography>
                                 {/* Select Dropdown */}
                                 <TicketQtySelect
-                                    maxQty={maxOrderQty}
+                                    maxQty={ticketDetails?.maxOrderQty}
                                     onValueChange={handleQuantityChange}
                                 />
                             </StyledBox>
@@ -118,7 +118,7 @@ const Ticket: React.FC<TicketProps> = ({ ticketDetails, onQunatityChange, onBuyC
 
                             {quantity ?
                                 (<Typography sx={customTextSx}>
-                                    Total: ₹ {price * quantity}
+                                    Total: ₹ {ticketDetails?.price * quantity}
                                 </Typography>
                                 ) : (isBuyClicked && (
                                     <ErrorTypography sx={customTextSx}>

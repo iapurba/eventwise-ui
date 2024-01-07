@@ -8,8 +8,8 @@ import TableRow from '@mui/material/TableRow';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { formatDate } from '../../utils/dateTimeFormatter';
-import { CartItem } from '../../features/booking/cartSlice';
+import { formatToMonthDayString } from '../../../utils/dateTimeFormatter';
+import { CartItem } from '../../booking/cartSlice';
 
 const StyledBox = styled(Box)(({ theme }) => ({
     borderBottom: '1px dashed #D0D0D0',
@@ -49,7 +49,7 @@ const OrderSummaryContainer: React.FC<OrderSummaryContainerProps> = ({ cartItems
                                         <Typography variant='body1'>{item.ticketType}</Typography>
                                         <Typography variant='subtitle2'>{item?.event?.title}</Typography>
                                         <Typography variant='subtitle2'>
-                                            {`${formatDate(item?.event?.startDate)} | ${item?.event?.startTime}` }
+                                            {`${formatToMonthDayString(item?.event?.startDate)} | ${item?.event?.startTime}` }
                                         </Typography>
                                     </CustomTableCell>
                                     <CustomTableCell align='center'>{item?.quantity}</CustomTableCell>

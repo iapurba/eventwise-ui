@@ -2,7 +2,6 @@ import { styled, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import Container from '@mui/material/Container/Container';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -45,18 +44,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const SearchBox = () => {
     return (
-        <Box sx={{ flexGrow: 1, padding:'30px 0'}} mb={1} mt={3}>
-                <Container>
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Find you next concert, comedy show, cricket match, football game..."
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </Search>
-                </Container>
+        <Box>
+            <Search>
+                <SearchIconWrapper>
+                    <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                    placeholder="Find you next concert, comedy show, cricket match, football game..."
+                    inputProps={{ 'aria-label': 'search' }}
+                />
+            </Search>
         </Box>
     );
 };

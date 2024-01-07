@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import CustomTabs from '../../../components/common/CustomTabs';
-import { Faq } from '../../types/event';
+import { Faq } from '../types/event';
 
 interface EventOverviewProps {
     description: string;

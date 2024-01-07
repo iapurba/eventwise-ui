@@ -8,7 +8,7 @@ import Divider from '@mui/material/Divider';
 import EllipsisTypography from '../../../components/common/Typography/EllipsisTypography';
 import { EventIcon, LocationIcon, PlayCircleIcon } from '../../../components/common/Icons/StyledIcons';
 import CardWrapper from '../../../components/common/wrappers/CardWrapper';
-import { Event } from '../../types/event';
+import { Event } from '../types/event';
 
 const StyledBox = styled(Box)(({ theme }) => ({
     display: 'flex',

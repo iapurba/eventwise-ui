@@ -1,16 +1,16 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import LoginContainer from '../auth/LoginContainer';
+import LoginContainer from '../../auth/containers/LoginContainer';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
-import TicketDetailsForm from '../../components/forms/TicketDetailsForm';
+import TicketDetailsForm from '../forms/TicketDetailsForm';
 import OrderSummaryContainer from './OrderSummaryContainer';
-import PrimaryButton from '../../components/common/Buttons/PrimaryButton';
+import PrimaryButton from '../../../components/common/Buttons/PrimaryButton';
 import { useState } from 'react';
-import { AddIcon, RemoveIcon } from '../../components/common/Icons/StyledIcons';
+import { AddIcon, RemoveIcon } from '../../../components/common/Icons/StyledIcons';
 import { styled } from '@mui/material/styles';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
+import { RootState } from '../../../redux/store';
 
 const gridStyle = {
     justifyContent: 'center',
