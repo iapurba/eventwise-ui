@@ -3,16 +3,16 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import { useState } from 'react';
-import { ArrowLeftIcon, ArrowRightIcon } from '../common/Icons/ArrowIcons';
+import { ArrowLeftIcon, ArrowRightIcon } from '../../../components/common/Icons/ArrowIcons';
 import IconButton from '@mui/material/IconButton';
-import PageTitle from '../common/Typography/PageTitleTypography';
+import PageHeaderText from '../../../components/common/Typography/PageHeaderText';
 
 const FilterPanelWrapper = styled(Box)(() => ({
     justifyContent: 'center',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '2.5vw 0 0',
+    padding: '1vw 0 0',
 }));
 
 const FilterOptions = styled(Box)(() => ({
@@ -122,9 +122,9 @@ const EventFilterPanel = () => {
 
     return (
         <FilterPanelWrapper>
-            <PageTitle pb={2}>
+            <PageHeaderText pb={2}>
                 {`All Event `}<span style={{ color: '#000000', fontWeight: '320' }}>{'(2)'}</span>
-            </PageTitle>
+            </PageHeaderText>
             <FilterOptions>
                 <Typography sx={{ color: '#999999', fontSize: '14px' }}>TIME:</Typography>
                 {timeOption.map((item) => (

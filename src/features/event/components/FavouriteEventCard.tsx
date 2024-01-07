@@ -2,30 +2,37 @@ import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import EllipsisTypography from '../common/Typography/EllipsisTypography';
+import EllipsisTypography from '../../../components/common/Typography/EllipsisTypography';
 
+interface FavouriteEventCardProps {
+    title: string;
+    dateTimeStr: string;
+    priceStr: string;
+    imageUrl?: string;
+}
 
-const FavouriteEventCard = () => {
+const FavouriteEventCard: React.FC<FavouriteEventCardProps> = ({
+    title,
+    dateTimeStr,
+    priceStr,
+    imageUrl,
+}) => {
     return (
         <Grid container spacing={2}>
             <Grid item sm={5}>
                 <Card>
                     <CardMedia
-                        sx={{ height: 120, width: 'auto' }}
+                        sx={{ height: 122, width: 'auto' }}
                         image={`${process.env.PUBLIC_URL}/images/event-poster.png`}
                     />
                 </Card>
             </Grid>
             <Grid item sm={7}>
                 <EllipsisTypography variant='subtitle1'>
-                    {'When Chai Met Toast - Love You The Same Tour | Kolkata'}
+                    {title}
                 </EllipsisTypography>
-                <Typography variant='subtitle2'>
-                    {`December 2 | 6PM`}
-                </Typography>
-                <Typography variant='subtitle2'>
-                    <span>&#8377;</span>{`1000 Onwards`}
-                </Typography>
+                <Typography variant='subtitle2'>{dateTimeStr}</Typography>
+                <Typography variant='subtitle2'>{priceStr}</Typography>
             </Grid>
         </Grid>
     );

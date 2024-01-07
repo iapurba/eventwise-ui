@@ -1,13 +1,14 @@
-import { Container } from '@mui/material';
-import EventDetails from '../containers/events/EventDisplayContainer';
+import PageWrapper from '../components/common/wrappers/PageWrapper';
+import EventDisplayContainer from '../features/event/containers/EventDisplayContainer';
 import { useParams } from 'react-router-dom';
 
 const EventPage = () => {
-    const { eventId } = useParams();
+    const { slug } = useParams();
     return (
-        <Container disableGutters>
-            <EventDetails eventId={eventId ? eventId : ''} />
-        </Container>
+        <PageWrapper id='home-page'>
+            <EventDisplayContainer slug={slug ? slug : ''} />
+        </PageWrapper>
+
     );
 };
 

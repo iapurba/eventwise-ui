@@ -5,10 +5,10 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
-import EllipsisTypography from '../common/Typography/EllipsisTypography';
-import { EventIcon, LocationIcon, PlayCircleIcon } from '../common/Icons/StyledIcons';
-import CardWrapper from '../common/Wrappers/CardWrapper';
-import { formatDate } from '../../utils/dateTimeFormatter';
+import EllipsisTypography from '../../../components/common/Typography/EllipsisTypography';
+import { EventIcon, LocationIcon, PlayCircleIcon } from '../../../components/common/Icons/StyledIcons';
+import CardWrapper from '../../../components/common/wrappers/CardWrapper';
+import { Event } from '../../types/event';
 
 const StyledBox = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -30,7 +30,11 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
     margin: theme.spacing(0, 1),
 }));
 
-const PrimaryEventCard = ({ event }: any) => {
+interface PrimaryEventCardProps {
+    event: Event;
+}
+
+const PrimaryEventCard: React.FC<PrimaryEventCardProps> = ({ event }) => {
     return (
         <CardWrapper>
             <CardMedia
@@ -39,17 +43,11 @@ const PrimaryEventCard = ({ event }: any) => {
             />
             <CardContent>
                 <EllipsisTypography gutterBottom>
-                    {event?.title}
+                    {event?.name}
                 </EllipsisTypography>
                 <Box display="flex" alignItems="center" mb={1}>
                     <EventIcon />
-                    <StyledTypography>
-                        {formatDate(event.startDate)}
-                    </StyledTypography>
-                    <Divider orientation="vertical" flexItem sx={{ backgroundColor: '#202226', }} />
-                    <StyledTypography>
-                        {event.startTime}
-                    </StyledTypography>
+                    <StyledTypography>{event?.dateTimeString}</StyledTypography>
                 </Box>
                 <Box display="flex" alignItems="center">
                     {
@@ -57,7 +55,7 @@ const PrimaryEventCard = ({ event }: any) => {
                             <>
                                 <LocationIcon />
                                 <StyledTypography>
-                                    {`${event.location.venue}, ${event.location.address.city}`}
+                                    {`${event?.venue.name}, ${event?.venue?.address?.city}`}
                                 </StyledTypography>
                             </>
                         ) : (
@@ -78,7 +76,7 @@ const PrimaryEventCard = ({ event }: any) => {
                     }}
                 >
                     <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
-                        {event.startingPrice === 'Free' ? 'FREE' : `₹${event.startingPrice}`}
+                        {event?.priceDisplayString}
                     </Typography>
                     <Box sx={{ flexGrow: 1 }} />
                     <Divider

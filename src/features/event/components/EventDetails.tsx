@@ -1,18 +1,17 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
-import ContentBoxWrapper from '../common/Wrappers/ContentBoxWrapper';
-import { formatDate } from '../../utils/dateTimeFormatter';
-import IconWithText from '../common/IconWithText';
-import SecondaryButton from '../common/Buttons/SecondaryButton';
-import { EventType } from '../../types/EventType';
+import ContentBoxWrapper from '../../../components/common/wrappers/ContentBoxWrapper';
+import IconWithText from '../../../components/common/IconWithText';
+import SecondaryButton from '../../../components/common/Buttons/SecondaryButton';
 import {
     CategoryIcon,
     EventIcon,
     LocationIcon,
     PlayCircleIcon,
     WalletIcon
-} from '../common/Icons/StyledIcons';
+} from '../../../components/common/Icons/StyledIcons';
+import { Venue } from '../../types/event';
 
 
 const StyledBox = styled(Box)(({ theme }) => ({
@@ -24,26 +23,38 @@ const StyledBox = styled(Box)(({ theme }) => ({
 }));
 
 interface EventDetailsProps {
-    event: EventType;
+    name: string;
+    category: string;
+    venue: Venue;
+    eventType: string;
+    dateTimeString: string;
+    priceDisplatString: string;
     onBuyClick: () => void;
 }
 
-const EventDetails: React.FC<EventDetailsProps> = ({ event, onBuyClick }) => {
-    const { title, category, startDate, startTime, location, startingPrice } = event;
+const EventDetails: React.FC<EventDetailsProps> = ({
+    name,
+    category,
+    venue,
+    eventType,
+    dateTimeString,
+    priceDisplatString,
+    onBuyClick
+}) => {
     return (
         <ContentBoxWrapper>
             <Box mb={1}>
                 <Typography sx={{ fontWeight: 'bold', fontSize: '21px' }}>
-                    {title}
+                    {name}
                 </Typography>
             </Box>
             <IconWithText icon={CategoryIcon} text={category} />
             <IconWithText
                 icon={EventIcon}
-                text={`${formatDate(startDate)} | ${startTime}`}
+                text={dateTimeString}
             />
-            {event.eventType === 'physical' ? (
-                <IconWithText icon={LocationIcon} text={`${location.venue}, ${location.address.city}`} />
+            {eventType === 'physical' ? (
+                <IconWithText icon={LocationIcon} text={`${venue?.name}, ${venue?.address?.city}`} />
             ) : (
                 <IconWithText icon={PlayCircleIcon} text={'Online'} />
             )}
@@ -51,10 +62,7 @@ const EventDetails: React.FC<EventDetailsProps> = ({ event, onBuyClick }) => {
                 <Box sx={{ display: 'flex', alignItems: "center" }}>
                     <WalletIcon />
                     <Typography sx={{ fontWeight: 'bold', fontSize: '19px', ml: 1 }}>
-                        {event.startingPrice === 'Free'
-                            ? 'FREE'
-                            : `₹${startingPrice}`
-                        }
+                        {priceDisplatString}
                     </Typography>
                 </Box>
                 <SecondaryButton
