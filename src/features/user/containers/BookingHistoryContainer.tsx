@@ -1,5 +1,5 @@
 import Container from '@mui/material/Container';
-import Booking from '../../../components/tickets/Booking';
+import Booking from '../../checkout/components/tickets/Booking';
 
 const containerStyle = {
     justifyContent: 'center',
