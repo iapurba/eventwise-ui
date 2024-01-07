@@ -1,8 +1,8 @@
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import FormHeader from '../../common/FormHeader';
-import StyledTextField from '../../common/StyledTextField';
-import { ContactDetailsType } from '../../../types/UserProfileType';
+import FormHeader from '../../../../components/common/FormHeader';
+import StyledTextField from '../../../../components/common/TextField/StyledTextField';
+import { ContactDetailsType } from '../../../../types/UserProfileType';
 import { ChangeEvent } from 'react';
 
 interface ContactDetailsFormProps {

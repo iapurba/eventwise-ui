@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import UserProfileTabs from '../../components/user/UserProfileTabs';
+import UserProfileTabs from '../components/UserProfileTabs';
 import FavouriteEventsContainer from './FavouriteEventsContainer';
 import EditProfileContainer from './EditProfileContainer';
 import BookingHistoryContainer from './BookingHistoryContainer';
-import UserProfileHeader from '../../components/user/UserProfileHeader';
-import { useGetUserProfile } from '../../features/user/userQuery';
+import UserProfileHeader from '../components/UserProfileHeader';
+import { useGetUserProfile } from '../userQuery';
 import { useDispatch } from 'react-redux';
-import { logoutUser } from '../../features/auth/authSlice';
-import { normalizeUserRtkData } from '../../processors/userProcessor';
+import { logoutUser } from '../../auth/authSlice';
+import { normalizeUserRtkData } from '../../../processors/userProcessor';
 
 interface TabItem {
     label: string;

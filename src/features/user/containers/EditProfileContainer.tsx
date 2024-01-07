@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import Grid from '@mui/material/Grid';
-import ContactDetailsForm from '../../components/user/forms/ContactDetailsForm';
-import DeliveryDetailsForm from '../../components/user/forms/DeliveryDetailsForm';
-import BillingDetailsForm from '../../components/user/forms/BillingDetailsForm';
-import PrimaryButton from '../../components/common/Buttons/PrimaryButton';
-import { UserProfileType } from '../../types/UserProfileType';
-import { useUpdateUserProfile } from '../../features/user/userMutation';
-import { constructUpdateUserJsonPayload } from '../../processors/userProcessor';
-import { getStateNameFromPincode } from '../../utils/pincodeUtils';
+import ContactDetailsForm from '../components/forms/ContactDetailsForm';
+import DeliveryDetailsForm from '../components/forms/DeliveryDetailsForm';
+import BillingDetailsForm from '../components/forms/BillingDetailsForm';
+import PrimaryButton from '../../../components/common/Buttons/PrimaryButton';
+import { UserProfileType } from '../../../types/UserProfileType';
+import { useUpdateUserProfile } from '../userMutation';
+import { constructUpdateUserJsonPayload } from '../../../processors/userProcessor';
+import { getStateNameFromPincode } from '../../../utils/pincodeUtils';
 
 const gridStyle = {
     justifyContent: 'center',

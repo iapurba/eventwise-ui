@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
-import SquareButton from '../common/Buttons/SquareButton';
+import SquareButton from '../../../components/common/Buttons/SquareButton';
 import Typography from '@mui/material/Typography';
 
 const ProfileHeaderWrapper = styled(Box)(() => ({

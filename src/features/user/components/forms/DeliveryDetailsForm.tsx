@@ -1,13 +1,13 @@
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import FormWrapper from '../../common/FormWrapper';
-import StyledTextField from '../../common/StyledTextField';
-import FormHeader from '../../common/FormHeader';
+import FormWrapper from '../../../../components/common/FormWrapper';
+import StyledTextField from '../../../../components/common/TextField/StyledTextField';
+import FormHeader from '../../../../components/common/FormHeader';
 import Radio from '@mui/material/Radio';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import RadioGroup from '@mui/material/RadioGroup';
 import Typography from '@mui/material/Typography';
-import { DeliveryDetailsType } from '../../../types/UserProfileType';
+import { DeliveryDetailsType } from '../../../../types/UserProfileType';
 import { ChangeEvent } from 'react';
 
 interface DeliveryDetailsFormProps {

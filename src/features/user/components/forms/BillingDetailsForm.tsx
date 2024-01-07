@@ -2,11 +2,11 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import FormWrapper from '../../common/FormWrapper';
-import FormHeader from '../../common/FormHeader';
-import StyledTextField from '../../common/StyledTextField';
+import FormWrapper from '../../../../components/common/FormWrapper';
+import FormHeader from '../../../../components/common/FormHeader';
+import StyledTextField from '../../../../components/common/TextField/StyledTextField';
 import Typography from '@mui/material/Typography';
-import { BillingDetailsType } from '../../../types/UserProfileType';
+import { BillingDetailsType } from '../../../../types/UserProfileType';
 import { ChangeEvent } from 'react';
 
 interface BillingDetailsFormProps {
