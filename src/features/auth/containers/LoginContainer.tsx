@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid';
 import OTPLoginContainer from './OTPLoginContainer';
-import SSOLogin from '../../components/auth/SSOLogin';
+import SSOLogin from '../components/SSOLogin';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 

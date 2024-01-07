@@ -8,9 +8,9 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
-import RequestOtpForm from '../../components/auth/Forms/RequestOtpForm';
-import VerifyOtpForm from '../../components/auth/Forms/VerifyOtpForm';
-import ActionButton from '../../components/common/Buttons/ActionButton';
+import RequestOtpForm from '../components/Forms/RequestOtpForm';
+import VerifyOtpForm from '../components/Forms/VerifyOtpForm';
+import ActionButton from '../../../components/common/Buttons/ActionButton';
 
 const StyledModal = styled(Modal)({
     display: 'flex',

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import StyledTextField from "../../common/StyledTextField";
-import PrimaryButton from "../../common/Buttons/PrimaryButton";
-import { useRequestOtpMutation } from "../../../features/auth/authApi";
+import StyledTextField from "../../../../components/common/TextField/StyledTextField";
+import PrimaryButton from "../../../../components/common/Buttons/PrimaryButton";
+import { useRequestOtpMutation } from "../../authApi";
 import Box from "@mui/material/Box";
 
 interface RequestOtpFormProps {

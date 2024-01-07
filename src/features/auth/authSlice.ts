@@ -12,7 +12,7 @@ export interface AuthState {
 const initialState: AuthState = {
     user: null,
     token: '',
-    isLoggedIn: false || (
+    isLoggedIn: true || (
         localStorage.getItem('isLoggedIn') ? true : false
     )
 }

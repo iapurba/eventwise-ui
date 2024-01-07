@@ -1,8 +1,8 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
-import RequestOtpForm from '../../components/auth/Forms/RequestOtpForm';
-import VerifyOtpForm from '../../components/auth/Forms/VerifyOtpForm';
+import RequestOtpForm from '../components/Forms/RequestOtpForm';
+import VerifyOtpForm from '../components/Forms/VerifyOtpForm';
 
 interface OTPLoginContainerProps {
     onLoginSuccess: () => void;
