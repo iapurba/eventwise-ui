@@ -6,13 +6,15 @@ export interface AuthState {
         email: string;
     };
     token: string;
-    isAuthenticated: boolean;
+    isLoggedIn: boolean;
 }
 
 const initialState: AuthState = {
     user: null,
     token: '',
-    isAuthenticated: false,
+    isLoggedIn: true || (
+        localStorage.getItem('isLoggedIn') ? true : false
+    )
 }
 
 const authSlice = createSlice({
@@ -24,12 +26,18 @@ const authSlice = createSlice({
             const { user, token } = action.payload;
             state.user = user;
             state.token = token;
-            state.isAuthenticated = !!action.payload;
+            state.isLoggedIn = !!action.payload;
+            // Save the token in local storage
+            localStorage.setItem('token', token);
+            localStorage.setItem('isLoggedIn', (!!action.payload).toString());
         },
         logoutUser: (state) => {
             state.user = null;
             state.token = '';
-            state.isAuthenticated = false;
+            state.isLoggedIn = false;
+            // Remove the token from local storage on logout
+            localStorage.removeItem('token');
+            localStorage.removeItem('isLoggedIn');
         },
     },
 });

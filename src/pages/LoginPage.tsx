@@ -1,16 +1,11 @@
-import LoginContainer from '../containers/auth/LoginContainer';
+import LoginContainer from '../features/auth/containers/LoginContainer';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
 import { useNavigate } from 'react-router-dom';
+import PageWrapper from '../components/common/wrappers/PageWrapper';
+import PageHeaderText from '../components/common/Typography/PageHeaderText';
+import PageHeaderWrapper from '../components/common/wrappers/PageHeaderWrapper';
 
-const spanTextCss = {
-    fontSize: '26px',
-    fontWeight: 'bold',
-    color: '#00B9F5',
-};
-
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
     const navigate = useNavigate();
 
     const handleLoginSuccess = () => {
@@ -19,33 +14,13 @@ const LoginPage = () => {
     }
 
     return (
-        <Container>
-            <Grid
-                container
-                display="flex"
-                alignItems="center"
-                maxWidth={'800px'}
-                margin={'auto'}
-            >
-                <Grid
-                    item
-                    sx={{
-                        margin: '32px auto',
-                        textAlign: 'center'
-                    }}
-                >
-                    <Typography variant="h5" gutterBottom>
-                        <span style={spanTextCss}>Signup</span>
-                        {' or '}
-                        <span style={spanTextCss}>Login</span>
-                    </Typography>
-                    <Typography>Sign up to purchase tickets, unlock exclusive content, follow your favourite artists & become a valued member of the Eventwise community.</Typography>
-                </Grid>
-                <Grid item m={'auto'}>
-                    <LoginContainer onLoginSuccess={handleLoginSuccess} />
-                </Grid>
-            </Grid>
-        </Container>
+        <PageWrapper id='login-page'>
+            <PageHeaderWrapper>
+                <PageHeaderText>Signup or Login</PageHeaderText>
+                <Typography>Sign up to purchase tickets, unlock exclusive content, follow your favourite artists & become a valued member of the Eventwise community.</Typography>
+            </PageHeaderWrapper>
+            <LoginContainer onLoginSuccess={handleLoginSuccess} />
+        </PageWrapper>
     );
 };
 

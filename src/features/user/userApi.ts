@@ -8,7 +8,7 @@ export const userApi = createApi({
         baseUrl: `${API_CONFIG.baseUrl}`,
         prepareHeaders: (headers, { getState }) => {
             const state = getState() as RootState;
-            const token = state.auth.token;
+            const token = state.auth.token || localStorage.getItem('token');
             if (token) {
                 headers.set('Authorization', `Bearer ${token}`);
             }

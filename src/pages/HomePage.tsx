@@ -1,11 +1,13 @@
-import { Container } from '@mui/material';
-import EventList from '../containers/events/EventList';
+import EventListContainer from '../features/event/containers/EventListContainer';
+import EventFilterPanel from '../features/event/components/EventFilterPanel';
+import PageWrapper from '../components/common/wrappers/PageWrapper';
 
 const HomePage = () => {
     return (
-        <Container disableGutters>
-            <EventList />
-        </Container>
+        <PageWrapper id='home-page'>
+            <EventFilterPanel/>
+            <EventListContainer />
+        </PageWrapper>
     );
 };
 

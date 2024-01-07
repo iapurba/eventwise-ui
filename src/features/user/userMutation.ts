@@ -1,15 +1,15 @@
 import { useUpdateUserProfileMutation } from './userApi';
 
 export const useUpdateUserProfile = () => {
-    const [updateUserProfile, { isLoading, isError, error }] = useUpdateUserProfileMutation();
+    const [updateUser, { isLoading, isError, error }] = useUpdateUserProfileMutation();
 
-    const updateUser = async (userId: string, newData: any) => {
+    const updateUserProfile = async (userId: string, newData: any) => {
         try {
-            await updateUserProfile({ userId, data: newData });
+            await updateUser({ userId, data: newData });
         } catch (error) {
             console.error('Error updating profile:', error);
         }
     };
 
-    return { updateUser, isLoading, isError, error };
+    return { updateUserProfile, isLoading, isError, error };
 };

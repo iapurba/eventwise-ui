@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import ErrorPage from '../pages/ErrorPage';
 import LoginPage from '../pages/LoginPage';
-import UserProfilePage from '../pages/UserProfilePage';
+import ProfilePage from '../pages/ProfilePage';
 import HomePage from '../pages/HomePage';
 import CityRoute from './CityRoute';
 import EventPage from '../pages/EventPage';
@@ -9,10 +9,11 @@ import TicketsPage from '../pages/TicketsPage';
 import CheckoutPage from '../pages/CheckoutPage';
 import SearchPage from '../pages/SearchPage';
 import RootLayout from '../components/layouts/RootLayout';
+import PrivateRoute from './PrivateRoute';
+import PaymentPage from '../pages/PaymentPage';
 
 
 export const router = createBrowserRouter([
-
     {
         path: '/',
         element: <RootLayout />,
@@ -31,11 +32,11 @@ export const router = createBrowserRouter([
                 element: <HomePage />,
             },
             {
-                path: '/events/:eventId',
+                path: '/:slug/event',
                 element: <EventPage />,
             },
             {
-                path: '/buy/events/:eventId/tickets',
+                path: 'event/:slug/buy/:eventId/tickets',
                 element: <TicketsPage />,
             },
             {
@@ -48,11 +49,19 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/users/me',
-                element: <UserProfilePage />,
+                element: <PrivateRoute element={<ProfilePage />}/>,
+            },
+            {
+                path: '/users/me/:tab',
+                element: <PrivateRoute element={<ProfilePage />}/>,
             },
             {
                 path: '/search',
                 element: <SearchPage />,
+            },
+            {
+                path: '/payments/success',
+                element: <PaymentPage/>
             },
             {
                 path: '*',

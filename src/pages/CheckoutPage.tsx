@@ -1,21 +1,21 @@
-import Container from '@mui/material/Container';
-import PageTitleTypography from '../components/common/Typography/PageTitleTypography';
-import CheckoutContainer from '../containers/checkout/CheckoutContainer';
-import PageTitleWrapper from '../components/common/Wrappers/PageTitleWapper';
-
+import PageHeaderText from '../components/common/Typography/PageHeaderText';
+import CheckoutContainer from '../features/checkout/containers/CheckoutContainer';
+import PageHeaderWrapper from '../components/common/wrappers/PageHeaderWrapper';
+import PageWrapper from '../components/common/wrappers/PageWrapper';
+import PaymentMethodContainer from '../features/payment/containers/PaymentMethodContainer';
 
 
 const CheckoutPage = () => {
     return (
-        <Container>
-            <PageTitleWrapper>
-                <PageTitleTypography gutterBottom >
+        <PageWrapper id='checkout-page'>
+            <PageHeaderWrapper pb={3}>
+                <PageHeaderText>
                     {'Confirm your cart details and pay'}
-                </PageTitleTypography>
-            </PageTitleWrapper>
-            <CheckoutContainer />
-        </Container>
-
+                </PageHeaderText>
+            </PageHeaderWrapper>
+            {/* <CheckoutContainer /> */}
+            <PaymentMethodContainer/>
+        </PageWrapper>
     );
 };
 

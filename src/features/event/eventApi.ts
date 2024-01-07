@@ -1,25 +1,25 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { EventType } from '../../types/EventType';
 import API_CONFIG from '../../utils/api/apiConfig';
+import { EventApiResponse, EventBySlugApiResponse } from './types/event';
 
 export const eventApi = createApi({
     reducerPath: 'eventApi',
     baseQuery: fetchBaseQuery({ baseUrl: `${API_CONFIG.baseUrl}/events` }),
     endpoints: (builder) => ({
-        getEvents: builder.query<EventType[], void>({
+        getEvents: builder.query<EventApiResponse, void>({
             query: () => '/'
         }),
-        getEventById: builder.query<any, string>({
-            query: (eventId) => `/${eventId}`
+        getEventBySlug: builder.query<EventBySlugApiResponse, string>({
+            query: (slug) => `bySlug/${slug}`
         }),
-        getEventByCity: builder.query<EventType[], string>({
-            query: (city) => `?location=${city}`
+        getEventByCity: builder.query<EventApiResponse, string>({
+            query: (city) => `/byCity/${city}`
         }),
     }),
 });
 
 export const { 
     useGetEventsQuery, 
-    useGetEventByIdQuery,
+    useGetEventBySlugQuery,
     useGetEventByCityQuery,
 } = eventApi;

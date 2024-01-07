@@ -1,13 +1,13 @@
 import { skipToken } from '@reduxjs/toolkit/dist/query';
-import { useGetEventByIdQuery, useGetEventByCityQuery, useGetEventsQuery } from './eventApi'
+import { useGetEventBySlugQuery, useGetEventByCityQuery, useGetEventsQuery } from './eventApi'
 
 export const useGetAllEvents = () => {
-    const { data: events, error, isLoading } = useGetEventsQuery();
-    return { events, error, isLoading };
+    const { data, error, isLoading } = useGetEventsQuery();
+    return { data, error, isLoading };
 };
 
-export const useGetEvent = (eventId: string) => {
-    const { data: event, error, isLoading } = useGetEventByIdQuery(eventId);
+export const useGetEventBySlug = (eventId: string) => {
+    const { data: event, error, isLoading } = useGetEventBySlugQuery(eventId);
     return { event, error, isLoading };
 };
 

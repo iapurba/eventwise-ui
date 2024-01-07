@@ -3,6 +3,7 @@ import { eventApi } from '../features/event/eventApi';
 import { ticketApi } from '../features/ticket/ticketApi';
 import { authApi } from '../features/auth/authApi';
 import rootReducer from './rootReducer';
+import { userApi } from '../features/user/userApi';
 
 export const store = configureStore({
     reducer: rootReducer,
@@ -11,6 +12,7 @@ export const store = configureStore({
             .concat(eventApi.middleware)
             .concat(ticketApi.middleware)
             .concat(authApi.middleware)
+            .concat(userApi.middleware)
 });
 
 export type RootState = ReturnType<typeof store.getState>;
