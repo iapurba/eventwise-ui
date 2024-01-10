@@ -4,8 +4,8 @@ import PaymentMethodOption from '../components/PaymentMethodOption';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
-import UPIInputTextField from '../../../components/common/TextField/UPIInputTextField';
 import Note from '../../../components/common/Note';
+import CustomTextField from '../../../common/CustomTextField/CustomTextField';
 
 const UPIPaymentContentWrapper = styled(Box)(({ theme }) => ({
     boxShadow: 'none',
@@ -29,7 +29,8 @@ const UPIPaymentContainer = () => {
                     <Note>Important: This is mock payment method. Do not enter real VPA or UPI.</Note>
                     <Grid container spacing={2}>
                         <Grid item sm={12}>
-                            <UPIInputTextField
+                            <CustomTextField
+                                styleType='borderAndLabel'
                                 fullWidth
                                 id="vpa"
                                 name="vpa"
@@ -47,7 +48,8 @@ const UPIPaymentContainer = () => {
                             }}>OR</Typography>
                         </Grid>
                         <Grid item sm={12}>
-                            <UPIInputTextField
+                            <CustomTextField
+                                styleType='borderAndLabel'
                                 fullWidth
                                 id="upi"
                                 name="upi"

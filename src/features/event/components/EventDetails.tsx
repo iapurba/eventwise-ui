@@ -1,7 +1,6 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
-import ContentBoxWrapper from '../../../components/common/wrappers/ContentBoxWrapper';
 import IconWithText from '../../../components/common/IconWithText';
 import SecondaryButton from '../../../components/common/Buttons/SecondaryButton';
 import {
@@ -12,6 +11,7 @@ import {
     WalletIcon
 } from '../../../components/common/Icons/StyledIcons';
 import { Venue } from '../types/event';
+import ContentBoxWrapper from '../../../components/common/wrappers/ContentBoxWrapper';
 
 
 const StyledBox = styled(Box)(({ theme }) => ({

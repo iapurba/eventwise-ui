@@ -1,9 +1,9 @@
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import FormHeader from '../../../../components/common/FormHeader';
-import StyledTextField from '../../../../components/common/TextField/StyledTextField';
 import { ContactDetailsType } from '../../../../types/UserProfileType';
 import { ChangeEvent } from 'react';
+import CustomTextField from '../../../../common/CustomTextField/CustomTextField';
 
 interface ContactDetailsFormProps {
     contactDetails: ContactDetailsType;
@@ -26,7 +26,8 @@ const ContactDetailsForm: React.FC<ContactDetailsFormProps> = ({
             <Box component="form" noValidate sx={{ mt: 1 }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>
-                        <StyledTextField
+                        <CustomTextField
+                            styleType='borderOnly'
                             fullWidth
                             id="firstName"
                             name="firstName"
@@ -38,7 +39,8 @@ const ContactDetailsForm: React.FC<ContactDetailsFormProps> = ({
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <StyledTextField
+                        <CustomTextField
+                            styleType='borderOnly'
                             fullWidth
                             id="lastName"
                             name="lastName"
@@ -50,7 +52,8 @@ const ContactDetailsForm: React.FC<ContactDetailsFormProps> = ({
                         />
                     </Grid>
                     <Grid item xs={12}>
-                        <StyledTextField
+                        <CustomTextField
+                            styleType='borderOnly'
                             fullWidth
                             id="phone"
                             name="phone"
