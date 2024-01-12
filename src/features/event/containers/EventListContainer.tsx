@@ -1,5 +1,5 @@
 import Grid from '@mui/material/Grid';
-import PrimaryEventCard from '../components/PrimaryEventCard';
+import PrimaryEventCard from '../../EventDiscovery/components/PrimaryEventCard/PrimaryEventCard';
 import { useNavigate } from 'react-router-dom';
 import { eventMockData } from '../../../mock/eventMockData';
 import { Event } from '../types/event';
@@ -19,7 +19,14 @@ const EventListContainer: React.FC = () => {
             {events.map((event: Event, index: number) => (
                 <Grid item xs={12} sm={4} md={4} key={index}>
                     <div onClick={() => handleEventClick(event?.slug)}>
-                        <PrimaryEventCard event={event} />
+                        <PrimaryEventCard 
+                            name={event.name}
+                            dateTimeStr={event.dateTimeString}
+                            eventType={event.eventType}
+                            venue={event.venue.name}
+                            city={event.city}
+                            priceDisplayStr={event.priceDisplayString}
+                         />
                     </div>
                 </Grid>
             ))}

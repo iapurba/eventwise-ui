@@ -4,15 +4,15 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import FormWrapper from '../../../../components/common/FormWrapper';
 import FormHeader from '../../../../components/common/FormHeader';
-import StyledTextField from '../../../../components/common/TextField/StyledTextField';
 import Typography from '@mui/material/Typography';
 import { BillingDetailsType } from '../../../../types/UserProfileType';
 import { ChangeEvent } from 'react';
+import CustomTextField from '../../../../common/CustomTextField/CustomTextField';
 
 interface BillingDetailsFormProps {
     billingDetails: BillingDetailsType;
     onInputChange: (field: string, value: string) => void;
-    onUseSameDetails: (isChecked:boolean) => void;
+    onUseSameDetails: (isChecked: boolean) => void;
 };
 
 const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
@@ -45,7 +45,8 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <StyledTextField
+                        <CustomTextField
+                            styleType='borderOnly'
                             required
                             name="pincode"
                             fullWidth
@@ -58,7 +59,8 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <StyledTextField
+                        <CustomTextField
+                            styleType='borderOnly'
                             required
                             fullWidth
                             id="state"

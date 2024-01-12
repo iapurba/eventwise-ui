@@ -1,7 +1,6 @@
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import FormWrapper from '../../../../components/common/FormWrapper';
-import StyledTextField from '../../../../components/common/TextField/StyledTextField';
 import FormHeader from '../../../../components/common/FormHeader';
 import Radio from '@mui/material/Radio';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -9,6 +8,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import Typography from '@mui/material/Typography';
 import { DeliveryDetailsType } from '../../../../types/UserProfileType';
 import { ChangeEvent } from 'react';
+import CustomTextField from '../../../../common/CustomTextField/CustomTextField';
 
 interface DeliveryDetailsFormProps {
     deliveryDetails: DeliveryDetailsType;
@@ -33,7 +33,8 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
             <Box component="form" noValidate sx={{ mt: 2 }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
-                        <StyledTextField
+                        <CustomTextField
+                            styleType='borderOnly'
                             required
                             fullWidth
                             id="addressLine1"
@@ -46,7 +47,8 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                         />
                     </Grid>
                     <Grid item xs={12}>
-                        <StyledTextField
+                        <CustomTextField
+                            styleType='borderOnly'
                             required
                             fullWidth
                             id="addressLine2"
@@ -59,7 +61,8 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <StyledTextField
+                        <CustomTextField
+                            styleType='borderOnly'
                             required
                             fullWidth
                             id="landmark"
@@ -72,7 +75,8 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <StyledTextField
+                        <CustomTextField
+                            styleType='borderOnly'
                             required
                             fullWidth
                             id="city"
@@ -85,7 +89,8 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <StyledTextField
+                        <CustomTextField
+                            styleType='borderOnly'
                             fullWidth
                             id="pincode"
                             name="pincode"
@@ -97,7 +102,8 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <StyledTextField
+                        <CustomTextField
+                            styleType='borderOnly'
                             required
                             fullWidth
                             id="state"

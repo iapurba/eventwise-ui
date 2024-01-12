@@ -5,7 +5,7 @@ import PaymentMethodOption from "../components/PaymentMethodOption";
 import PaymentContentWrapper from "../../../components/common/wrappers/PaymentContentWrapper";
 import Note from "../../../components/common/Note";
 import { styled } from "@mui/material/styles";
-import CardPayInputTextField from "../../../components/common/TextField/CardPayInputTextField";
+import CustomTextField from "../../../common/CustomTextField/CustomTextField";
 
 const CardPaymentContentWrapper = styled(Box)(({ theme }) => ({
     boxShadow: 'none',
@@ -31,14 +31,17 @@ const CardPaymentContainer = () => {
                     <PaymentContentWrapper pb={3}>
                         <Grid container spacing={4}>
                             <Grid item sm={12}>
-                                <CardPayInputTextField
+                                <CustomTextField
+                                    styleType='bottomBorderAndLabel'
                                     fullWidth
                                     label="Card Number"
                                     variant="standard"
+                                    size="medium"
                                 />
                             </Grid>
                             <Grid item sm={6}>
-                                <CardPayInputTextField
+                                <CustomTextField
+                                    styleType='bottomBorderAndLabel'
                                     fullWidth
                                     id="expiry"
                                     label="Expiry / Validity"
@@ -46,7 +49,8 @@ const CardPaymentContainer = () => {
                                 />
                             </Grid>
                             <Grid item sm={6}>
-                                <CardPayInputTextField
+                                <CustomTextField
+                                    styleType='bottomBorderAndLabel'
                                     fullWidth
                                     id="cvv"
                                     label="CVV"
