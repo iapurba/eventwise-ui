@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import CustomTextField from '../CustomTextField';
 
 const meta = {
-  title: 'CustomTextField',
+  title: 'Common/CustomTextField',
   component: CustomTextField,
   parameters: {
     layout: 'centered',
