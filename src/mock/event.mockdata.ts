@@ -5,7 +5,7 @@ export const eventMockData: Event[] = [
         _id: "6588709c35543d885ed456a6",
         name: "Kolkata Music Fest",
         slug: "kolkata-music-fest-jan15-2024-jan17-2024",
-        description: "A fantastic music festival in the heart of Kolkata",
+        description: "<p>Get ready for an unforgettable musical journey as Darshan Raval, the heartthrob of Indian music, embarks on his much-anticipated nationwide tour - This extraordinary concert series promises to be a celebration of love, emotions, and the magic of Darshan Raval's soulful voice.</p><p>The tour kicks off in Surat and will traverse the length and breadth of India, bringing Darshan's chart-topping hits to fans across the country.</p>\n<p>Audiences can expect a visually stunning and immersive experience, with state-of-the-art stage production, lighting, and sound engineering to complement the musical extravaganza. Each concert is meticulously crafted to provide an intimate yet electrifying atmosphere, allowing fans to connect with Darshan Raval on a personal level.</p>",
         category: "Music",
         eventType: "physical",
         city: "Kolkata",

@@ -1,31 +1,22 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
-import IconWithText from '../../../components/common/IconWithText';
-import SecondaryButton from '../../../components/common/Buttons/SecondaryButton';
+import IconWithText from '../../../../components/common/IconWithText';
 import {
     CategoryIcon,
     EventIcon,
     LocationIcon,
     PlayCircleIcon,
     WalletIcon
-} from '../../../components/common/Icons/StyledIcons';
-import { Venue } from '../types/event';
-import ContentBoxWrapper from '../../../components/common/wrappers/ContentBoxWrapper';
+} from '../../../../components/common/Icons/StyledIcons';
+import EventDetailsWrapper, { EventDetailsFooter } from './EventDetails.styles';
+import ButtonOne from '../../../../common/Button/ButtonOne/ButtonOne';
 
-
-const StyledBox = styled(Box)(({ theme }) => ({
-    display: 'flex',
-    justifyContent: 'space-between',
-    fontWeight: 'bold',
-    alignItems: 'center',
-    width: '100%',
-}));
 
 interface EventDetailsProps {
     name: string;
     category: string;
-    venue: Venue;
+    venue: string;
+    city: string;
     eventType: string;
     dateTimeString: string;
     priceDisplatString: string;
@@ -36,42 +27,40 @@ const EventDetails: React.FC<EventDetailsProps> = ({
     name,
     category,
     venue,
+    city,
     eventType,
     dateTimeString,
     priceDisplatString,
     onBuyClick
 }) => {
     return (
-        <ContentBoxWrapper>
+        <EventDetailsWrapper className='event-details'>
             <Box mb={1}>
                 <Typography sx={{ fontWeight: 'bold', fontSize: '21px' }}>
                     {name}
                 </Typography>
             </Box>
             <IconWithText icon={CategoryIcon} text={category} />
-            <IconWithText
-                icon={EventIcon}
-                text={dateTimeString}
-            />
+            <IconWithText icon={EventIcon} text={dateTimeString}/>
             {eventType === 'physical' ? (
-                <IconWithText icon={LocationIcon} text={`${venue?.name}, ${venue?.address?.city}`} />
+                <IconWithText icon={LocationIcon} text={`${venue}, ${city}`} />
             ) : (
                 <IconWithText icon={PlayCircleIcon} text={'Online'} />
             )}
-            <StyledBox mt={1}>
+            <EventDetailsFooter>
                 <Box sx={{ display: 'flex', alignItems: "center" }}>
                     <WalletIcon />
                     <Typography sx={{ fontWeight: 'bold', fontSize: '19px', ml: 1 }}>
                         {priceDisplatString}
                     </Typography>
                 </Box>
-                <SecondaryButton
-                    sx={{ font: 'Roboto Condensed' }}
-                    onClick={onBuyClick}>
-                    {'BUY NOW'}
-                </SecondaryButton>
-            </StyledBox>
-        </ContentBoxWrapper>
+                <ButtonOne
+                    primary={false}
+                    label='buy now'
+                    onClick={onBuyClick}
+                />
+            </EventDetailsFooter>
+        </EventDetailsWrapper>
     );
 }
 
