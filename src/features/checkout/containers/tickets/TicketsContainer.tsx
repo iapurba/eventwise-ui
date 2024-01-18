@@ -3,11 +3,11 @@ import EventBasicInfo from '../../../event/components/EventBasicInfo';
 import { CartItem, addToCart } from '../../../booking/cartSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { eventMockData } from '../../../../mock/eventMockData';
+import { eventMockData } from '../../../../mock/event.mockdata';
 import { useEffect, useState } from 'react';
 import { Event } from '../../../event/types/event';
 import { Typography } from '@mui/material';
-import { ticketsMockData } from '../../../../mock/ticketMockData';
+import { ticketsMockData } from '../../../../mock/ticket.mockdata';
 import { TicketType } from '../../../ticket/types/ticket';
 import TicketList from '../../components/tickets/TicketList';
 

@@ -1,7 +1,7 @@
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import Typography from '@mui/material/Typography';
-import SecondaryButton from '../../../components/common/Buttons/SecondaryButton';
 import Box from '@mui/material/Box';
+import ButtonOne from '../../../common/Button/ButtonOne/ButtonOne';
 
 const PaymentSuccess = () => {
     return (
@@ -27,9 +27,7 @@ const PaymentSuccess = () => {
                     If you could not find an email from purchases@insider.in, check your Spam or Junk email
                 </Typography>
             </Box>
-            <SecondaryButton>
-                View Tickets
-            </SecondaryButton>
+            <ButtonOne label='View Tickets'/>
         </Box>
     );
 };

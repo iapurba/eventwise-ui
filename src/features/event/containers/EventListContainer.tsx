@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
 import PrimaryEventCard from '../../EventDiscovery/components/PrimaryEventCard/PrimaryEventCard';
 import { useNavigate } from 'react-router-dom';
-import { eventMockData } from '../../../mock/eventMockData';
+import { eventMockData } from '../../../mock/event.mockdata';
 import { Event } from '../types/event';
 
 
