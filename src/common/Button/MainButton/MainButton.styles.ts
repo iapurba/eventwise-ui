@@ -1,6 +1,6 @@
 import { Button, styled } from '@mui/material';
 
-const ButtonOneWrapper = styled(Button)(
+const MainButtonWrapper = styled(Button)(
     ({ theme, className }) => ({
         fontSize: '20px',
         color: className?.includes('primary')
@@ -24,4 +24,4 @@ const ButtonOneWrapper = styled(Button)(
         },
     }));
 
-export default ButtonOneWrapper;
+export default MainButtonWrapper;

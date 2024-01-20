@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ButtonOne from '../ButtonOne';
+import MainButton from '../MainButton';
 
 
 const meta = {
-  title: 'Common/ButtonOne',
-  component: ButtonOne,
+  title: 'Common/Button/Main Button',
+  component: MainButton,
   parameters: {
     layout: 'centered',
   },
@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     // backgroundColor: { control: 'color' },
   },
-} satisfies Meta<typeof ButtonOne>;
+} satisfies Meta<typeof MainButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

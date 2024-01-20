@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import ButtonOneWrapper from "./ButtonOne.styles";
+import MainButtonWrapper from "./MainButton.styles";
 
-interface ButtonOneProps {
+interface MainButtonProps {
     primary?: boolean;
     size?: 'small' | 'medium' | 'large';
     label: string;
@@ -9,21 +9,21 @@ interface ButtonOneProps {
     onClick?: () => void;
 }
 
-const ButtonOne = ({
+const MainButton = ({
     primary = true,
     children,
     label,
     onClick,
     ...props
-}: ButtonOneProps) => {
+}: MainButtonProps) => {
     return (
-        <ButtonOneWrapper
+        <MainButtonWrapper
             className={primary ? 'primary' : 'secondary'}
             onClick={onClick}
             {...props}
         >{label}
-        </ButtonOneWrapper>
+        </MainButtonWrapper>
     );
 };
 
-export default ButtonOne;
+export default MainButton;
