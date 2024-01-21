@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
-import ButtonOne from '../../../common/Button/ButtonOne/ButtonOne';
+import ButtonOne from '../../../common/Button/MainButton/MainButton';
 
 const PaymentFailure = () => {
     return (

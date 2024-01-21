@@ -1,4 +1,5 @@
-import { UserProfileType } from "../types/UserProfileType";
+import { UserProfileType } from "../features/UserProfile/types/userProfile.types";
+
 
 export const normalizeUserRtkData = (rtkData: any) => {
     const userObj = {

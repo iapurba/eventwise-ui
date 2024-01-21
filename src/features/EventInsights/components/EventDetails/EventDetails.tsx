@@ -9,7 +9,7 @@ import {
     WalletIcon
 } from '../../../../components/common/Icons/StyledIcons';
 import EventDetailsWrapper, { EventDetailsFooter } from './EventDetails.styles';
-import ButtonOne from '../../../../common/Button/ButtonOne/ButtonOne';
+import ButtonOne from '../../../../common/Button/MainButton/MainButton';
 
 
 interface EventDetailsProps {

@@ -1,7 +1,7 @@
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import ButtonOne from '../../../common/Button/ButtonOne/ButtonOne';
+import ButtonOne from '../../../common/Button/MainButton/MainButton';
 
 const PaymentSuccess = () => {
     return (

@@ -3,7 +3,7 @@ import { eventApi } from '../features/event/eventApi';
 import { ticketApi } from '../features/ticket/ticketApi';
 import { authApi } from '../features/auth/authApi';
 import rootReducer from './rootReducer';
-import { userApi } from '../features/user/userApi';
+import { userApi } from '../features/UserProfile/userApi';
 
 export const store = configureStore({
     reducer: rootReducer,
