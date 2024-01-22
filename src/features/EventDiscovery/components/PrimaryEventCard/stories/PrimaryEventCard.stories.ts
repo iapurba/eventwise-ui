@@ -1,13 +1,10 @@
 import { StoryObj, Meta } from '@storybook/react';
-
 import PrimaryEventCard from '../PrimaryEventCard';
 
 const meta = {
-    title: 'PrimaryEventCard',
+    title: 'Event Discovery/Primary Event Card',
     component: PrimaryEventCard,
-    args: {
-
-    }
+    args: {},
 } satisfies Meta<typeof PrimaryEventCard>;
 
 export default meta;

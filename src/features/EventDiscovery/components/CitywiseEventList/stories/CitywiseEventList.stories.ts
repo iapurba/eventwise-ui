@@ -3,7 +3,7 @@ import CitywiseEventList from '../CitywiseEventList';
 import { CITYWISE_EVENT_MOCK } from '../CitywiseEventList.mockdata';
 
 const meta = {
-    title: 'Events in City',
+    title: 'Event Discovery/Events in City',
     component: CitywiseEventList,
     args: {
         events: CITYWISE_EVENT_MOCK
