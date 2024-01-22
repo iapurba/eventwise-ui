@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import StyledTextField from "../../../../components/common/TextField/StyledTextField";
 import PrimaryButton from "../../../../components/common/Buttons/PrimaryButton";
 import { useRequestOtpMutation } from "../../authApi";
 import Box from "@mui/material/Box";
+import CustomTextField from "../../../../common/CustomTextField/CustomTextField";
 
 interface RequestOtpFormProps {
     onSuccess: (email:string) => void;
@@ -20,7 +20,8 @@ const RequestOtpForm: React.FC<RequestOtpFormProps> = ({ onSuccess }) => {
 
     return (
         <Box component="form" display="flex" flexDirection="column">
-            <StyledTextField
+            <CustomTextField
+                styleType='borderOnly'
                 required
                 fullWidth
                 id="email"

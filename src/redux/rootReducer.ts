@@ -1,10 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { eventApi } from '../features/event/eventApi';
+import { eventApi } from '../features/EventDiscovery/eventApi';
 import { ticketApi } from '../features/ticket/ticketApi';
 import { authApi } from '../features/auth/authApi';
 import authReducer from '../features/auth/authSlice';
-import cartReducer from '../features/booking/cartSlice';
-import { userApi } from '../features/user/userApi';
+import cartReducer from '../features/checkout/cartSlice';
+import { userApi } from '../features/UserProfile/userApi';
 
 const rootReducer = combineReducers({
     [eventApi.reducerPath]: eventApi.reducer,

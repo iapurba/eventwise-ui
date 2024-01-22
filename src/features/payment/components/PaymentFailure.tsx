@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
-import SecondaryButton from '../../../components/common/Buttons/SecondaryButton';
 import Box from '@mui/material/Box';
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
+import ButtonOne from '../../../common/Button/MainButton/MainButton';
 
 const PaymentFailure = () => {
     return (
@@ -22,9 +22,7 @@ const PaymentFailure = () => {
             }}>
                 Oh no, payment failed
             </Typography>
-            <SecondaryButton>
-                Continue Shopping
-            </SecondaryButton>
+            <ButtonOne label='Continue Shopping'/>
         </Box>
     );
 };

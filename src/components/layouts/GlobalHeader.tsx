@@ -15,7 +15,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import CircularIconButton from '../common/Buttons/CircularIconButton';
 import MenuButton from '../common/Buttons/MenuButton';
-import BgLetterAvatar from '../../features/user/components/BgLetterAvatar';
+import BgLetterAvatar from '../../common/BgLetterAvatar';
 
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
