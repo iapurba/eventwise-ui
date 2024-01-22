@@ -1,8 +1,8 @@
 import Grid from '@mui/material/Grid';
-import PrimaryEventCard from '../../EventDiscovery/components/PrimaryEventCard/PrimaryEventCard';
+import PrimaryEventCard from '../components/PrimaryEventCard/PrimaryEventCard';
 import { useNavigate } from 'react-router-dom';
 import { eventMockData } from '../../../mock/event.mockdata';
-import { Event } from '../types/event';
+import { Event } from '../types/event.type';
 
 
 const EventListContainer: React.FC = () => {

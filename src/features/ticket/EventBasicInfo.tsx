@@ -1,7 +1,7 @@
 import React from "react";
-import PageHeaderText from "../../../components/common/Typography/PageHeaderText";
+import PageHeaderText from "../../components/common/Typography/PageHeaderText";
 import Typography from "@mui/material/Typography";
-import PageHeaderWrapper from "../../../components/common/wrappers/PageHeaderWrapper";
+import PageHeaderWrapper from "../../components/common/wrappers/PageHeaderWrapper";
 
 interface EventBasicInfoProps {
     name: string;

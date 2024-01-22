@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import API_CONFIG from '../../utils/api/apiConfig';
-import { EventApiResponse, EventBySlugApiResponse } from './types/event';
+import { EventApiResponse, EventBySlugApiResponse } from './types/event.type';
 
 export const eventApi = createApi({
     reducerPath: 'eventApi',

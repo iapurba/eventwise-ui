@@ -3,10 +3,10 @@ import Grid from '@mui/material/Grid';
 // import { useGetEventBySlug } from '../../features/event/eventQuery';
 import { useNavigate } from 'react-router-dom';
 import { eventMockData } from '../../../mock/event.mockdata';
-import EventDetails from '../../EventInsights/components/EventDetails/EventDetails';
-import EventGuide from '../../EventInsights/components/EventGuide/EventGuide';
-import EventPoster from '../../EventInsights/components/EventPoster/EventPoster';
-import EventOverview from '../../EventInsights/components/EventOverview/EventOverview';
+import EventDetails from '../components/EventDetails/EventDetails';
+import EventGuide from '../components/EventGuide/EventGuide';
+import EventPoster from '../components/EventPoster/EventPoster';
+import EventOverview from '../components/EventOverview/EventOverview';
 
 interface EventDisplayContainerProps {
     slug: string;
