@@ -9,7 +9,7 @@ import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { formatToMonthDayString } from '../../../utils/dateTimeFormatter';
-import { CartItem } from '../../booking/cartSlice';
+import { CartItem } from '../cartSlice';
 
 const StyledBox = styled(Box)(({ theme }) => ({
     borderBottom: '1px dashed #D0D0D0',

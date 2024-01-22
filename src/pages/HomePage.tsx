@@ -1,6 +1,6 @@
-import EventListContainer from '../features/event/containers/EventListContainer';
-import EventFilterPanel from '../features/event/components/EventFilterPanel';
+import EventListContainer from '../features/EventDiscovery/containers/EventListContainer';
 import PageWrapper from '../components/common/wrappers/PageWrapper';
+import EventFilterPanel from '../features/EventDiscovery/components/EventFilterPanel/EventFilterPanel';
 
 const HomePage = () => {
     return (

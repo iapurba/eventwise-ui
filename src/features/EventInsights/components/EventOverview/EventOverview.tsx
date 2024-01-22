@@ -1,9 +1,9 @@
-import { Faq } from '../../../event/types/event';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Terms from './Terms';
 import FAQs from './FAQs';
 import {EventOverviewHeader} from './EventOverview.styles';
+import { Faq } from '../../../EventDiscovery/types/event.type';
 
 interface EventOverviewProps {
     description: string;

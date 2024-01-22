@@ -1,6 +1,6 @@
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
-import { Faq } from "../../../event/types/event";
+import { Faq } from "../../../EventDiscovery/types/event.type";
 
 interface FAQsProps {
     faqs: Faq[];

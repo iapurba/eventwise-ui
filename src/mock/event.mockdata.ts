@@ -1,4 +1,4 @@
-import { Event } from "../features/event/types/event";
+import { Event } from "../features/EventDiscovery/types/event.type";
 
 export const eventMockData: Event[] = [
     {

@@ -1,5 +1,5 @@
 import PageWrapper from '../components/common/wrappers/PageWrapper';
-import EventDisplayContainer from '../features/event/containers/EventDisplayContainer';
+import EventDisplayContainer from '../features/EventInsights/containers/EventDisplayContainer';
 import { useParams } from 'react-router-dom';
 
 const EventPage = () => {
