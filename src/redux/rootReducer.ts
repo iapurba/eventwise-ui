@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { eventApi } from '../features/EventDiscovery/eventApi';
-import { ticketApi } from '../features/ticket/ticketApi';
+import { ticketApi } from '../features/EventTickets/ticketApi';
 import { authApi } from '../features/auth/authApi';
 import authReducer from '../features/auth/authSlice';
 import cartReducer from '../features/checkout/cartSlice';

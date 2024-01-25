@@ -1,47 +1,19 @@
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
-import TicketQtySelect from '../forms/TicketQtySelect';
+import TicketQtySelect from './Forms/TicketQtySelect';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { useState } from 'react';
 import ErrorTypography from '../../../../components/common/Typography/ErrorTypography';
-
-const BuyButton = styled(Button)(({ theme }) => ({
-    padding: '6px 24px',
-    marginTop: theme.spacing(1),
-    backgroundColor: '#3695D8',
-    borderRadius: '2px',
-    boxShadow: 'none',
-    '&:hover': {
-        backgroundColor: '#3695D8',
-    }
-}));
-
-const StyledBox = styled(Box)(() => ({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end'
-}));
-
-const TicketWrapper = styled(Box)(() => ({
-    borderBottom: '1px solid rgb(225, 227, 230)',
-}));
-
-const customTextSx = {
-    fontSize: '16px',
-    marginTop: '8px',
-    fontStyle: 'italic',
-    textAlign: 'right'
-};
+import { TicketContentWrapper, TicketWrapper, customTextSx } from './Ticket.styles';
+import TicketButton from '../../../../common/Button/TicketButton/TicketButton';
 
 interface TicketProps {
     ticketDetails: {
         ticketType: string;
         description: string;
         price: number;
+        priceDisplayString: string;
         maxOrderQty: number;
         isAvailable: boolean;
         extraInfo?: string;
@@ -77,7 +49,7 @@ const Ticket: React.FC<TicketProps> = ({
     };
 
     return (
-        <TicketWrapper>
+        <TicketWrapper className='event-ticket'>
             <Grid container spacing={2} p={3}>
                 <Grid item xs={12} md={8}>
                     <Stack direction="row" spacing={3} alignItems="center">
@@ -88,7 +60,7 @@ const Ticket: React.FC<TicketProps> = ({
                             <Chip
                                 label={ticketDetails?.extraInfo}
                                 size="small"
-                                sx={{ background: '#F9E79F' }}
+                                sx={{ color: '#F05B2B', background: '#FDEFEA' }}
                             />
                         }
                     </Stack>
@@ -99,22 +71,20 @@ const Ticket: React.FC<TicketProps> = ({
                 <Grid item xs={12} md={4}>
                     {ticketDetails?.isAvailable ?
                         <>
-                            <StyledBox mb={1}>
-                                <Typography variant="subtitle1">₹ {` ${ticketDetails?.price} × `}</Typography>
+                            <TicketContentWrapper mb={1}>
+                                <Typography variant="subtitle1">{`${ticketDetails?.priceDisplayString} × `}</Typography>
                                 {/* Select Dropdown */}
                                 <TicketQtySelect
                                     maxQty={ticketDetails?.maxOrderQty}
                                     onValueChange={handleQuantityChange}
                                 />
-                            </StyledBox>
-                            <StyledBox>
-                                <BuyButton
-                                    variant="contained"
+                            </TicketContentWrapper>
+                            <TicketContentWrapper>
+                                <TicketButton
+                                    label='Buy'
                                     onClick={handleBuyClickChild}
-                                >
-                                    Buy
-                                </BuyButton>
-                            </StyledBox>
+                                />
+                            </TicketContentWrapper>
 
                             {quantity ?
                                 (<Typography sx={customTextSx}>
@@ -127,9 +97,12 @@ const Ticket: React.FC<TicketProps> = ({
                                 ))}
                         </>
                         : (
-                            <StyledBox>
-                                <Button variant="contained" disabled>SOLD OUT</Button>
-                            </StyledBox>
+                            <TicketContentWrapper>
+                                <TicketButton
+                                    label='Sold Out'
+                                    disabled={true}
+                                />
+                            </TicketContentWrapper>
                         )}
                 </Grid>
             </Grid>

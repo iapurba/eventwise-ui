@@ -1,5 +1,5 @@
 import PageWrapper from '../components/common/wrappers/PageWrapper';
-import TicketsContainer from '../features/checkout/containers/tickets/TicketsContainer';
+import TicketsContainer from '../features/EventTickets/containers/TicketsContainer';
 import { useParams } from 'react-router-dom';
 
 const TicketsPage = () => {
