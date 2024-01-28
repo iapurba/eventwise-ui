@@ -1,4 +1,4 @@
-import LoginContainer from '../features/auth/containers/LoginContainer';
+import LoginContainer from '../features/Authentication/containers/LoginContainer';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
 import PageWrapper from '../components/common/wrappers/PageWrapper';
