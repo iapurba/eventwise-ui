@@ -10,7 +10,7 @@ import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownR
 import Box from '@mui/material/Box';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import LoginModal from '../../features/auth/containers/LoginModal';
+import LoginModal from '../../features/Authentication/containers/LoginModal';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import CircularIconButton from '../common/Buttons/CircularIconButton';

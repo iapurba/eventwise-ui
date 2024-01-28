@@ -7,6 +7,7 @@ interface TicketItem {
     maxOrderQty: number;
     isAvailable: boolean;
     extraInfo?: string;
+    priceDisplayString: string;
 }
 
 interface TicketListProps {
@@ -32,6 +33,7 @@ const TicketList: React.FC<TicketListProps> = ({
                     description: ticket?.description,
                     maxOrderQty: ticket?.maxOrderQty,
                     isAvailable: ticket?.isAvailable,
+                    priceDisplayString: ticket?.priceDisplayString
                 }}
                 onQunatityChange={() => ({})}
                 onBuyClick={onBuyClick}

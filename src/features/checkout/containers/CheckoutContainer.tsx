@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import LoginContainer from '../../auth/containers/LoginContainer';
+import LoginContainer from '../../Authentication/containers/LoginContainer';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import TicketDetailsForm from '../forms/TicketDetailsForm';

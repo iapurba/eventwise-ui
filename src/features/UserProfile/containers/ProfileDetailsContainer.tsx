@@ -6,7 +6,7 @@ import EditProfileContainer from './EditProfileContainer';
 import BookingHistoryContainer from './BookingHistoryContainer';
 import { useGetUserProfile } from '../userQuery';
 import { useDispatch } from 'react-redux';
-import { logoutUser } from '../../auth/authSlice';
+import { logoutUser } from '../../Authentication/authSlice';
 import { normalizeUserRtkData } from '../../../processors/userProcessor';
 import UserProfileHeader from '../components/UserProfileHeader/UserProfileHeader';
 

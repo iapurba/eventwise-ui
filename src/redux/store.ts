@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { eventApi } from '../features/EventDiscovery/eventApi';
 import { ticketApi } from '../features/EventTickets/ticketApi';
-import { authApi } from '../features/auth/authApi';
+import { authApi } from '../features/Authentication/authApi';
 import rootReducer from './rootReducer';
 import { userApi } from '../features/UserProfile/userApi';
 
