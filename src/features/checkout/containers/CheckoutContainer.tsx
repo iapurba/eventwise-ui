@@ -5,12 +5,12 @@ import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import TicketDetailsForm from '../forms/TicketDetailsForm';
 import OrderSummaryContainer from './OrderSummaryContainer';
-import PrimaryButton from '../../../components/common/Buttons/PrimaryButton';
 import { useState } from 'react';
 import { AddIcon, RemoveIcon } from '../../../components/common/Icons/StyledIcons';
 import { styled } from '@mui/material/styles';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
+import MainButton from '../../../common/Button/MainButton/MainButton';
 
 const gridStyle = {
     justifyContent: 'center',
@@ -96,7 +96,10 @@ const CheckoutContainer = () => {
                                     {`Please note you won't lose the items in your cart if you sign out.`}
                                 </Typography>
                                 <Box pt={2}>
-                                    <PrimaryButton onClick={handleOrderSummaryExpanded}>CONTINUE</PrimaryButton>
+                                    <MainButton
+                                        label='CONTINUE'
+                                        onClick={handleOrderSummaryExpanded}
+                                    />
                                 </Box>
                             </Box>
                         }
@@ -113,7 +116,7 @@ const CheckoutContainer = () => {
                                 </Typography>
                             </Box>
                             <Box pt={1}>
-                                <LoginContainer onLoginSuccess={handleOrderSummaryExpanded}/>
+                                <LoginContainer onLoginSuccess={handleOrderSummaryExpanded} />
                             </Box>
                         </Box>
                     </Grid>
@@ -144,9 +147,12 @@ const CheckoutContainer = () => {
                 </div>
                 {orderSummaryExpanded && (
                     <Box sx={{ padding: '8px 16px 40px 24px' }}>
-                        <OrderSummaryContainer cartItems={cartData}/>
+                        <OrderSummaryContainer cartItems={cartData} />
                         <Box pt={1} display="flex" justifyContent="center">
-                            <PrimaryButton onClick={handlerTicketDetailsExpanded}>CONTINUE</PrimaryButton>
+                            <MainButton
+                                label='CONTINUE'
+                                onClick={handlerTicketDetailsExpanded}
+                            />
                         </Box>
                     </Box>
                 )}
@@ -175,7 +181,7 @@ const CheckoutContainer = () => {
                             <TicketDetailsForm />
                         </StyledBox>
                         <Box pt={2} display="flex" justifyContent="center">
-                            <PrimaryButton>CONTINUE</PrimaryButton>
+                            <MainButton label='CONTINUE' />
                         </Box>
                     </Box>
                 )}

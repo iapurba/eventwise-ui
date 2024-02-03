@@ -1,11 +1,11 @@
 import React, { useState, useRef, ChangeEvent, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
-import PrimaryButton from '../../../../../components/common/Buttons/PrimaryButton';
 import { loginUser } from '../../../authSlice';
 import { useDispatch } from 'react-redux';
 import { useVerifyOtpMutation } from '../../../authApi';
 import Box from '@mui/material/Box';
+import MainButton from '../../../../../common/Button/MainButton/MainButton';
 
 const OTPDigitInput = styled(TextField)({
     margin: '0 5px',
@@ -92,14 +92,13 @@ const VerifyOtpForm: React.FC<VerifyOtpFormProps> = ({ email, onSuccess }) => {
                     />
                 ))}
             </Box>
-            <PrimaryButton
+            <MainButton
                 fullWidth
                 sx={{ mt: 2, p: 3, width: '100%' }}
+                label='Log in'
                 onClick={handleLogin}
                 disabled={otp.join('').length !== 6}
-            >
-                Log in
-            </PrimaryButton>
+            />
         </Box>
     );
 };

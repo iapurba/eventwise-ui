@@ -1,12 +1,13 @@
 import { ReactNode } from "react";
 import MainButtonWrapper from "./MainButton.styles";
+import { ButtonProps } from "@mui/material";
 
-interface MainButtonProps {
+interface MainButtonProps extends ButtonProps {
     primary?: boolean;
     size?: 'small' | 'medium' | 'large';
     label: string;
     children?: ReactNode;
-    onClick?: () => void;
+    onClick?: any;
 }
 
 const MainButton = ({

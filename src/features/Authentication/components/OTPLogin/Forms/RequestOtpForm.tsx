@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import PrimaryButton from "../../../../../components/common/Buttons/PrimaryButton";
 import { useRequestOtpMutation } from "../../../authApi";
 import Box from "@mui/material/Box";
 import CustomTextField from "../../../../../common/CustomTextField/CustomTextField";
+import MainButton from "../../../../../common/Button/MainButton/MainButton";
 
 interface RequestOtpFormProps {
-    onSuccess: (email:string) => void;
+    onSuccess: (email: string) => void;
 }
 
 const RequestOtpForm: React.FC<RequestOtpFormProps> = ({ onSuccess }) => {
@@ -33,13 +33,12 @@ const RequestOtpForm: React.FC<RequestOtpFormProps> = ({ onSuccess }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 autoFocus={true}
             />
-            <PrimaryButton
+            <MainButton
                 sx={{ mt: 2, p: 3 }}
+                label='CONTINUE'
                 onClick={handleSubmit}
                 disabled={isLoading}
-            >
-                CONTINUE
-            </PrimaryButton>
+            />
         </Box>
     );
 };
