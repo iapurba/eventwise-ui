@@ -3,7 +3,7 @@ import { eventApi } from '../features/EventDiscovery/eventApi';
 import { ticketApi } from '../features/EventTickets/ticketApi';
 import { authApi } from '../features/Authentication/authApi';
 import authReducer from '../features/Authentication/authSlice';
-import cartReducer from '../features/checkout/cartSlice';
+import cartReducer from '../features/Checkout/cartSlice';
 import { userApi } from '../features/UserProfile/userApi';
 
 const rootReducer = combineReducers({

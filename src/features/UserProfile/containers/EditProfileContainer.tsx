@@ -3,11 +3,11 @@ import Grid from '@mui/material/Grid';
 import ContactDetailsForm from '../components/EditProfile/Forms/ContactDetailsForm';
 import DeliveryDetailsForm from '../components/EditProfile/Forms/DeliveryDetailsForm';
 import BillingDetailsForm from '../components/EditProfile/Forms/BillingDetailsForm';
-import PrimaryButton from '../../../components/common/Buttons/PrimaryButton';
 import { useUpdateUserProfile } from '../userMutation';
 import { constructUpdateUserJsonPayload } from '../../../processors/userProcessor';
 import { getStateNameFromPincode } from '../../../utils/pincodeUtils';
 import { UserProfileType } from '../types/userProfile.types';
+import MainButton from '../../../common/Button/MainButton/MainButton';
 
 const gridStyle = {
     justifyContent: 'center',
@@ -151,7 +151,10 @@ const EditProfileContainer: React.FC<EditProfileProps> = ({ initialProfile }) =>
                 />
             </Grid>
             <Grid item mt={2}>
-                <PrimaryButton onClick={handleProfileUpdate}>UPDATE</PrimaryButton>
+                <MainButton
+                    label='UPDATE'
+                    onClick={handleProfileUpdate}
+                />
             </Grid>
         </Grid>
     );

@@ -4,7 +4,7 @@ import TicketQtySelect from './Forms/TicketQtySelect';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { useState } from 'react';
-import ErrorTypography from '../../../../components/common/Typography/ErrorTypography';
+import ErrorTypography from '../../../../common/Typography/ErrorTypography';
 import { TicketContentWrapper, TicketWrapper, customTextSx } from './Ticket.styles';
 import TicketButton from '../../../../common/Button/TicketButton/TicketButton';
 

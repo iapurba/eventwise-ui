@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import EventBasicInfo from '../components/EventBasicInfo/EventBasicInfo';
-import { CartItem, addToCart } from '../../checkout/cartSlice';
+import { CartItem, addToCart } from '../../Checkout/cartSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { eventMockData } from '../../../mock/event.mockdata';

@@ -1,7 +1,6 @@
 import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
+import { CustomTab } from './UserProfileTabs.styles';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -22,16 +21,6 @@ const CustomTabPanel = (props: TabPanelProps) => {
         </div>
     );
 }
-
-const CustomTab = styled(Tab)(({ theme }) => ({
-    textTransform: 'capitalize',
-    fontWeight: 'bold',
-    fontSize: '16px',
-    padding: theme.spacing(2),
-    '&.Mui-selected': {
-        color: '#0D0F13',
-    },
-}));
 
 interface TabItem {
     label: string;

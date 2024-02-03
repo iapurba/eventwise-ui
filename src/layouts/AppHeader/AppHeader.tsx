@@ -10,7 +10,7 @@ import { useState } from 'react';
 import LoginModal from '../../features/Authentication/containers/LoginModal';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import BgLetterAvatar from '../../common/BgLetterAvatar';
+import NameAvatar from '../../common/NameAvatar/NameAvatar';
 import HeaderButton from '../../common/Button/HeaderButton/HeaderButton';
 import { AppHeaderContentWrapper, AppHeaderWrapper } from './AppHeader.styles';
 
@@ -71,7 +71,7 @@ const AppHeader: React.FC = () => {
                     />
                     {/* User Profile Menu  */}
                     {isLoggedIn ? (
-                        <BgLetterAvatar
+                        <NameAvatar
                             name={'Apurba Panja'}
                             onClick={() => { navigate('/users/me') }}
                         />

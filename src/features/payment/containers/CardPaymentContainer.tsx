@@ -1,9 +1,8 @@
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import PayButton from "../../../components/common/Buttons/PayButton";
-import PaymentMethodOption from "../components/PaymentMethodOption";
-import PaymentContentWrapper from "../../../components/common/wrappers/PaymentContentWrapper";
-import Note from "../../../components/common/Note";
+import PayButton from "../components/PayButton/PayButton";
+import PaymentMethodOption from "../components/PaymentMethodOption/PaymentMethodOption";
+import Note from "../../../common/Note/Note";
 import { styled } from "@mui/material/styles";
 import CustomTextField from "../../../common/CustomTextField/CustomTextField";
 
@@ -12,6 +11,14 @@ const CardPaymentContentWrapper = styled(Box)(({ theme }) => ({
     border: '1px solid rgb(240, 241, 242)',
     borderRadius: theme.spacing(1.5),
     padding: '0 18px 24px',
+    margin: '0 0 18px',
+}));
+
+const PaymentContentWrapper = styled(Box)(({ theme }) => ({
+    boxShadow: 'none',
+    border: '1px solid rgb(240, 241, 242)',
+    borderRadius: theme.spacing(1.5),
+    padding: '18px 9px',
     margin: '0 0 18px',
 }));
 
@@ -61,7 +68,7 @@ const CardPaymentContainer = () => {
                     </PaymentContentWrapper>
                 </CardPaymentContentWrapper>
                 <Box sx={{ padding: '12px 0px' }}>
-                    <PayButton>{`Pay ₹100.00`}</PayButton>
+                    <PayButton label={`Pay ₹100.00`} />
                 </Box>
             </PaymentMethodOption>
         </>

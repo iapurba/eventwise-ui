@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import UserProfileTabs from '../components/UserProfileTabs';
+import UserProfileTabs from '../components/UserProfileTabs/UserProfileTabs';
 import FavouriteEventsContainer from './FavouriteEventsContainer';
 import EditProfileContainer from './EditProfileContainer';
 import BookingHistoryContainer from './BookingHistoryContainer';
@@ -96,7 +96,8 @@ const ProfileDetailsContainer: React.FC = () => {
                         onTabChange={handleRouteFromTabChange}
                     />
                 </>
-            }</div>
+            }
+        </div>
     );
 };
 

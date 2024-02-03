@@ -5,7 +5,7 @@ import EventGuideWrapper, {
     EventGuideHeader,
     EventGuideItemWrapper, StyledText1, StyledText2
 } from './EventGuide.styles';
-import CustomAgeIcon from '../../../../components/common/Icons/CustomAgeIcon';
+import CustomAgeIcon from '../../../../common/StyledIcons/CustomAgeIcon';
 import { ExtraInfo } from '../../types/extraInfo.types';
 
 interface EventGuideProps {

@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import TicketDetailsForm from '../forms/TicketDetailsForm';
 import OrderSummaryContainer from './OrderSummaryContainer';
 import { useState } from 'react';
-import { AddIcon, RemoveIcon } from '../../../components/common/Icons/StyledIcons';
+import { AddIcon, RemoveIcon } from '../../../common/StyledIcons/StyledIcons';
 import { styled } from '@mui/material/styles';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';

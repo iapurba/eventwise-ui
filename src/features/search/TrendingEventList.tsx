@@ -1,5 +1,5 @@
 import { Box, Divider, Typography } from '@mui/material';
-import { TrendingIcon } from '../../components/common/Icons/StyledIcons';
+import { TrendingIcon } from '../../common/StyledIcons/StyledIcons';
 
 
 const TrendingEventList = () => {

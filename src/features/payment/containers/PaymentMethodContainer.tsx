@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import CardPaymentContainer from './CardPaymentContainer';
-import PaymentOrderSummary from '../components/PaymentOrderSummary';
+import PaymentOrderSummary from '../components/PaymentOrderSummary/PaymentOrderSummary';
 import { styled } from '@mui/material/styles';
 import UPIPaymentContainer from './UPIPaymentContainer';
 

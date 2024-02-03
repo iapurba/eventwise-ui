@@ -1,4 +1,4 @@
-import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 import BookingHistory from '../components/BookingHistory/BookingHistory';
 
 const customStyles = {
@@ -10,12 +10,12 @@ const customStyles = {
 
 const BookingHistoryContainer: React.FC = () => {
     return (
-        <Container
+        <Box
             sx={customStyles}
             className='booking-history-container'
         >
             <BookingHistory />
-        </Container>
+        </Box>
     );
 };
 

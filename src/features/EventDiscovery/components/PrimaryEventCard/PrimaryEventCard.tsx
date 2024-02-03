@@ -1,11 +1,11 @@
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import Box from '@mui/material/Box';
-import EllipsisTypography from '../../../../components/common/Typography/EllipsisTypography';
-import { EventIcon, LocationIcon, PlayCircleIcon } from '../../../../components/common/Icons/StyledIcons';
-import { PrimaryEventCardText, PrimaryEventCardWrapper } from './PrimaryEventCard.styles';
+import EllipsisTypography from '../../../../common/Typography/EllipsisTypography';
+import { EventIcon, LocationIcon, PlayCircleIcon } from '../../../../common/StyledIcons/StyledIcons';
+import { PrimaryEventCardWrapper } from './PrimaryEventCard.styles';
 import EventCardFooter from '../EventCardFooter/EventCardFooter';
+import IconTextPair from '../../../../common/IconTextPair/IconTextPair';
 
 export interface PrimaryEventCardProps {
     name: string;
@@ -34,31 +34,26 @@ const PrimaryEventCard: React.FC<PrimaryEventCardProps> = ({
                 <EllipsisTypography gutterBottom>
                     {name}
                 </EllipsisTypography>
-                <Box display="flex" alignItems="center" mb={1}>
-                    <EventIcon />
-                    <PrimaryEventCardText>
-                        {dateTimeStr}
-                    </PrimaryEventCardText>
-                </Box>
-                <Box display="flex" alignItems="center">
-                    {
-                        eventType === 'physical' ? (
-                            <>
-                                <LocationIcon />
-                                <PrimaryEventCardText>
-                                    {`${venue}, ${city}`}
-                                </PrimaryEventCardText>
-                            </>
-                        ) : (
-                            <>
-                                <PlayCircleIcon />
-                                <PrimaryEventCardText>
-                                    Online
-                                </PrimaryEventCardText>
-                            </>
-                        )}
-
-                </Box>
+                <IconTextPair
+                    icon={EventIcon}
+                    textVariant='bold'
+                    text={dateTimeStr}
+                />
+                {eventType === 'physical' ? (
+                    <IconTextPair
+                        icon={LocationIcon}
+                        textVariant='bold'
+                        text={`${venue}, ${city}`}
+                        mb={0}
+                    />
+                ) : (
+                    <IconTextPair
+                        icon={PlayCircleIcon}
+                        textVariant='bold'
+                        text={'Online'}
+                        mb={0}
+                    />
+                )}
             </CardContent>
             <CardActions>
                 <EventCardFooter
