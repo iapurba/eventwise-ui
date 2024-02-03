@@ -1,13 +1,13 @@
-import EventListContainer from '../features/EventDiscovery/containers/EventListContainer';
-import PageWrapper from '../components/common/wrappers/PageWrapper';
 import EventFilterPanel from '../features/EventDiscovery/components/EventFilterPanel/EventFilterPanel';
+import EventListContainer from '../features/EventDiscovery/containers/EventListContainer';
+import PageBuilder from './PageBuilder/PageBuilder';
 
 const HomePage = () => {
     return (
-        <PageWrapper id='home-page'>
+        <PageBuilder id='home-page'>
             <EventFilterPanel/>
             <EventListContainer />
-        </PageWrapper>
+        </PageBuilder>
     );
 };
 
