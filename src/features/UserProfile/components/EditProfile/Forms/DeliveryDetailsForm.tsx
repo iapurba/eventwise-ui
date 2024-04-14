@@ -63,7 +63,6 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                     <Grid item xs={12} sm={6}>
                         <CustomTextField
                             styleType='borderOnly'
-                            required
                             fullWidth
                             id="landmark"
                             name="landmark"

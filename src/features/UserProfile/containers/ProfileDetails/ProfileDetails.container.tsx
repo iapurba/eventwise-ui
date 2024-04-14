@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import UserProfileTabs from '../components/UserProfileTabs/UserProfileTabs';
-import FavouriteEventsContainer from './FavouriteEventsContainer';
-import EditProfileContainer from './EditProfileContainer';
-import BookingHistoryContainer from './BookingHistoryContainer';
-import { useGetUserProfile } from '../userQuery';
+import UserProfileTabs from '../../components/UserProfileTabs/UserProfileTabs';
+import FavouriteEventsContainer from '../FavouriteEventsContainer';
+import BookingHistoryContainer from '../BookingHistoryContainer';
+import { useGetUserProfile } from '../../userQuery';
 import { useDispatch } from 'react-redux';
-import { logoutUser } from '../../Authentication/authSlice';
-import { normalizeUserRtkData } from '../../../processors/userProcessor';
-import UserProfileHeader from '../components/UserProfileHeader/UserProfileHeader';
+import { logoutUser } from '../../../Authentication/authSlice';
+import UserProfileHeader from '../../components/UserProfileHeader/UserProfileHeader';
+import { constructUpdateUserJsonPayload, normalizeUserRtkData } from './ProfileDetails.helper';
+import { UserProfileType } from '../../types/userProfile.types';
+import { useUpdateUserProfile } from '../../userMutation';
+import EditProfile from '../../components/EditProfile/EditProfile';
 
 interface TabItem {
     label: string;
@@ -19,6 +21,7 @@ const ProfileDetailsContainer: React.FC = () => {
     const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
 
     const { userProfile, isLoading } = useGetUserProfile();
+    const { updateUserProfile } = useUpdateUserProfile();
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -65,14 +68,21 @@ const ProfileDetailsContainer: React.FC = () => {
         }
     };
 
+    const onUserProfileUpdate = async (profile: UserProfileType) => {
+        console.log({profile});
+        const updatedData = constructUpdateUserJsonPayload(profile);
+        await updateUserProfile(profile.id, updatedData);
+    };
+
     const tabs: TabItem[] = [
         { label: 'Bookings', component: <BookingHistoryContainer /> },
         { label: 'Favourites', component: <FavouriteEventsContainer /> },
         {
             label: 'Edit Profile',
             component: userProfile ? (
-                <EditProfileContainer
+                <EditProfile
                     initialProfile={normalizeUserRtkData(userProfile)}
+                    onUpdate={onUserProfileUpdate}
                 />
             ) : null,
         },

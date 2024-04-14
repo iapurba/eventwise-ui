@@ -3,14 +3,14 @@ import Typography from '@mui/material/Typography';
 import LoginContainer from '../../Authentication/containers/LoginContainer';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
-import TicketDetailsForm from '../forms/TicketDetailsForm';
-import OrderSummaryContainer from './OrderSummaryContainer';
+import TicketDetailsForm from '../components/forms/TicketDetailsForm';
 import { useState } from 'react';
 import { AddIcon, RemoveIcon } from '../../../common/StyledIcons/StyledIcons';
 import { styled } from '@mui/material/styles';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
 import MainButton from '../../../common/Button/MainButton/MainButton';
+import OrderSummaryTable from '../components/OrderSummary/OrderSummary';
 
 const gridStyle = {
     justifyContent: 'center',
@@ -147,7 +147,7 @@ const CheckoutContainer = () => {
                 </div>
                 {orderSummaryExpanded && (
                     <Box sx={{ padding: '8px 16px 40px 24px' }}>
-                        <OrderSummaryContainer cartItems={cartData} />
+                        <OrderSummaryTable cartItems={cartData} />
                         <Box pt={1} display="flex" justifyContent="center">
                             <MainButton
                                 label='CONTINUE'

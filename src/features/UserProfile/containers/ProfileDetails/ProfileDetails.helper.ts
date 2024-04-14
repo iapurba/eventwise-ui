@@ -1,9 +1,8 @@
-import { UserProfileType } from "../features/UserProfile/types/userProfile.types";
-
+import { UserProfileType } from '../../types/userProfile.types';
 
 export const normalizeUserRtkData = (rtkData: any) => {
     const userObj = {
-        id: rtkData?.id,
+        id: rtkData?._id,
         email: rtkData?.email ? rtkData.email : '',
         firstName: rtkData?.firstName ? rtkData.firstName : '',
         lastName: rtkData?.lastName ? rtkData.lastName : '',
@@ -37,6 +36,7 @@ export const normalizeUserRtkData = (rtkData: any) => {
 };
 
 export const constructUpdateUserJsonPayload = (data: UserProfileType) => {
+    console.log({data})
     const userPayload = {
         firstName: data?.contactDetails?.firstName ?? null,
         lastName: data?.contactDetails?.lastName ?? null,

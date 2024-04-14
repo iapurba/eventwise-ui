@@ -1,38 +1,24 @@
 import React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { formatToMonthDayString } from '../../../utils/dateTimeFormatter';
-import { CartItem } from '../cartSlice';
+import { CartItem } from '../../cartSlice';
+import { CustomTableCell, OrderSummaryTableWrapper } from './OrderSummary.styles';
+// import { formatToMonthDayString } from '../../../utils/dateTimeFormatter';
 
-const StyledBox = styled(Box)(({ theme }) => ({
-    borderBottom: '1px dashed #D0D0D0',
-    paddingBottom: theme.spacing(1),
-    marginBottom: theme.spacing(1)
-}));
-
-const CustomTableCell = styled(TableCell)((theme) => ({
-    border: 'none',
-    padding: '8px 16px',
-    fontSize: '14px',
-    verticalAlign: 'top',
-}));
-
-interface OrderSummaryContainerProps {
+interface OrderSummaryTableProps {
     cartItems: CartItem[];
 };
 
-const OrderSummaryContainer: React.FC<OrderSummaryContainerProps> = ({ cartItems }) => {
+const OrderSummaryTable: React.FC<OrderSummaryTableProps> = ({ cartItems }) => {
     console.log(cartItems);
     return (
-        <Box>
-            <StyledBox>
+        <Box className='order-summary-table'>
+            <OrderSummaryTableWrapper>
                 <TableContainer>
                     <Table>
                         <TableHead>
@@ -49,7 +35,7 @@ const OrderSummaryContainer: React.FC<OrderSummaryContainerProps> = ({ cartItems
                                         <Typography variant='body1'>{item.ticketType}</Typography>
                                         <Typography variant='subtitle2'>{item?.event?.title}</Typography>
                                         <Typography variant='subtitle2'>
-                                            {`${formatToMonthDayString(item?.event?.startDate)} | ${item?.event?.startTime}` }
+                                            {`${item?.event?.startDate} | ${item?.event?.startTime}` }
                                         </Typography>
                                     </CustomTableCell>
                                     <CustomTableCell align='center'>{item?.quantity}</CustomTableCell>
@@ -59,8 +45,8 @@ const OrderSummaryContainer: React.FC<OrderSummaryContainerProps> = ({ cartItems
                         </TableBody>
                     </Table>
                 </TableContainer>
-            </StyledBox>
-            <StyledBox>
+            </OrderSummaryTableWrapper>
+            <OrderSummaryTableWrapper>
                 <Table>
                     <TableBody>
                         <TableRow>
@@ -73,9 +59,9 @@ const OrderSummaryContainer: React.FC<OrderSummaryContainerProps> = ({ cartItems
                         </TableRow>
                     </TableBody>
                 </Table>
-            </StyledBox>
+            </OrderSummaryTableWrapper>
         </Box>
     );
 };
 
-export default OrderSummaryContainer;
+export default OrderSummaryTable;
