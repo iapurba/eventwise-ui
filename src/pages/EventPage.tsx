@@ -1,13 +1,13 @@
-import PageWrapper from '../components/common/wrappers/PageWrapper';
 import EventDisplayContainer from '../features/EventInsights/containers/EventDisplayContainer';
 import { useParams } from 'react-router-dom';
+import PageBuilder from './PageBuilder/PageBuilder';
 
 const EventPage = () => {
     const { slug } = useParams();
     return (
-        <PageWrapper id='home-page'>
+        <PageBuilder id='home-page'>
             <EventDisplayContainer slug={slug ? slug : ''} />
-        </PageWrapper>
+        </PageBuilder>
 
     );
 };

@@ -7,6 +7,7 @@ interface TicketType {
     maxTicketsPerOrder: number;
     extraInfo: string;
     isAvailable: boolean;
+    priceDisplayString: string;
 };
 
 export default TicketType;

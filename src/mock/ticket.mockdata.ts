@@ -1,4 +1,4 @@
-import { DiscountType, TicketType } from "../features/ticket/types/ticket";
+import { DiscountType, TicketType } from "../features/EventTickets/types/ticket.type";
 
 const discount1: DiscountType = {
     code: 'DISCOUNT1',

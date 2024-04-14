@@ -52,7 +52,7 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
                             fullWidth
                             id="pincode"
                             type="text"
-                            placeholder="Pincode*"
+                            placeholder="Pincode"
                             size="small"
                             value={billingDetails.pincode}
                             onChange={handleInputChange}
@@ -65,7 +65,7 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
                             fullWidth
                             id="state"
                             type="text"
-                            placeholder="State*"
+                            placeholder="State"
                             name="state"
                             size="small"
                             value={billingDetails.state}

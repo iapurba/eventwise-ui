@@ -8,7 +8,7 @@ import EventPage from '../pages/EventPage';
 import TicketsPage from '../pages/TicketsPage';
 import CheckoutPage from '../pages/CheckoutPage';
 import SearchPage from '../pages/SearchPage';
-import RootLayout from '../components/layouts/RootLayout';
+import RootLayout from '../layouts/RootLayout';
 import PrivateRoute from './PrivateRoute';
 import PaymentPage from '../pages/PaymentPage';
 

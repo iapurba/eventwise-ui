@@ -1,9 +1,6 @@
-import LoginContainer from '../features/auth/containers/LoginContainer';
-import Typography from '@mui/material/Typography';
+import LoginContainer from '../features/Authentication/containers/LoginContainer';
 import { useNavigate } from 'react-router-dom';
-import PageWrapper from '../components/common/wrappers/PageWrapper';
-import PageHeaderText from '../components/common/Typography/PageHeaderText';
-import PageHeaderWrapper from '../components/common/wrappers/PageHeaderWrapper';
+import PageBuilder from './PageBuilder/PageBuilder';
 
 const LoginPage: React.FC = () => {
     const navigate = useNavigate();
@@ -14,14 +11,14 @@ const LoginPage: React.FC = () => {
     }
 
     return (
-        <PageWrapper id='login-page'>
-            <PageHeaderWrapper>
-                <PageHeaderText>Signup or Login</PageHeaderText>
-                <Typography>Sign up to purchase tickets, unlock exclusive content, follow your favourite artists & become a valued member of the Eventwise community.</Typography>
-            </PageHeaderWrapper>
+        <PageBuilder id='login-page'
+            title='Signup or Login'
+        >
             <LoginContainer onLoginSuccess={handleLoginSuccess} />
-        </PageWrapper>
+        </PageBuilder>
     );
 };
 
 export default LoginPage;
+
+// Sign up to purchase tickets, unlock exclusive content, follow your favourite artists & become a valued member of the Eventwise community.

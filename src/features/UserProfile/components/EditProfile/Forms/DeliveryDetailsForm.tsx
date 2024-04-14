@@ -40,7 +40,7 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                             id="addressLine1"
                             name="addressLine1"
                             type="text"
-                            placeholder='Address 1*'
+                            placeholder='Address 1'
                             size="small"
                             value={deliveryDetails.addressLine1}
                             onChange={handleInputChange}
@@ -54,7 +54,7 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                             id="addressLine2"
                             name="addressLine2"
                             type="text"
-                            placeholder="Address 2*"
+                            placeholder="Address 2"
                             size="small"
                             value={deliveryDetails.addressLine2}
                             onChange={handleInputChange}
@@ -63,7 +63,6 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                     <Grid item xs={12} sm={6}>
                         <CustomTextField
                             styleType='borderOnly'
-                            required
                             fullWidth
                             id="landmark"
                             name="landmark"
@@ -82,7 +81,7 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                             id="city"
                             name="city"
                             type="text"
-                            placeholder="City*"
+                            placeholder="City"
                             size="small"
                             value={deliveryDetails.city}
                             onChange={handleInputChange}
@@ -95,7 +94,7 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                             id="pincode"
                             name="pincode"
                             type="text"
-                            placeholder="Pincode*"
+                            placeholder="Pincode"
                             size="small"
                             value={deliveryDetails.pincode}
                             onChange={handleInputChange}
@@ -109,7 +108,7 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                             id="state"
                             name="state"
                             type="text"
-                            placeholder="State*"
+                            placeholder="State"
                             size="small"
                             value={deliveryDetails.state}
                             onChange={handleInputChange}
@@ -124,7 +123,7 @@ const DeliveryDetailsForm: React.FC<DeliveryDetailsFormProps> = ({
                         marginTop: '15px',
                     }}
                 >
-                    <FormHeader title={"Address Type*"} />
+                    <FormHeader title={"Address Type"} />
                     <RadioGroup
                         name="addressType"
                         row

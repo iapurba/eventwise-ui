@@ -16,19 +16,22 @@ const IconOnlyButtonWrapper = styled(IconButton)({
     }
 });
 
-const IconTextButtonWrapper = styled(Button)({
-    borderRadius: '100px',
-    color: 'white',
-    padding: '7px 15px',
-    border: '1px solid rgba(255,255,255,0.2)',
-    fontWeight: '600',
-    fontSize: '13px',
-    marginLeft: '15px',
-    textTransform: 'initial',
-    '&:hover': {
-        borderColor: 'white',
-        backgroundColor: 'transparent',
-    }
-});
+const IconTextButtonWrapper = styled(Button)(
+    ({ className }) => ({
+        borderRadius: '100px',
+        color: 'white',
+        padding: '7px 15px',
+        border: `1px solid ${className?.includes('btn-active')
+            ? '#31C0F0' : 'rgba(255,255,255,0.2)'}`,
+        fontWeight: '600',
+        fontSize: '13px',
+        marginLeft: '15px',
+        textTransform: 'initial',
+        '&:hover': {
+            borderColor: className?.includes('btn-active')
+                ? '#31C0F0' : '#FFFFFF',
+            backgroundColor: 'transparent',
+        }
+    }));
 
 export { IconOnlyButtonWrapper, IconTextButtonWrapper };

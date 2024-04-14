@@ -19,43 +19,43 @@ const EventDisplayContainer: React.FC<EventDisplayContainerProps> = ({ slug }) =
     const navigate = useNavigate();
 
     const handleBuyNowClick = () => {
-        console.log({slug})
+        console.log({ slug })
         navigate(`/event/${slug}/buy/${event._id}/tickets`)
     }
 
     return (
-        <>
-            <Grid container spacing={4}>
-                <Grid item sm={12} md={8}>
-                    <EventPoster imageUrl={`${process.env.PUBLIC_URL}/images/event-poster.png`} />
-                    <EventOverview
-                        description={event?.description}
-                        terms={event?.terms}
-                        faqs={event?.faqs}
-                    />
-                </Grid>
-                <Grid item sm={12} md={4}>
-                    <Grid container direction={'column'}>
-                        <Grid item>
-                            <EventDetails
-                                name={event?.name}
-                                category={event?.category}
-                                dateTimeString={event?.dateTimeString}
-                                venue={event?.venue.name}
-                                city={event?.city}
-                                eventType={event?.eventType}
-                                priceDisplatString={event?.priceDisplayString}
-                                onBuyClick={handleBuyNowClick}
-                            />
-                        </Grid>
-                        <Grid item>
-                            <EventGuide extraInfo={event?.extraInfo} />
-                        </Grid>
+        <Grid
+            container spacing={4}
+            className='event-display-container'
+        >
+            <Grid item sm={12} md={8}>
+                <EventPoster imageUrl={`${process.env.PUBLIC_URL}/images/event-poster.png`} />
+                <EventOverview
+                    description={event?.description}
+                    terms={event?.terms}
+                    faqs={event?.faqs}
+                />
+            </Grid>
+            <Grid item sm={12} md={4}>
+                <Grid container direction={'column'}>
+                    <Grid item>
+                        <EventDetails
+                            name={event?.name}
+                            category={event?.category}
+                            dateTimeString={event?.dateTimeString}
+                            venue={event?.venue.name}
+                            city={event?.city}
+                            eventType={event?.eventType}
+                            priceDisplatString={event?.priceDisplayString}
+                            onBuyClick={handleBuyNowClick}
+                        />
+                    </Grid>
+                    <Grid item>
+                        <EventGuide extraInfo={event?.extraInfo} />
                     </Grid>
                 </Grid>
             </Grid>
-
-        </>
+        </Grid>
     );
 };
 

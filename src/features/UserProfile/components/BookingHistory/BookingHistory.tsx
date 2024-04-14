@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import EllipsisTypography from '../../../../components/common/Typography/EllipsisTypography';
+import EllipsisTypography from '../../../../common/Typography/EllipsisTypography';
 import {
     BookingHistoryContent,
     BookingHistoryFooter,

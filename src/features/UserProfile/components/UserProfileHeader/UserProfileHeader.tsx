@@ -1,7 +1,9 @@
 import Typography from '@mui/material/Typography';
-import { ProfileHeaderContent, ProfileHeaderWrapper } from './UserProfileHeader.styles';
-import SquareButton from '../../../../components/common/Buttons/SquareButton';
-
+import {
+    CustomButton, 
+    ProfileHeaderContent,
+    ProfileHeaderWrapper
+} from './UserProfileHeader.styles';
 
 interface UserProfileHeaderProps {
     email: string | null;
@@ -34,8 +36,8 @@ const UserProfileHeader: React.FC<UserProfileHeaderProps> = ({
                     <Typography>{email}</Typography>
                 </div>
                 <div>
-                    <SquareButton onClick={onEditProfile}>Edit Profile</SquareButton>
-                    <SquareButton onClick={onSignOut}>Sign out</SquareButton>
+                    <CustomButton onClick={onEditProfile}>Edit Profile</CustomButton>
+                    <CustomButton onClick={onSignOut}>Sign out</CustomButton>
                 </div>
             </ProfileHeaderContent>
         </ProfileHeaderWrapper>

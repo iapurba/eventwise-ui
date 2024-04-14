@@ -6,9 +6,8 @@ import {
     FilterPanelWrapper,
     ScrollableOptions
 } from './EventFilterPanel.styles';
-import PageHeaderText from '../../../../components/common/Typography/PageHeaderText';
 import FilterButton from '../../../../common/Button/FilterButton/FilterButton';
-import { ArrowLeftIcon, ArrowRightIcon } from '../../../../components/common/Icons/ArrowIcons';
+import { ArrowLeftIcon, ArrowRightIcon } from '../../../../common/StyledIcons/ArrowIcons';
 
 const timeOption = ['All', 'Today', 'Tomorrow', 'Weekend'];
 const genreOption = [
@@ -67,9 +66,14 @@ const EventFilterPanel = () => {
 
     return (
         <FilterPanelWrapper className='event-filter-panel'>
-            <PageHeaderText pb={2}>
+            <Typography pb={2} sx={{
+                fontSize: '26px',
+                fontWeight: 'bold',
+                color: '#00B9F5',
+                fontVariant: 'h5',
+            }}>
                 {`All Event `}<span style={{ color: '#000000', fontWeight: '320' }}>{'(2)'}</span>
-            </PageHeaderText>
+            </Typography>
             <FilterOptionsWrapper>
                 <Typography sx={{ color: '#999999', fontSize: '14px' }}>TIME:</Typography>
                 {timeOption.map((item) => (

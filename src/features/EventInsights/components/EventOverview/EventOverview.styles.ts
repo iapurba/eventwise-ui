@@ -1,4 +1,4 @@
-import { Typography, styled } from "@mui/material";
+import { Typography, styled } from '@mui/material';
 
 const EventOverviewHeader = styled(Typography)({
     borderBottom: '2px solid #0D0F13',
@@ -6,6 +6,7 @@ const EventOverviewHeader = styled(Typography)({
     fontSize: '21px',
     fontWeight: 'bold',
     padding: '3px 0',
+    marginTop: '24px',
 });
 
 const BulletMark = styled('span')({

@@ -14,7 +14,7 @@ const Terms: React.FC<TermsProps> = ({ terms }) => {
                 variant: 'h6',
                 fontWeight: 'bold',
                 fontSize: '22px',
-                margin: '8px',
+                margin: '8px 0',
             }}>
                 Terms & Conditions
             </Typography>

@@ -5,6 +5,7 @@ interface HeaderButtonProps {
     label?: string;
     endIcon?: React.ComponentType | null;
     onClick?: () => void;
+    active?: boolean;
 }
 
 const HeaderButton = ({
@@ -12,12 +13,14 @@ const HeaderButton = ({
     label,
     endIcon: EndIcon,
     onClick,
+    active,
     ...props
 }: HeaderButtonProps) => {
     return (
         <>{label ? (
             <IconTextButtonWrapper
-                className='btn btn-header btn-icon-text'
+                className={`btn btn-header btn-icon-text 
+                ${active ? 'btn-active' : ''}`}
                 startIcon={<StartIcon />}
                 endIcon={EndIcon ? <EndIcon /> : null}
                 onClick={onClick}

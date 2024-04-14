@@ -1,10 +1,10 @@
 import Box from '@mui/material/Box';
-import PayButton from '../../../components/common/Buttons/PayButton';
-import PaymentMethodOption from '../components/PaymentMethodOption';
+import PayButton from '../components/PayButton/PayButton';
+import PaymentMethodOption from '../components/PaymentMethodOption/PaymentMethodOption';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
-import Note from '../../../components/common/Note';
+import Note from '../../../common/Note/Note';
 import CustomTextField from '../../../common/CustomTextField/CustomTextField';
 
 const UPIPaymentContentWrapper = styled(Box)(({ theme }) => ({
@@ -62,7 +62,7 @@ const UPIPaymentContainer = () => {
 
 
                     <Box sx={{ padding: '18px 0px 0px' }}>
-                        <PayButton>{`Pay ₹100.00`}</PayButton>
+                        <PayButton label={`Pay ₹100.00`}/>
                     </Box>
                 </UPIPaymentContentWrapper>
             </PaymentMethodOption>

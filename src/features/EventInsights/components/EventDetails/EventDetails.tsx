@@ -1,15 +1,15 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import IconWithText from '../../../../components/common/IconWithText';
 import {
     CategoryIcon,
     EventIcon,
     LocationIcon,
     PlayCircleIcon,
     WalletIcon
-} from '../../../../components/common/Icons/StyledIcons';
+} from '../../../../common/StyledIcons/StyledIcons';
 import EventDetailsWrapper, { EventDetailsFooter } from './EventDetails.styles';
 import ButtonOne from '../../../../common/Button/MainButton/MainButton';
+import IconTextPair from '../../../../common/IconTextPair/IconTextPair';
 
 
 interface EventDetailsProps {
@@ -40,13 +40,28 @@ const EventDetails: React.FC<EventDetailsProps> = ({
                     {name}
                 </Typography>
             </Box>
-            <IconWithText icon={CategoryIcon} text={category} />
-            <IconWithText icon={EventIcon} text={dateTimeString}/>
-            {eventType === 'physical' ? (
-                <IconWithText icon={LocationIcon} text={`${venue}, ${city}`} />
-            ) : (
-                <IconWithText icon={PlayCircleIcon} text={'Online'} />
-            )}
+            <IconTextPair
+                textVariant='regular'
+                icon={CategoryIcon}
+                text={category}
+            />
+            <IconTextPair
+                textVariant='regular'
+                icon={EventIcon}
+                text={dateTimeString}
+            />
+            {eventType === 'physical'
+                ? <IconTextPair
+                    textVariant='regular'
+                    icon={LocationIcon}
+                    text={`${venue}, ${city}`}
+                />
+                : <IconTextPair
+                    textVariant='regular'
+                    icon={PlayCircleIcon}
+                    text={'Online'}
+                />
+            }
             <EventDetailsFooter>
                 <Box sx={{ display: 'flex', alignItems: "center" }}>
                     <WalletIcon />
